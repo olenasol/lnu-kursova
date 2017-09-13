@@ -1,0 +1,7 @@
+c:\users\olena\documents\visual studio 2013\Projects\KursovaLibrary\KursovaLibrary\bin\Debug\KursovaLibrary.dll
+c:\users\olena\documents\visual studio 2013\Projects\KursovaLibrary\KursovaLibrary\bin\Debug\KursovaLibrary.pdb
+c:\users\olena\documents\visual studio 2013\Projects\KursovaLibrary\KursovaLibrary\obj\Debug\KursovaLibrary.csprojResolveAssemblyReference.cache
+c:\users\olena\documents\visual studio 2013\Projects\KursovaLibrary\KursovaLibrary\obj\Debug\KursovaLibrary.dll
+c:\users\olena\documents\visual studio 2013\Projects\KursovaLibrary\KursovaLibrary\obj\Debug\KursovaLibrary.pdb
+C:\Users\olena\Documents\Visual Studio 2013\Projects\KursovaLibrary\KursovaLibrary\bin\Debug\Methods.dll
+C:\Users\olena\Documents\Visual Studio 2013\Projects\KursovaLibrary\KursovaLibrary\bin\Debug\Methods.pdb
