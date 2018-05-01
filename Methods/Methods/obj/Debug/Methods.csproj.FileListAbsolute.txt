@@ -1,0 +1,5 @@
+c:\users\olena\documents\visual studio 2013\Projects\Methods\Methods\bin\Debug\Methods.dll
+c:\users\olena\documents\visual studio 2013\Projects\Methods\Methods\bin\Debug\Methods.pdb
+c:\users\olena\documents\visual studio 2013\Projects\Methods\Methods\obj\Debug\Methods.csprojResolveAssemblyReference.cache
+c:\users\olena\documents\visual studio 2013\Projects\Methods\Methods\obj\Debug\Methods.dll
+c:\users\olena\documents\visual studio 2013\Projects\Methods\Methods\obj\Debug\Methods.pdb

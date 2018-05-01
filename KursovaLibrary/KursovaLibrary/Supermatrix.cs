@@ -12,9 +12,9 @@ namespace KursovaLibrary
         public int cols;
         public int blockrows;
         public int blockcols;
-        public Rkmatrix r;
-        public Fullmatrix f;
-        public Supermatrix[,] s;
+        public Rkmatrix rkmatrix;
+        public Fullmatrix fullmatrix;
+        public Supermatrix[,] supermatrix;
     }
 }
 

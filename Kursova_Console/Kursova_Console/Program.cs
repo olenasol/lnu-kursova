@@ -10,10 +10,14 @@ namespace Kursova_Console
 {
     class Program
     {
-        static public double f_i(double x,double i)
+
+        static public double f(double x)
         {
-            
-            return x;
+            return 1;
+        }
+        static public double f_i(double x,int i,int n)
+        {
+            return f(x);//* FunctionsBEM.phi(i, n, x);
         }
         static public double un(double x, double[] u, int n)
         {
@@ -28,51 +32,57 @@ namespace Kursova_Console
         }
         static void Main(string[] args)
         {
+            int n = 4;
             Supermatrix s = new Supermatrix();
-            ClusterTree c=ClusterTree.buildClusterTree(8);
-            s = BlockClusterTree.BuildBlockClusterTree(c, c, s,8);
-            double[] f = new double[8];
-            double[] x0=new double[8];
-            for (int i = 0; i < 8; i++)
+            ClusterTree c=ClusterTree.buildClusterTree(n);
+            s = BlockClusterTree.BuildBlockClusterTree(c, c, s, n);
+            double[] f = new double[n];
+            double[] x0 = new double[n];
+            for (int i = 0; i < n; i++)
             {
-                f[i] = f_i(i+0.125,i);
-                //Console.WriteLine(f[i]);
-                x0[i]=0;
+                f[i] = f_i(((double)i)/ ((double)n), i,n);
+                Console.WriteLine(f[i]);
+                x0[i] = 0;
             }
 
             double[] u = GradientMethod.ConjugateGradientMethodHMatrix(s, f, x0);
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < n; i++)
             {
-                //Console.WriteLine(u[i]);
+                Console.WriteLine(un(((double)i) / ((double)n), u,n));
             }
-            double[] su = new double[8];
-            su[0] = un(0, u, 8);
-            su[1] = un(0.2, u, 8);
-            su[2] = un(0.4, u, 8);
-            su[3] = un(0.6, u, 8);
-            su[4] = un(0.8, u, 8);
-            su[5] = un(0.9, u, 8);
-            su[6] = un(0.1, u, 8);
-            su[7] = un(1, u, 8);
-            for (int i = 0; i < 8; i++)
-                    {
-                        
-                      Console.WriteLine(su[i]);
-                    }
-                //double[,] a = new double[3,3];
-                //double[] b = {11,16,14};
-                //a[0, 0] = 1;
-                //a[0, 1] = 7;
-                //a[0, 2] = 3;
-                //a[1, 0] = 7;
-                //a[1, 1] = 4;
-                //a[1, 2] = 5;
-                //a[2, 0] = 3;
-                //a[2, 1] = 5;
-                //a[2, 2] = 6;
-                //double[] x0={0,0,0};
-                //double[] x = GradientMethod.ConjugateGradientMethod(a, b, x0);
-                
+
+
+
+
+            //double[] su = new double[8];
+            //su[0] = un(0, u, 8);
+            //su[1] = un(0.2, u, 8);
+            //su[2] = un(0.4, u, 8);
+            //su[3] = un(0.6, u, 8);
+            //su[4] = un(0.8, u, 8);
+            //su[5] = un(0.9, u, 8);
+            //su[6] = un(0.1, u, 8);
+            //su[7] = un(1, u, 8);
+            //for (int i = 0; i < 8; i++)
+            //        {
+
+            //          Console.WriteLine(su[i]);
+            //        }
+            //double[,] a = new double[3,3];
+            //double[] b = {11,16,14};
+            //a[0, 0] = 1;
+            //a[0, 1] = 7;
+            //a[0, 2] = 3;
+            //a[1, 0] = 7;
+            //a[1, 1] = 4;
+            //a[1, 2] = 5;
+            //a[2, 0] = 3;
+            //a[2, 1] = 5;
+            //a[2, 2] = 6;
+            //double[] x0={0,0,0};
+            //double[] x = GradientMethod.ConjugateGradientMethod(a, b, x0);
+            Console.ReadKey();
+
         }
     }
 }

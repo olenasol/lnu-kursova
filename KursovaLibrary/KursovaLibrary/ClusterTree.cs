@@ -13,8 +13,8 @@ namespace KursovaLibrary
         public int[] leaf;
         public ClusterTree leftTree;
         public ClusterTree rightTree;
-
-        public static int getNumberOfNodes(int p)
+        
+        public int getNumberOfNodes(int p)
         {
             if (p == 1)
             {
@@ -36,7 +36,8 @@ namespace KursovaLibrary
             ClusterTree t = buildClusterTreeRec(0, n - 1, 0, 0, arr);
             return t;
         }
-        public static ClusterTree buildClusterTreeRec(int b, int e, int level, int num, int[] arr)
+
+        private static ClusterTree buildClusterTreeRec(int b, int e, int level, int num, int[] arr)
         {
             ClusterTree t = new ClusterTree();
             t.level = level;
@@ -63,6 +64,7 @@ namespace KursovaLibrary
             }
             return t;
         }
+
         public static ClusterTree getByIndex(ClusterTree t, int l, int n)
         {
             if (t == null)

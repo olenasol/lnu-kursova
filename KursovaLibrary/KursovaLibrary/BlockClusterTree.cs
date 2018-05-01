@@ -48,54 +48,51 @@ namespace KursovaLibrary
         {
             if (IsAdmissible(t, s))
             {
-                spr.s = null;
-                spr.r = new Rkmatrix();
-                spr.r.rows = t.leaf.Length;
-                spr.r.cols = s.leaf.Length;
-                spr.r.k = spr.r.rows;
-                spr.r.a = new double[spr.r.rows * spr.r.cols];
-                spr.r.b = new double[spr.r.rows * spr.r.cols];
-                for (int i = 0; i < spr.r.a.Length; i++)
+                spr.supermatrix = null;
+                spr.rkmatrix = new Rkmatrix();
+                spr.rkmatrix.rows = t.leaf.Length;
+                spr.rkmatrix.cols = s.leaf.Length;
+                spr.rkmatrix.k = spr.rkmatrix.rows;
+                spr.rkmatrix.a = new double[spr.rkmatrix.rows * spr.rkmatrix.cols];
+                spr.rkmatrix.b = new double[spr.rkmatrix.rows * spr.rkmatrix.cols];
+                //filling Rkmatrix
+                int p = (int)Math.Pow(2, s.level);
+                double[] podil = new double[p + 1];
+                for (int i = 0; i < podil.Length; i++)
                 {
-                    spr.r.a[i] = 8;
-                    spr.r.b[i] = 1;
+                    podil[i] = i / (double)p;
                 }
-                    //int p = (int)Math.Pow(2, s.level);
-                    //double[] podil = new double[p + 1];
-                    //for (int i = 0; i < podil.Length; i++)
-                    //{
-                    //    podil[i] = i / (double)p;
-                    //}
-                    //double a = podil[s.numberOfLeaf];
-                    //double b = podil[s.numberOfLeaf + 1];
-                    //double x0=(a+b)/2;
-                    //int m=0;
-                    //for(int i=0;i<t.leaf.Length;i++)
-                    //{
-                    //    for (int v=0;v<spr.r.k;v++){
-                    //        spr.r.a[m] = FunctionsBEM.amatr(t.leaf[i],n,x0,v);
-                    //        m++;
-                    //    }
-                    //}
-                    //m = 0;
-                    //for (int i = 0; i < s.leaf.Length; i++)
-                    //{
-                    //    for (int v = 0; v < spr.r.k; v++)
-                    //    {
-                    //        if (v == 0)
-                    //        {
-                    //            spr.r.b[m] = FunctionsBEM.bmatr2(s.leaf[i], n, x0, v);
-                    //            m++;
-                    //        }
-                    //        else
-                    //        {
-                    //            spr.r.b[m] = FunctionsBEM.bmatr1(s.leaf[i], n, x0, v);
-                    //            m++;
-                    //        }
-                    //    }
-                    //}
-
-                    return spr;
+                double a = podil[s.numberOfLeaf];
+                double b = podil[s.numberOfLeaf + 1];
+                double x0 = (a + b) / 2;
+                int m = 0;
+                for (int i = 0; i < t.leaf.Length; i++)
+                {
+                    for (int v = 0; v < spr.rkmatrix.k; v++)
+                    {
+                        spr.rkmatrix.a[m] = FunctionsBEM.amatr(t.leaf[i], n, x0, v);
+                        m++;
+                    }
+                }
+                m = 0;
+                for (int i = 0; i < s.leaf.Length; i++)
+                {
+                    for (int v = 0; v < spr.rkmatrix.k; v++)
+                    {
+                        if (v == 0)
+                        {
+                            spr.rkmatrix.b[m] = FunctionsBEM.bmatr2(s.leaf[i], n, x0, v);
+                            m++;
+                        }
+                        else
+                        {
+                            spr.rkmatrix.b[m] = FunctionsBEM.bmatr1(s.leaf[i], n, x0, v);
+                            m++;
+                        }
+                    }
+                }
+                //end of filling Rkmatrix
+                return spr;
             }
             else
             {
@@ -105,30 +102,30 @@ namespace KursovaLibrary
                     spr.cols = n;
                     spr.blockrows = 2;
                     spr.blockcols = 2;
-                    spr.s = new Supermatrix[spr.blockrows, spr.blockcols];
-                    for (int i = 0; i < spr.s.GetLength(0); i++)
+                    spr.supermatrix = new Supermatrix[spr.blockrows, spr.blockcols];
+                    for (int i = 0; i < spr.supermatrix.GetLength(0); i++)
                     {
-                        for (int j = 0; j < spr.s.GetLength(1); j++)
+                        for (int j = 0; j < spr.supermatrix.GetLength(1); j++)
                         {
-                            spr.s[i, j] = new Supermatrix();
+                            spr.supermatrix[i, j] = new Supermatrix();
                         }
                     }
-                    spr.s[0, 0] = BuildBlockClusterTree(t.leftTree, s.leftTree, spr.s[0, 0],n);
-                    spr.s[0, 1] = BuildBlockClusterTree(t.rightTree, s.leftTree, spr.s[0, 1],n);
-                    spr.s[1, 0] = BuildBlockClusterTree(t.leftTree, s.rightTree, spr.s[1, 0],n);
-                    spr.s[1, 1] = BuildBlockClusterTree(t.rightTree, s.rightTree, spr.s[1, 1],n);
+                    spr.supermatrix[0, 0] = BuildBlockClusterTree(t.leftTree, s.leftTree, spr.supermatrix[0, 0],n);
+                    spr.supermatrix[0, 1] = BuildBlockClusterTree(t.rightTree, s.leftTree, spr.supermatrix[0, 1],n);
+                    spr.supermatrix[1, 0] = BuildBlockClusterTree(t.leftTree, s.rightTree, spr.supermatrix[1, 0],n);
+                    spr.supermatrix[1, 1] = BuildBlockClusterTree(t.rightTree, s.rightTree, spr.supermatrix[1, 1],n);
                 }
                 else
                 {
                     spr.rows = n;
                     spr.cols = n;
-                    spr.s = null;
-                    spr.f = new Fullmatrix();
-                    spr.f.cols = 0;
-                    spr.f.rows = 0;
-                    spr.f.e = new double[1];
-                    spr.f.e[0] = 3;
-                   // spr.f.e[0] = FunctionsBEM.Egtulda(t.leaf[0], s.leaf[0], n);
+                    spr.supermatrix = null;
+                    spr.fullmatrix = new Fullmatrix();
+                    spr.fullmatrix.cols = 0;
+                    spr.fullmatrix.rows = 0;
+                    spr.fullmatrix.e = new double[1];
+                    //filling Fullmatrix
+                    spr.fullmatrix.e[0] = FunctionsBEM.Egtulda(t.leaf[0], s.leaf[0], n);
                 }
                 return spr;
             }
@@ -137,7 +134,7 @@ namespace KursovaLibrary
 
         static public double[] MultHMatrixByVector(Supermatrix spr, double[] vct)
         {
-            if (spr.s != null)
+            if (spr.supermatrix != null)
             {
                 int n=vct.Length;
                 double[] vct1=new double[(int)(n/2)];
@@ -146,10 +143,10 @@ namespace KursovaLibrary
                     vct1[i]=vct[i];
                     vct2[i]=vct[i+(int)(n/2)];
                 }
-                double[] a1=MultHMatrixByVector(spr.s[0, 0], vct1);
-                double[] a2=MultHMatrixByVector(spr.s[0, 1], vct2);
-                double[] b1=MultHMatrixByVector(spr.s[1, 0], vct1);
-                double[] b2=MultHMatrixByVector(spr.s[1, 1], vct2);
+                double[] a1=MultHMatrixByVector(spr.supermatrix[0, 0], vct1);
+                double[] a2=MultHMatrixByVector(spr.supermatrix[0, 1], vct2);
+                double[] b1=MultHMatrixByVector(spr.supermatrix[1, 0], vct1);
+                double[] b2=MultHMatrixByVector(spr.supermatrix[1, 1], vct2);
                 double[] res = new double[n];
                 for (int i = 0; i < (int)n / 2; i++)
                 {
@@ -160,17 +157,17 @@ namespace KursovaLibrary
             }
             else
             {
-                if (spr.r != null)
+                if (spr.rkmatrix != null)
                 {
-                    double[,] tempa=new double[spr.r.rows,spr.r.cols];
-                    double[,] tempb=new double[spr.r.rows,spr.r.cols];
+                    double[,] tempa=new double[spr.rkmatrix.rows,spr.rkmatrix.cols];
+                    double[,] tempb=new double[spr.rkmatrix.rows,spr.rkmatrix.cols];
                     int k = 0;
-                    for (int i = 0; i < spr.r.rows; i++)
+                    for (int i = 0; i < spr.rkmatrix.rows; i++)
                     {
-                        for (int j = 0; j < spr.r.cols; j++)
+                        for (int j = 0; j < spr.rkmatrix.cols; j++)
                         {
-                            tempa[i, j] = spr.r.a[k];
-                            tempb[i, j] = spr.r.b[k];
+                            tempa[i, j] = spr.rkmatrix.a[k];
+                            tempb[i, j] = spr.rkmatrix.b[k];
                             k++;
                         }
                     }
@@ -178,10 +175,10 @@ namespace KursovaLibrary
                     double[] second = GradientMethod.MultiplyMatrixByVector(tempa, first);
                     return second;
                 }
-                else if (spr.f != null)
+                else if (spr.fullmatrix != null)
                 {
                     double[] res = new double[1];
-                    res[0]=GradientMethod.MultiplyVectorByVector(spr.f.e, vct);
+                    res[0]=GradientMethod.MultiplyVectorByVector(spr.fullmatrix.e, vct);
                     return res;
                 }
             }
