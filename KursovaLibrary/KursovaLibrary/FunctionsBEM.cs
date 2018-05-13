@@ -38,22 +38,34 @@ namespace KursovaLibrary
         }
 
         static public double f(double x,double a){
-            return a*Math.Log(x-a)-x*Math.Log(x-a)-a;
+            return a*Math.Log(Math.Abs(x-a))-x*Math.Log(Math.Abs(x-a))-a;
         }
 
+        static public double f1(double x,double a)
+        {
+            return 0.5 * (a * Math.Sign(x - a) * (Math.Log(Math.Abs(x - a)) - Math.Log(Math.Abs(a - x))) + a * Math.Log(Math.Abs(x - a)) + a * Math.Log(Math.Abs(a - x)) - 2 * x * Math.Log(Math.Abs(a - x)) - 2 * a);
+            //return a * (x - a) * Math.Log(x - a) - a * x;
+        }
+        static public double f2(double x, double a)
+        {
+            return 0.25 * (x - a) * (2 * (a + x) * Math.Log(Math.Abs(x - a)) - 3 * a - x) + a * x;
+        }
+        static public double fIntegr(double c,double d,double a)
+        {
+            return (f1(d, a) - f1(c, a)) - (f2(d, a) - f2(c, a));
+        }
         static public double Egtulda(int i, int j, int n)
         {
-            double b = ((double)(j + 1.0)) / (double)n;
-            double a = ((double)j) / ((double)n);
-            //if (a == 0)
-            //{
-            //    a = 0.0001;
-            //}
-            //if (b == 0) { b = 0.0001;}
+            double b = ((double)(i + 1.0)) / (double)n;
+            double a = ((double)i) / ((double)n);
+            double d = ((double)(j + 1.0)) / (double)n;
+            double c = ((double)j) / ((double)n);
             double eps = 0.00001;
-            double k = -Integral.RegtangleMethod(f, ((double)i) / ((double)n), ((double)(i + 1.0)) / ((double)n), eps, a);
-            double m=Integral.RegtangleMethod(f, ((double)i) /((double) n), ((double)(i + 1.0)) / ((double)n), eps, b);
-            return k + m;
+            double k = -Integral.RegtangleMethod(f, ((double)i) / ((double)n), ((double)(i + 1.0)) / ((double)n), eps, c);
+            double m=Integral.RegtangleMethod(f, ((double)i) /((double) n), ((double)(i + 1.0)) / ((double)n), eps, d);
+            //double k = -fIntegr(c,d, a);
+            //double m = fIntegr(c,d, b);
+            return k+m;
         }
 
         public static double phi(int i, int n, double x)
@@ -67,21 +79,45 @@ namespace KursovaLibrary
                 return 0;
             }
         }
+        public static double amatrIntegr(double x, double x0, int v)
+        {
+            return Math.Pow(x - x0, v + 1) / (double)(v + 1);
+        }
 
         public static double amatr(int i, int n, double x0,int v){
-            return Math.Pow((((double)(i + 1.0)) / ((double)n)) - x0, v + 1.0) / ((double)(v + 1.0)) - Math.Pow(((double)i) /((double) n) - x0, v + 1.0) / ((double)(v + 1.0));
+            return amatrIntegr(((double)(i + 1.0)) / ((double)n), x0, v) - amatrIntegr(((double)(i)) / ((double)n), x0, v);
+           // return Math.Pow((((double)(i + 1.0)) / ((double)n)) - x0, v + 1.0) / ((double)(v + 1.0)) - Math.Pow(((double)i) /((double) n) - x0, v + 1.0) / ((double)(v + 1.0));
         }
 
         public static double bmatr1(int j, int n, double x0, int v)
         {
-            return Math.Pow(-1.0, v + 1.0) * Math.Pow(v, -1.0) * (Math.Pow(x0 - (((double)(j + 1.0)) / ((double)n)), 1.0 - v) / ((double)(1.0 - v))
-                - Math.Pow(x0 - ((double)j) / ((double)n), 1.0 - v) / ((double)(1.0 - v)));
+            return Math.Pow(-1, v + 1) * Math.Pow(v, -1) * (bmatr1Integr((double)(j + 1.0) / (double)n, x0, v) - bmatr1Integr((double)(j) / (double)n, x0, v));
+          //  return Math.Pow(-1.0, v + 1.0) * Math.Pow(v, -1.0) * (Math.Pow(x0 - (((double)(j + 1.0)) / ((double)n)), 1.0 - v) / ((double)(1.0 - v))
+          //      - Math.Pow(x0 - ((double)j) / ((double)n), 1.0 - v) / ((double)(1.0 - v)));
+        }
+
+        public static double bmatr1Integr(double x, double x0, int v)
+        {
+            if (v == 1)
+            {
+                return -Math.Log(Math.Abs(x0 - x));
+            }
+            else
+            {
+                return Math.Pow(x0 - x, 1 - v) / ((double)v - 1);
+            }
         }
 
         public static double bmatr2(int j, int n, double x0, int v)
         {
-            return ((((double)(j + 1.0)) / ((double)n)) * Math.Log(x0 - ((double)(j + 1.0) / ((double)n)), Math.E) - x0 * Math.Log((((double)(j + 1)) / ((double)n)) - x0,Math.E) - (((double)(j + 1)) / ((double)n))) - 
-                ((((double)j) / ((double)n)) * Math.Log(x0 - (((double)j) / ((double)n)), Math.E) - x0 * Math.Log((((double)j) / ((double)n)) - x0,Math.E) - (((double)j) / ((double)n)));
+            // return ((((double)(j + 1.0)) / ((double)n)) * Math.Log(Math.Abs(x0 - ((double)(j + 1.0) / ((double)n))), Math.E) - x0 * Math.Log(Math.Abs((((double)(j + 1)) / ((double)n)) - x0),Math.E) - (((double)(j + 1)) / ((double)n))) - 
+            //     ((((double)j) / ((double)n)) * Math.Log(Math.Abs(x0 - (((double)j) / ((double)n))), Math.E) - x0 * Math.Log(Math.Abs((((double)j) / ((double)n)) - x0),Math.E) - (((double)j) / ((double)n)));
+            return bmatr2Integr(((double)(j + 1.0)) / ((double)n), x0) - bmatr2Integr(((double)(j)) / ((double)n), x0);
+        }
+
+        private static double bmatr2Integr(double x,double x0)
+        {
+            return 0.5 * (x * Math.Sign(x0 - x) * (Math.Log(Math.Abs(x0 - x)) - Math.Log(Math.Abs(x - x0))) + x * Math.Log(Math.Abs(x0 - x)) + x * Math.Log(Math.Abs(x - x0)) - 2 * x0 * Math.Log(Math.Abs(x - x0)) - 2 * x);
         }
     }
 }

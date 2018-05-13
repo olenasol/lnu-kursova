@@ -44,54 +44,60 @@ namespace KursovaLibrary
             }
         }
 
+        private static Rkmatrix buildRkmatrix(ClusterTree t, ClusterTree s, int n)
+        {
+            Rkmatrix rkmatrix = new Rkmatrix();
+            rkmatrix.rows = t.leaf.Length;
+            rkmatrix.cols = s.leaf.Length;
+            rkmatrix.k = rkmatrix.rows;
+            rkmatrix.a = new double[rkmatrix.rows * rkmatrix.cols];
+            rkmatrix.b = new double[rkmatrix.rows * rkmatrix.cols];
+            //filling Rkmatrix
+            double x0 = ((double)t.leaf[0] + 0.5 * (double)t.leaf.Length) * (1.0 / (double)n);
+            int m = 0;
+            for (int i = 0; i < t.leaf.Length; i++)
+            {
+                for (int v = 1; v < rkmatrix.k; v++)
+                {
+                    rkmatrix.a[m] = FunctionsBEM.amatr(t.leaf[i], n, x0, v);
+                    m++;
+                }
+            }
+            m = 0;
+            for (int i = 0; i < s.leaf.Length; i++)
+            {
+                for (int v = 1; v < rkmatrix.k; v++)
+                {
+                    if (v == 0)
+                    {
+                        rkmatrix.b[m] = FunctionsBEM.bmatr2(s.leaf[i], n, x0, v);
+                      
+                        m++;
+                    }
+                    else
+                    {
+                        rkmatrix.b[m] = FunctionsBEM.bmatr1(s.leaf[i], n, x0, v);
+                       
+                        m++;
+                    }
+                }
+            }
+
+            //for (int i = 0; i < rkmatrix.a.Length; i++)
+            //{
+            //    rkmatrix.a[i] = -0.25;
+            //    rkmatrix.b[i] = 1;
+            //}
+            //end of filling Rkmatrix
+            return rkmatrix;
+        }
+
         public static Supermatrix BuildBlockClusterTree(ClusterTree t,ClusterTree s,Supermatrix spr,int n)
         {
             if (IsAdmissible(t, s))
             {
                 spr.supermatrix = null;
-                spr.rkmatrix = new Rkmatrix();
-                spr.rkmatrix.rows = t.leaf.Length;
-                spr.rkmatrix.cols = s.leaf.Length;
-                spr.rkmatrix.k = spr.rkmatrix.rows;
-                spr.rkmatrix.a = new double[spr.rkmatrix.rows * spr.rkmatrix.cols];
-                spr.rkmatrix.b = new double[spr.rkmatrix.rows * spr.rkmatrix.cols];
-                //filling Rkmatrix
-                int p = (int)Math.Pow(2, s.level);
-                double[] podil = new double[p + 1];
-                for (int i = 0; i < podil.Length; i++)
-                {
-                    podil[i] = i / (double)p;
-                }
-                double a = podil[s.numberOfLeaf];
-                double b = podil[s.numberOfLeaf + 1];
-                double x0 = (a + b) / 2;
-                int m = 0;
-                for (int i = 0; i < t.leaf.Length; i++)
-                {
-                    for (int v = 0; v < spr.rkmatrix.k; v++)
-                    {
-                        spr.rkmatrix.a[m] = FunctionsBEM.amatr(t.leaf[i], n, x0, v);
-                        m++;
-                    }
-                }
-                m = 0;
-                for (int i = 0; i < s.leaf.Length; i++)
-                {
-                    for (int v = 0; v < spr.rkmatrix.k; v++)
-                    {
-                        if (v == 0)
-                        {
-                            spr.rkmatrix.b[m] = FunctionsBEM.bmatr2(s.leaf[i], n, x0, v);
-                            m++;
-                        }
-                        else
-                        {
-                            spr.rkmatrix.b[m] = FunctionsBEM.bmatr1(s.leaf[i], n, x0, v);
-                            m++;
-                        }
-                    }
-                }
-                //end of filling Rkmatrix
+                spr.rkmatrix = buildRkmatrix(t, s, n);
                 return spr;
             }
             else
@@ -125,7 +131,8 @@ namespace KursovaLibrary
                     spr.fullmatrix.rows = 0;
                     spr.fullmatrix.e = new double[1];
                     //filling Fullmatrix
-                    spr.fullmatrix.e[0] = FunctionsBEM.Egtulda(t.leaf[0], s.leaf[0], n);
+                    spr.fullmatrix.e[0] = FunctionsBEM.Egtulda(t.leaf[0],s.leaf[0], n);
+                    //spr.fullmatrix.e[0] = 1;
                 }
                 return spr;
             }

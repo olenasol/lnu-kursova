@@ -13,11 +13,11 @@ namespace Kursova_Console
 
         static public double f(double x)
         {
-            return 1;
+            return 1.0;
         }
         static public double f_i(double x,int i,int n)
         {
-            return f(x);//* FunctionsBEM.phi(i, n, x);
+            return f(x);//FunctionsBEM.phi(i, n, x);
         }
         static public double un(double x, double[] u, int n)
         {
@@ -26,21 +26,32 @@ namespace Kursova_Console
             {
                
                 s = s + FunctionsBEM.phi(i, n,x) * u[i];
-            }
-          
+            }          
             return s;
         }
+
+        static public double yTochne(double x)
+        {
+            return 1.0/(Math.Pow(Math.PI,2)*Math.Log(0.25)*Math.Sqrt(x*(1-x)));
+        }
+
         static void Main(string[] args)
         {
-            int n = 4;
+            int n = 16;
             Supermatrix s = new Supermatrix();
             ClusterTree c=ClusterTree.buildClusterTree(n);
-            s = BlockClusterTree.BuildBlockClusterTree(c, c, s, n);
+            try
+            {
+                s = BlockClusterTree.BuildBlockClusterTree(c, c, s, n);
+            }catch(IndexOutOfRangeException e)
+            {
+                Console.WriteLine("error");
+            }
             double[] f = new double[n];
             double[] x0 = new double[n];
             for (int i = 0; i < n; i++)
             {
-                f[i] = f_i(((double)i)/ ((double)n), i,n);
+                f[i] = f_i(((double)i) / ((double)n), i, n);
                 Console.WriteLine(f[i]);
                 x0[i] = 0;
             }
@@ -48,7 +59,12 @@ namespace Kursova_Console
             double[] u = GradientMethod.ConjugateGradientMethodHMatrix(s, f, x0);
             for (int i = 0; i < n; i++)
             {
-                Console.WriteLine(un(((double)i) / ((double)n), u,n));
+                Console.WriteLine(un(((double)i) / ((double)n), u, n));
+            }
+            Console.WriteLine("----------------");
+            for(int i = 0; i < n; i++)
+            {
+                Console.WriteLine(yTochne(((double)i) / ((double)n)));
             }
 
 
@@ -81,7 +97,7 @@ namespace Kursova_Console
             //a[2, 2] = 6;
             //double[] x0={0,0,0};
             //double[] x = GradientMethod.ConjugateGradientMethod(a, b, x0);
-            Console.ReadKey();
+            Console.ReadLine();
 
         }
     }
