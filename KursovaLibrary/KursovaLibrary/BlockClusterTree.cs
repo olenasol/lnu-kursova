@@ -83,11 +83,11 @@ namespace KursovaLibrary
                 }
             }
 
-            //for (int i = 0; i < rkmatrix.a.Length; i++)
-            //{
-            //    rkmatrix.a[i] = -0.25;
-            //    rkmatrix.b[i] = 1;
-            //}
+            for (int i = 0; i < rkmatrix.a.Length; i++)
+            {
+                rkmatrix.a[i] = -0.25;
+                rkmatrix.b[i] = 1;
+            }
             //end of filling Rkmatrix
             return rkmatrix;
         }

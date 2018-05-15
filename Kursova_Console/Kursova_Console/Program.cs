@@ -37,6 +37,10 @@ namespace Kursova_Console
 
         static void Main(string[] args)
         {
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Black;
+          
             int n = 16;
             Supermatrix s = new Supermatrix();
             ClusterTree c=ClusterTree.buildClusterTree(n);
@@ -52,24 +56,23 @@ namespace Kursova_Console
             for (int i = 0; i < n; i++)
             {
                 f[i] = f_i(((double)i) / ((double)n), i, n);
-                Console.WriteLine(f[i]);
                 x0[i] = 0;
             }
-
+            Console.WriteLine("u_approx");
             double[] u = GradientMethod.ConjugateGradientMethodHMatrix(s, f, x0);
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine(un(((double)i) / ((double)n), u, n));
             }
             Console.WriteLine("----------------");
+            Console.WriteLine("u_tochne");
+            double[] ytochne = new double[n];
             for(int i = 0; i < n; i++)
             {
+                ytochne[i] = yTochne(((double)i) / ((double)n));
                 Console.WriteLine(yTochne(((double)i) / ((double)n)));
             }
-
-
-
-
+            
             //double[] su = new double[8];
             //su[0] = un(0, u, 8);
             //su[1] = un(0.2, u, 8);
