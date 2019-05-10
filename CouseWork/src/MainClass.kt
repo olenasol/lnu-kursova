@@ -55,16 +55,25 @@ fun main(args : Array<String>) {
 //        println(yTochne(i.toDouble() / n.toDouble()))
 //    }
 //    val temp2 = BlockClusterTree.MultHMatrixByVector(s, doubleArrayOf(1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0))
-//    temp2.forEach { println(it) }
-      val m= 8
+//    81.forEach { println(it) }
+      val m= 4
      val superm = Supermatrix()
     val cl = ClusterTree.buildClusterTree(m)
     val sppp = BlockClusterTree.buildBlockClusterTree(cl, cl, superm, m)
-    val res = BlockClusterTree.MultHMatrixByVector(sppp, doubleArrayOf(1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0))
+    val ourArray = DoubleArray(m){
+        1.0
+    }
+    val x0 = DoubleArray(m){0.0}
+    val res = BlockClusterTree.MultHMatrixByVector(sppp, ourArray)
     res.forEach { println(it) }
     println("==============")
-    val per = gradientMethodMatrix(sppp, res, doubleArrayOf(0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0))
+    val per = gradientMethodMatrix(sppp, res, x0)
     per.forEach { println(it) }
+
+    println("=============")
+    val test = BlockClusterTree.getNormalMatrix(sppp)
+    val p = gradientMethod(test, multiplyMatrixByVector(test,ourArray),x0)
+    p.forEach { println(it) }
 //    val s = ClusterTree.buildClusterTree(8)
 //    val t = ClusterTree.buildClusterTree(8)
 //    val tree:ClusterTree? = ClusterTree.getTreeByIndex(ClusterTree.buildClusterTree(8),3,0)

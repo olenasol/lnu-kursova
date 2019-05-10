@@ -63,8 +63,9 @@ fun gradientMethodMatrix(matrix: Supermatrix, vector: DoubleArray, inx0: DoubleA
     return x1
 }
 
+//TODO indeces are messed up here
 fun multiplyMatrixByVector(matrix: Array<DoubleArray>, vector: DoubleArray): DoubleArray {
-    val result = DoubleArray(vector.size)
+    val result = DoubleArray(matrix.size)
     for (i in 0..(matrix.size - 1)) {
         for (j in 0..(matrix[i].size - 1))
             result[i] += matrix[i][j] * vector[j]
@@ -72,6 +73,29 @@ fun multiplyMatrixByVector(matrix: Array<DoubleArray>, vector: DoubleArray): Dou
     return result
 }
 
+fun multiplyMatricesV3(firstMatrix: Array<DoubleArray>, secondMatrix: Array<DoubleArray>): Array<DoubleArray> {
+    val r1 = firstMatrix.size
+    val c1 = firstMatrix[0].size
+    val c2 = secondMatrix[0].size
+    val product = Array(r1) { DoubleArray(c2) }
+    for (i in 0 until r1) {
+        for (j in 0 until c2) {
+            for (k in 0 until c1) {
+                product[i][j] += firstMatrix[i][k] * secondMatrix[k][j]
+            }
+        }
+    }
+
+    return product
+}
+
+fun transposeMatrix(m: Array<DoubleArray>): Array<DoubleArray> {
+    val temp = Array(m[0].size) { DoubleArray(m.size) }
+    for (i in m.indices)
+        for (j in 0 until m[0].size)
+            temp[j][i] = m[i][j]
+    return temp
+}
 fun multiplyVectorByVector(vector1: DoubleArray, vector2: DoubleArray): Double {
     var result = 0.0
     for (i in 0..(vector1.size - 1)) {

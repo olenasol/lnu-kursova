@@ -22,42 +22,41 @@ class BlockClusterTree {
         }
 
         fun buildRkmatrix(t: ClusterTree, s: ClusterTree, n: Int): Rkmatrix {
-            val rkmatrix = Rkmatrix(t.leaf.size, t.leaf.size, s.leaf.size,
-                    DoubleArray(t.leaf.size * s.leaf.size), DoubleArray(t.leaf.size * s.leaf.size))
-            rkmatrix.a = DoubleArray(rkmatrix.rows * rkmatrix.cols)
-            rkmatrix.b = DoubleArray(rkmatrix.rows * rkmatrix.cols)
-            //filling Rkmatrix
-            val x0 = (t.leaf[0].toDouble() + 0.5 * t.leaf.size.toDouble()) * (1.0 / n.toDouble())
-            var m = 0
-            for (i in 0 until t.leaf.size) {
-                for (v in 1 until rkmatrix.k) {
-                    rkmatrix.a[m] = amatr(t.leaf[i], n, x0, v)
-                    m++
-                }
-            }
-            m = 0
-            for (i in 0 until s.leaf.size) {
-                for (v in 1 until rkmatrix.k) {
-                    if (v == 0) {
-                        rkmatrix.b[m] = bmatr2(s.leaf[i], n, x0, v)
-
-                        m++
-                    } else {
-                        rkmatrix.b[m] = bmatr1(s.leaf[i], n, x0, v)
-
-                        m++
-                    }
-                }
-            }
+            val k=100
+            val rkmatrix = Rkmatrix(k, t.leaf.size, s.leaf.size)
+//            //filling Rkmatrix
+//            val x0 = (t.leaf[0].toDouble() + 0.5 * t.leaf.size.toDouble()) * (1.0 / n.toDouble())
+//            var m = 0
+//            for (i in 0 until t.leaf.size) {
+//                for (v in 1 until rkmatrix.k) {
+//                    rkmatrix.a[m] = amatr(t.leaf[i], n, x0, v)
+//                    m++
+//                }
+//            }
+//            m = 0
+//            for (i in 0 until s.leaf.size) {
+//                for (v in 1 until rkmatrix.k) {
+//                    if (v == 0) {
+//                        rkmatrix.b[m] = bmatr2(s.leaf[i], n, x0, v)
+//
+//                        m++
+//                    } else {
+//                        rkmatrix.b[m] = bmatr1(s.leaf[i], n, x0, v)
+//
+//                        m++
+//                    }
+//                }
+//            }
             //TODO remove
-            if (rkmatrix.a.size == 2){
-                rkmatrix.a[0]=1.0
-                rkmatrix.a[1]=2.0
-                rkmatrix.b[0]=5.0
-                rkmatrix.b[1]=6.0
-            } else if(rkmatrix.a.size==1){
-                rkmatrix.a[0]=1.0
-                rkmatrix.b[0]=5.0
+            for(i in 0 until rkmatrix.a.size){
+                for (j in 0 until rkmatrix.a[i].size){
+                    rkmatrix.a[i][j] = 2.0
+                }
+            }
+            for(i in 0 until rkmatrix.b.size){
+                for (j in 0 until rkmatrix.b[i].size){
+                    rkmatrix.b[i][j] = 5.0
+                }
             }
             //end of filling Rkmatrix
             return rkmatrix
@@ -95,7 +94,7 @@ class BlockClusterTree {
                     //filling Fullmatrix
                     if (s != null) {
                         //TODO change back
-                        spr.fullmatrix!!.e[0] = 2.0//Egtulda(t.leaf[0],s.leaf[0], n)
+                        spr.fullmatrix!!.e[0] = 3.0//Egtulda(t.leaf[0],s.leaf[0], n)
                     }
                 }
                 return spr
@@ -123,18 +122,8 @@ class BlockClusterTree {
                 return res;
             } else {
                 if (spr.rkmatrix != null) {
-                    var tempa = Array<DoubleArray>(spr.rkmatrix!!.rows, { DoubleArray(spr.rkmatrix!!.cols) })
-                    var tempb = Array<DoubleArray>(spr.rkmatrix!!.rows, { DoubleArray(spr.rkmatrix!!.cols) })
-                    var k = 0
-                    for (i in 0..(spr.rkmatrix!!.rows - 1)) {
-                        for (j in 0..(spr.rkmatrix!!.cols - 1)) {
-                            tempa[i][j] = spr.rkmatrix!!.a[k]
-                            tempb[i][j] = spr.rkmatrix!!.b[k]
-                            k++
-                        }
-                    }
-                    val first = multiplyMatrixByVector(tempb, vct);
-                    val second = multiplyMatrixByVector(tempa, first);
+                    val first = multiplyMatrixByVector(transposeMatrix(spr.rkmatrix!!.b), vct)
+                    val second = multiplyMatrixByVector(spr.rkmatrix!!.a, first)
                     return second
                 } else if (spr.fullmatrix != null) {
                     var res = DoubleArray(1)
@@ -144,5 +133,37 @@ class BlockClusterTree {
             }
             return DoubleArray(1)
         }
+        public fun getNormalMatrix(spr:Supermatrix):Array<DoubleArray>{
+            if(spr.supermatrix != null){
+                val a1 = getNormalMatrix(spr.supermatrix!![0][0])
+                val a2 = getNormalMatrix(spr.supermatrix!![0][1])
+                val b1 = getNormalMatrix(spr.supermatrix!![1][0])
+                val b2 = getNormalMatrix(spr.supermatrix!![1][1])
+                val array = Array(a1.size+b1.size){DoubleArray(a1[0].size+a2[0].size)}
+                for (i in 0 until a1.size)
+                    for (j in 0 until a1[0].size)
+                        array[i][j] = a1[i][j]
+                for (i in 0 until a1.size)
+                    for (j in a1.size until (a1[0].size+a2[0].size))
+                        array[i][j] = a2[i][j-a1.size]
+                for (i in a1.size until (a1.size+b1.size))
+                    for (j in a1.size until (a1[0].size+a2[0].size))
+                        array[i][j] = b2[i-a1.size][j-a1.size]
+                for (i in a1.size until (b1.size+a1.size))
+                    for (j in 0 until a1[0].size)
+                        array[i][j] = b1[i-a1.size][j]
+                return array
+            }
+            else {
+                if (spr.rkmatrix != null) {
+                    val temp = multiplyMatricesV3(spr.rkmatrix!!.a,transposeMatrix(spr.rkmatrix!!.b))
+                    return multiplyMatricesV3(spr.rkmatrix!!.a,transposeMatrix(spr.rkmatrix!!.b))
+                } else if (spr.fullmatrix != null) {
+                    return arrayOf(doubleArrayOf(spr.fullmatrix!!.e[0]))
+                }
+            }
+            return Array(1){ DoubleArray(1) }
+        }
     }
+
 }
