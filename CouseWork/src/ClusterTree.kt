@@ -11,7 +11,6 @@ class ClusterTree{
             //n=2^p
             val p:Int = Util.log2(n)
             val numbersOfElementsAtLevel = IntArray(p+1){i-> Math.pow(2.0,i.toDouble()).toInt()}
-           // numbersOfElementsAtLevel.forEach { println(it) }
             return buildRealClusterTree(0,n-1, 0,0,numbersOfElementsAtLevel)
         }
 

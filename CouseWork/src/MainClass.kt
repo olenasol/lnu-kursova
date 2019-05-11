@@ -27,11 +27,11 @@ fun yTochne(x: Double): Double {
 
 fun main(args : Array<String>) {
 
-//    val n = 8
+//    val n = 16
 //    var s = Supermatrix()
 //    val c = ClusterTree.buildClusterTree(n)
 //    try {
-//        s = BlockClusterTree.buildBlockClusterTree(c, c, s, n)
+//        s = BlockClusterTree.buildBlockClusterTree(c, c, s, n,2)
 //    } catch (e: Exception) {
 //        println("error")
 //    }
@@ -42,7 +42,11 @@ fun main(args : Array<String>) {
 //        f[i] = f_i(i.toDouble() / n.toDouble(), i, n)
 //        x0[i] = 0.0
 //    }
- //   println("u_approx")
+//    println("----------------")
+//    println("testing")
+//    val test = gradientMethod(BlockClusterTree.getNormalMatrix(s),f,x0)
+//    test.forEach { println(it) }
+//    println("u_approx")
 //    val u = gradientMethodMatrix(s, f, x0)
 //    for (i in 0 until n) {
 //        println(un(i.toDouble() / n.toDouble(), u, n))
@@ -54,14 +58,13 @@ fun main(args : Array<String>) {
 //        ytochne[i] = yTochne(i.toDouble() / n.toDouble())
 //        println(yTochne(i.toDouble() / n.toDouble()))
 //    }
-//    val temp2 = BlockClusterTree.MultHMatrixByVector(s, doubleArrayOf(1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0))
-//    81.forEach { println(it) }
+    //TODO testing
       val m= 4
      val superm = Supermatrix()
     val cl = ClusterTree.buildClusterTree(m)
-    val sppp = BlockClusterTree.buildBlockClusterTree(cl, cl, superm, m)
+    val sppp = BlockClusterTree.buildBlockClusterTree(cl, cl, superm, m,1)
     val ourArray = DoubleArray(m){
-        1.0
+        it.toDouble()
     }
     val x0 = DoubleArray(m){0.0}
     val res = BlockClusterTree.MultHMatrixByVector(sppp, ourArray)
@@ -72,17 +75,12 @@ fun main(args : Array<String>) {
 
     println("=============")
     val test = BlockClusterTree.getNormalMatrix(sppp)
+    for (i in 0 until test.size){
+        for (j in 0 until test[i].size){
+            print(" "+test[i][j])
+        }
+        println()
+    }
     val p = gradientMethod(test, multiplyMatrixByVector(test,ourArray),x0)
     p.forEach { println(it) }
-//    val s = ClusterTree.buildClusterTree(8)
-//    val t = ClusterTree.buildClusterTree(8)
-//    val tree:ClusterTree? = ClusterTree.getTreeByIndex(ClusterTree.buildClusterTree(8),3,0)
-//    tree?.leaf?.forEach { println(it) }
-//
-//    println(BlockClusterTree.isAdmissible(s.leftTree!!.leftTree!!,t.rightTree!!.rightTree!!))
-//
-//    val res = gradientMethod(arrayOf(doubleArrayOf(4.0,1.0), doubleArrayOf(1.0,3.0)), doubleArrayOf(1.0,2.0),doubleArrayOf(2.0,1.0))
-//    res.forEach { println(it) }
-//    val rkmatrix = BlockClusterTree.buildRkmatrix(t,s,8)
-//    println(multiplyVectorByVector(doubleArrayOf(1.0,2.0), doubleArrayOf(5.0,6.0)))
 }

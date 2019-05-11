@@ -11,4 +11,4 @@ data class Rkmatrix(val k:Int,val rows:Int,val cols:Int,
                     })
 
 data class Fullmatrix(var rows:Int=0, var cols:Int=0,
-                      var e:DoubleArray= DoubleArray(1))
+                      var e:Array<DoubleArray> = Array(rows){DoubleArray(cols)})
