@@ -23,19 +23,21 @@ class BlockClusterTree {
             val k=2*nMin
             val rkmatrix = Rkmatrix(k, t.leaf.size, s.leaf.size)
 //            //filling Rkmatrix
-            val x0 = (t.leaf[0].toDouble() + 0.5 * t.leaf.size.toDouble()) * (1.0 / n.toDouble())
+            val a = t.leaf[0]*(1.0 / n.toDouble())
+            val b = (t.leaf[0] + t.leaf.size)*(1.0 / n.toDouble())
+            val x0 = (a+b)*0.5//(t.leaf[0].toDouble() + 0.5 * t.leaf.size.toDouble()) * (1.0 / n.toDouble())
             for (i in 0 until t.leaf.size) {
-                for (v in 1 until rkmatrix.k) {
-                    rkmatrix.a[i][v] = amatr(t.leaf[i], n, x0, v)
+                for (v in 0 until rkmatrix.k) {
+                    rkmatrix.a[i][v] = Math.abs(amatr(t.leaf[i], n, x0, v))
                 }
             }
-            for (i in 0 until s.leaf.size) {
-                for (v in 1 until rkmatrix.k) {
+            for (j in 0 until s.leaf.size) {
+                for (v in 0 until rkmatrix.k) {
                     if (v == 0) {
-                        rkmatrix.b[i][v] = bmatr2(s.leaf[i], n, x0, v)
+                        rkmatrix.b[j][v] = Math.abs(bmatr2(s.leaf[j], n, x0, v))
 
                     } else {
-                        rkmatrix.b[i][v] = bmatr1(s.leaf[i], n, x0, v)
+                        rkmatrix.b[j][v] = Math.abs(bmatr1(s.leaf[j], n, x0, v))
                     }
                 }
             }
@@ -87,7 +89,7 @@ class BlockClusterTree {
                     for(i in 0 until spr.fullmatrix!!.rows){
                         for (j in 0 until spr.fullmatrix!!.cols)
                             //I am not sure what is supposed to be here
-                            spr.fullmatrix!!.e[i][j] = Egtulda(i,j,n)//(t.leaf[i],s.leaf[j], n)
+                            spr.fullmatrix!!.e[i][j] = Math.abs(Egtulda(t.leaf[i],s.leaf[j], n))
                     }
                 }
                 return spr
