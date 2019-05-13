@@ -20,7 +20,7 @@ class BlockClusterTree {
         }
 
         fun buildRkmatrix(t: ClusterTree, s: ClusterTree, n: Int,nMin:Int): Rkmatrix {
-            val k=2*nMin
+            val k=64//2*nMin
             val rkmatrix = Rkmatrix(k, t.leaf.size, s.leaf.size)
 //            //filling Rkmatrix
             val a = t.leaf[0]*(1.0 / n.toDouble())
@@ -28,16 +28,16 @@ class BlockClusterTree {
             val x0 = (a+b)*0.5//(t.leaf[0].toDouble() + 0.5 * t.leaf.size.toDouble()) * (1.0 / n.toDouble())
             for (i in 0 until t.leaf.size) {
                 for (v in 0 until rkmatrix.k) {
-                    rkmatrix.a[i][v] = Math.abs(amatr(t.leaf[i], n, x0, v))
+                    rkmatrix.a[i][v] = amatr(t.leaf[i], n, x0, v)
                 }
             }
             for (j in 0 until s.leaf.size) {
                 for (v in 0 until rkmatrix.k) {
                     if (v == 0) {
-                        rkmatrix.b[j][v] = Math.abs(bmatr2(s.leaf[j], n, x0, v))
+                        rkmatrix.b[j][v] = bmatr2(s.leaf[j], n, x0, v)
 
                     } else {
-                        rkmatrix.b[j][v] = Math.abs(bmatr1(s.leaf[j], n, x0, v))
+                        rkmatrix.b[j][v] = bmatr1(s.leaf[j], n, x0, v)
                     }
                 }
             }

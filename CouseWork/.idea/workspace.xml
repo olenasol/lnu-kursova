@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5eb2281-b93c-4ba6-a869-70bf77761176" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CouseWork/BlockClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CouseWork/BlockClusterTree$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CouseWork/MainClassKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CouseWork/MainClassKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BlockClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FunctionsBEM.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionsBEM.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MainClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainClass.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Integral.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="69">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -59,29 +57,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BlockClusterTree.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="39" column="68" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="68" />
+            <state relative-caret-position="187">
+              <caret line="146" column="49" lean-forward="true" selection-start-line="146" selection-start-column="49" selection-end-line="146" selection-end-column="49" />
               <folding>
-                <marker date="1557666586382" expanded="true" signature="1723:2090" ph="..." />
+                <marker date="1557782776454" expanded="true" signature="1697:2064" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FunctionsBEM.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="104">
+              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainClass.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+            <state relative-caret-position="205">
+              <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
               <folding>
                 <element signature="e#1#50#0" expanded="true" />
               </folding>
@@ -110,6 +108,7 @@
       <find>transpose</find>
       <find>nMin</find>
       <find>k</find>
+      <find>Egt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,13 +119,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/Extentions.kt" />
         <option value="$PROJECT_DIR$/src/Integral.kt" />
-        <option value="$PROJECT_DIR$/src/FunctionsBEM.kt" />
         <option value="$PROJECT_DIR$/src/ClusterTree.kt" />
         <option value="$PROJECT_DIR$/src/ComputationalClasses.kt" />
         <option value="$PROJECT_DIR$/src/ConjugateGradient.java" />
         <option value="$PROJECT_DIR$/src/GradientMethod.kt" />
         <option value="$PROJECT_DIR$/src/BlockClusterTree.kt" />
         <option value="$PROJECT_DIR$/src/MainClass.kt" />
+        <option value="$PROJECT_DIR$/src/FunctionsBEM.kt" />
       </list>
     </option>
   </component>
@@ -249,6 +248,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -259,14 +259,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44475922" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.44475922" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067115" side_tool="true" weight="0.44475922" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32719547" />
       <window_info anchor="bottom" id="GraphQL" order="11" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -316,39 +316,9 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/BlockClusterTree.kt</url>
-          <line>32</line>
+          <line>33</line>
           <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/BlockClusterTree.kt</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/BlockClusterTree.kt</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/BlockClusterTree.kt</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/BlockClusterTree.kt</url>
-          <line>36</line>
-          <properties />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/BlockClusterTree.kt</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="79" />
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -362,13 +332,6 @@
     <SUITE FILE_PATH="coverage/CouseWork$MainClassKt.ic" NAME="MainClassKt Coverage Results" MODIFIED="1557595124888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="258" column="37" lean-forward="true" selection-start-line="258" selection-start-column="37" selection-end-line="258" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$KOTLIN_BUNDLED$/lib/kotlin-stdlib-sources.jar!/kotlin/Array.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -398,20 +361,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FunctionsBEM.kt">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Math.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="121">
+          <caret line="291" column="25" selection-start-line="291" selection-start-column="25" selection-end-line="291" selection-end-column="25" />
+          <folding>
+            <element signature="e#11119#11120#0" expanded="true" />
+            <element signature="e#11200#11201#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlockClusterTree.kt">
+    <entry file="file://$PROJECT_DIR$/src/GradientMethod.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="39" column="68" selection-start-line="39" selection-start-column="68" selection-end-line="39" selection-end-column="68" />
-          <folding>
-            <marker date="1557666586382" expanded="true" signature="1723:2090" ph="..." />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -424,25 +388,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Integral.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        <state relative-caret-position="69">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GradientMethod.kt">
+    <entry file="file://$PROJECT_DIR$/src/BlockClusterTree.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        <state relative-caret-position="187">
+          <caret line="146" column="49" lean-forward="true" selection-start-line="146" selection-start-column="49" selection-end-line="146" selection-end-column="49" />
+          <folding>
+            <marker date="1557782776454" expanded="true" signature="1697:2064" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainClass.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+        <state relative-caret-position="205">
+          <caret line="90" column="5" lean-forward="true" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
           <folding>
             <element signature="e#1#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FunctionsBEM.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
         </state>
       </provider>
     </entry>

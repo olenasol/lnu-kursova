@@ -66,7 +66,7 @@ fun main(args : Array<String>) {
 //        println(yTochne(i.toDouble() / n.toDouble()))
 //    }
     //TODO testing
-      val m= 64
+      val m= 8
      val superm = Supermatrix()
     val cl = ClusterTree.buildClusterTree(m)
     val sppp = BlockClusterTree.buildBlockClusterTree(cl, cl, superm, m,1)
@@ -92,4 +92,6 @@ fun main(args : Array<String>) {
     val t = multiplyMatrixByVector(test,ourArray)
     val p = solve(0.0000001,test,x0, t)
     p.forEach { println(it) }
+    println("===============")
+    println(amatr(6,8,0.9375,1))
 }

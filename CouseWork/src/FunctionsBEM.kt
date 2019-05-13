@@ -21,7 +21,7 @@ fun gTulda(x: Double, y: Double, k: Int, a: Double, b: Double): Double {
 }
 
 fun f(x: Double, a: Double): Double {
-    return a * Math.log(Math.abs(x - a)) - x * Math.log(Math.abs(x - a)) - a
+    return bmatr2Integr(x,a)//a * Math.log(Math.abs(x - a)) - x * Math.log(Math.abs(x - a)) - a
 }
 
 fun f1(x: Double, a: Double): Double {
@@ -63,14 +63,11 @@ fun amatrIntegr(x: Double, x0: Double, v: Int): Double {
 }
 
 fun amatr(i: Int, n: Int, x0: Double, v: Int): Double {
-    return amatrIntegr((i + 1.0) / n.toDouble(), x0, v) - amatrIntegr(i.toDouble() / n.toDouble(), x0, v)
-    // return Math.Pow((((double)(i + 1.0)) / ((double)n)) - x0, v + 1.0) / ((double)(v + 1.0)) - Math.Pow(((double)i) /((double) n) - x0, v + 1.0) / ((double)(v + 1.0));
+    return amatrIntegr((i.toDouble() + 1.0) / n.toDouble(), x0, v) - amatrIntegr(i.toDouble() / n.toDouble(), x0, v)
 }
 
 fun bmatr1(j: Int, n: Int, x0: Double, v: Int): Double {
     return Math.pow(-1.0, (v + 1).toDouble()) * Math.pow(v.toDouble(), -1.0) * (bmatr1Integr((j + 1.0) / n.toDouble(), x0, v) - bmatr1Integr(j.toDouble() / n.toDouble(), x0, v))
-    //  return Math.Pow(-1.0, v + 1.0) * Math.Pow(v, -1.0) * (Math.Pow(x0 - (((double)(j + 1.0)) / ((double)n)), 1.0 - v) / ((double)(1.0 - v))
-    //      - Math.Pow(x0 - ((double)j) / ((double)n), 1.0 - v) / ((double)(1.0 - v)));
 }
 
 fun bmatr1Integr(x: Double, x0: Double, v: Int): Double {
@@ -82,11 +79,22 @@ fun bmatr1Integr(x: Double, x0: Double, v: Int): Double {
 }
 
 fun bmatr2(j: Int, n: Int, x0: Double, v: Int): Double {
-    // return ((((double)(j + 1.0)) / ((double)n)) * Math.Log(Math.Abs(x0 - ((double)(j + 1.0) / ((double)n))), Math.E) - x0 * Math.Log(Math.Abs((((double)(j + 1)) / ((double)n)) - x0),Math.E) - (((double)(j + 1)) / ((double)n))) -
-    //     ((((double)j) / ((double)n)) * Math.Log(Math.Abs(x0 - (((double)j) / ((double)n))), Math.E) - x0 * Math.Log(Math.Abs((((double)j) / ((double)n)) - x0),Math.E) - (((double)j) / ((double)n)));
     return bmatr2Integr((j + 1.0) / n.toDouble(), x0) - bmatr2Integr(j.toDouble() / n.toDouble(), x0)
 }
 
-private fun bmatr2Integr(x: Double, x0: Double): Double {
-    return 0.5 * (x * Math.signum(x0 - x) * (Math.log(Math.abs(x0 - x)) - Math.log(Math.abs(x - x0))) + x * Math.log(Math.abs(x0 - x)) + x * Math.log(Math.abs(x - x0)) - 2 * x0 * Math.log(Math.abs(x - x0)) - 2 * x)
+private fun bmatr2Integr(y: Double, x0: Double): Double {
+    if(y < x0){
+        return -((x0-y)*Math.log(x0-y)-(x0-y))
+    }else{
+        return (y-x0)*Math.log(y-x0) - (y-x0)
+    }
 }
+//fun bmatr2(j: Int, n: Int, x0: Double, v: Int): Double {
+//    // return ((((double)(j + 1.0)) / ((double)n)) * Math.Log(Math.Abs(x0 - ((double)(j + 1.0) / ((double)n))), Math.E) - x0 * Math.Log(Math.Abs((((double)(j + 1)) / ((double)n)) - x0),Math.E) - (((double)(j + 1)) / ((double)n))) -
+//    //     ((((double)j) / ((double)n)) * Math.Log(Math.Abs(x0 - (((double)j) / ((double)n))), Math.E) - x0 * Math.Log(Math.Abs((((double)j) / ((double)n)) - x0),Math.E) - (((double)j) / ((double)n)));
+//    return bmatr2Integr((j + 1.0) / n.toDouble(), x0) - bmatr2Integr(j.toDouble() / n.toDouble(), x0)
+//}
+//
+//private fun bmatr2Integr(x: Double, x0: Double): Double {
+//    return 0.5 * (x * Math.signum(x0 - x) * (Math.log(Math.abs(x0 - x)) - Math.log(Math.abs(x - x0))) + x * Math.log(Math.abs(x0 - x)) + x * Math.log(Math.abs(x - x0)) - 2 * x0 * Math.log(Math.abs(x - x0)) - 2 * x)
+//}
