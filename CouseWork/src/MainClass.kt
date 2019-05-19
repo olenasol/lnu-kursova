@@ -1,15 +1,9 @@
 
-import sun.rmi.runtime.Log
-import java.io.Console
-
-
-
-fun f(x: Double): Double {
-    return 1.0
-}
-
-fun f_i(x: Double, i: Int, n: Int): Double {
-    return f(x)//FunctionsBEM.phi(i, n, x);
+fun f(x:Double):Double{
+    if ((x-1)<0||x<0){
+        return (1-x)*Math.log(1-x) -(1-x)+x*Math.log(-x)-x
+    }else
+        return -((x-1)*Math.log(x-1)-(x-1))+(x*Math.log(x)-x)
 }
 
 fun un(x: Double, u: DoubleArray, n: Int): Double {
@@ -22,7 +16,7 @@ fun un(x: Double, u: DoubleArray, n: Int): Double {
 }
 
 fun yTochne(x: Double): Double {
-    return 1.0 / (Math.pow(Math.PI, 2.0) * Math.log(0.25) * Math.sqrt(x * (1 - x)))
+    return 1.0
 }
 
 fun main(args : Array<String>) {
@@ -37,61 +31,58 @@ fun main(args : Array<String>) {
 //    }
 //
 //    val f = DoubleArray(n)
-//    val x0 = DoubleArray(n)
+//    val x0 = DoubleArray(n){0.0}
 //    for (i in 0 until n) {
-//        f[i] = f_i(i.toDouble() / n.toDouble(), i, n)
-//        x0[i] = 0.0
+//        f[i] = f(i.toDouble() / n.toDouble())
 //    }
+//
 //    println("----------------")
-//    println("testing")
-//    val test = solve(0.00001,BlockClusterTree.getNormalMatrix(s),x0,f)
-//    test.forEach { println(it) }
 //    println("u_approx")
-//    val u = solveMatrix(0.00001,s, x0, f)
+//    val u = solveMatrix(0.0000001,s, x0, f)
 //    for (i in 0 until n) {
 //        println(un(i.toDouble() / n.toDouble(), u, n))
 //    }
 //    println("----------------")
 //    println("u_tochne")
-//    val tst = BlockClusterTree.getNormalMatrix(s)
-//    for (i in 0 until tst.size){
-//        for (j in 0 until tst[i].size){
-//            print(" "+tst[i][j])
-//        }
-//        println()
-//    }
 //    val ytochne = DoubleArray(n)
 //    for (i in 0 until n) {
 //        ytochne[i] = yTochne(i.toDouble() / n.toDouble())
 //        println(yTochne(i.toDouble() / n.toDouble()))
 //    }
     //TODO testing
-      val m= 8
+      val m= 4
+    val nmin =m
      val superm = Supermatrix()
-    val cl = ClusterTree.buildClusterTree(m)
-    val sppp = BlockClusterTree.buildBlockClusterTree(cl, cl, superm, m,1)
+    val cl = ClusterTree.buildClusterTree(m,nmin)
+    val sppp = BlockClusterTree.buildBlockClusterTree(cl, cl, superm, m,nmin)
     val ourArray = DoubleArray(m){
         it.toDouble()
     }
     val x0 = DoubleArray(m){0.0}
-    val res = BlockClusterTree.MultHMatrixByVector(sppp, ourArray)
-    res.forEach { println(it) }
-    println("==============")
-//    println("solve")
-//    val per = solveMatrix(0.000000001,sppp,x0,res)
-//    per.forEach { println(it) }
-
-    println("=============")
-    val test = BlockClusterTree.getNormalMatrix(sppp)
-    for (i in 0 until test.size){
-        for (j in 0 until test[i].size){
-            print(" "+"%.8f".format(test[i][j]))
+    val testMatrix =BlockClusterTree.getNormalMatrix(sppp)
+    for (i in 0 until testMatrix.size){
+        for (j in 0 until testMatrix[i].size){
+            print(testMatrix[i][j].toString()+" ")
         }
         println()
     }
-    val t = multiplyMatrixByVector(test,ourArray)
-    val p = solve(0.0000001,test,x0, t)
-    p.forEach { println(it) }
+    val res = BlockClusterTree.MultHMatrixByVector(sppp, ourArray)
+    res.forEach { println(it) }
+    println("==============")
+    println("solve")
+    val superm2 = Supermatrix()
+    val cl2 = ClusterTree.buildClusterTree(m,nmin)
+    val sppp2 = BlockClusterTree.buildBlockClusterTree(cl2, cl2, superm2, m,nmin)
+    val per = solveMatrix(0.0001,sppp2,DoubleArray(m),res)
+    per.forEach { println(it) }
+
+    println("=============")
+    println(getPohubka(ourArray,per))
     println("===============")
-    println(amatr(6,8,0.9375,1))
+    val resttt = multiplyMatrixByVector(testMatrix,ourArray)
+    val per2 =solve(0.0001,testMatrix, DoubleArray(m),resttt)
+    println("=============")
+    println(getPohubka(ourArray,per2))
+    println("===============")
+
 }

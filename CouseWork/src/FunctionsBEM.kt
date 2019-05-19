@@ -36,18 +36,27 @@ fun f2(x: Double, a: Double): Double {
 fun fIntegr(c: Double, d: Double, a: Double): Double {
     return f1(d, a) - f1(c, a) - (f2(d, a) - f2(c, a))
 }
-
+//TODO wtf with integral - argument below 0
 fun Egtulda(i: Int, j: Int, n: Int): Double {
     val b = (i + 1.0) / n.toDouble()
     val a = i.toDouble() / n.toDouble()
     val d = (j + 1.0) / n.toDouble()
     val c = j.toDouble() / n.toDouble()
-    val eps = 0.00001
-    val k = -Integral.RegtangleMethod({ l, m -> f(l, m) }, i.toDouble() / n.toDouble(), (i + 1.0) / n.toDouble(), eps, c)
-    val m = Integral.RegtangleMethod({ l, m -> f(l, m) }, i.toDouble() / n.toDouble(), (i + 1.0) / n.toDouble(), eps, d)
-    //double k = -fIntegr(c,d, a);
-    //double m = fIntegr(c,d, b);
-    return k + m
+    val test = Math.log(b-c)
+    var k = 0.0
+    var k2 = 0.0
+    var m = 0.0
+    var m2 = 0.0
+    if ((b-c) !=0.0)
+       k = 0.25*Math.pow(b-c,2.0)*(2*Math.log(b-c)-1)-0.5*Math.pow(b,2.0)+c*b
+    if ((a-c)!=0.0)
+        k2 = - 0.25*Math.pow(a-c,2.0)*(2*Math.log(a-c)-1)+ 0.5*Math.pow(a,2.0)-c*a
+    if((d-b)!= 0.0)
+        m =  -0.25*Math.pow(d-b,2.0)*(2*Math.log(d-b)-1)+0.5*Math.pow(b,2.0)-d*b
+    if((d-a)!= 0.0)
+        m2 = 0.25*Math.pow(d-a,2.0)*(2*Math.log(d-a)-1)- 0.5*Math.pow(a,2.0)+d*a
+    println("testing eg "+" "+a+" "+b+" "+c+" "+d+" "+k+" "+k2+"  "+m+" "+m2)
+    return k +k2+ m+m2
 }
 
 fun phi(i: Int, n: Int, x: Double): Double {
@@ -89,12 +98,15 @@ private fun bmatr2Integr(y: Double, x0: Double): Double {
         return (y-x0)*Math.log(y-x0) - (y-x0)
     }
 }
-//fun bmatr2(j: Int, n: Int, x0: Double, v: Int): Double {
-//    // return ((((double)(j + 1.0)) / ((double)n)) * Math.Log(Math.Abs(x0 - ((double)(j + 1.0) / ((double)n))), Math.E) - x0 * Math.Log(Math.Abs((((double)(j + 1)) / ((double)n)) - x0),Math.E) - (((double)(j + 1)) / ((double)n))) -
-//    //     ((((double)j) / ((double)n)) * Math.Log(Math.Abs(x0 - (((double)j) / ((double)n))), Math.E) - x0 * Math.Log(Math.Abs((((double)j) / ((double)n)) - x0),Math.E) - (((double)j) / ((double)n)));
-//    return bmatr2Integr((j + 1.0) / n.toDouble(), x0) - bmatr2Integr(j.toDouble() / n.toDouble(), x0)
-//}
-//
-//private fun bmatr2Integr(x: Double, x0: Double): Double {
-//    return 0.5 * (x * Math.signum(x0 - x) * (Math.log(Math.abs(x0 - x)) - Math.log(Math.abs(x - x0))) + x * Math.log(Math.abs(x0 - x)) + x * Math.log(Math.abs(x - x0)) - 2 * x0 * Math.log(Math.abs(x - x0)) - 2 * x)
-//}
+fun getPohubka(a:DoubleArray,b:DoubleArray):Double{
+    val c = DoubleArray(a.size)
+    for(i in 0 until a.size){
+        c[i] = Math.abs(a[i]-b[i])
+    }
+    var max = c[0]
+    for (i in 1 until c.size){
+        if (c[i]>max)
+            max = c[i]
+    }
+    return max
+}

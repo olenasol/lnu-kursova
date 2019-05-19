@@ -20,7 +20,7 @@ class BlockClusterTree {
         }
 
         fun buildRkmatrix(t: ClusterTree, s: ClusterTree, n: Int,nMin:Int): Rkmatrix {
-            val k=64//2*nMin
+            val k=2*nMin
             val rkmatrix = Rkmatrix(k, t.leaf.size, s.leaf.size)
 //            //filling Rkmatrix
             val a = t.leaf[0]*(1.0 / n.toDouble())
@@ -64,7 +64,7 @@ class BlockClusterTree {
                     spr.rkmatrix = buildRkmatrix(t, s, n,nMin)
                 return spr
             } else {
-                if (t?.leaf?.size!!>nMin && s?.leaf?.size!! > nMin)
+                if (t!= null && t?.leaf?.size >nMin)
                 {
                     spr.rows = n
                     spr.cols = n
