@@ -89,7 +89,7 @@ class BlockClusterTree {
                     for(i in 0 until spr.fullmatrix!!.rows){
                         for (j in 0 until spr.fullmatrix!!.cols)
                             //I am not sure what is supposed to be here
-                            spr.fullmatrix!!.e[i][j] = Math.abs(Egtulda(t.leaf[i],s.leaf[j], n))
+                            spr.fullmatrix!!.e[i][j] = (Egtulda(t.leaf[i],s.leaf[j], n))
                     }
                 }
                 return spr
@@ -158,6 +158,46 @@ class BlockClusterTree {
             }
             return Array(1){ DoubleArray(1) }
         }
+        public fun MetodHausa(n: Int, a: Array<DoubleArray>, b: DoubleArray): DoubleArray {
+            val x = DoubleArray(n)
+            val m = Array(n) { DoubleArray(n) }
+            var p = 0
+            var temp: Double
+            for (k in 0..n - 2) {
+                for (l in k + 1..n - 1) {
+                    if (Math.abs(a[l][k]) > Math.abs(a[k][k])) {
+                        for (t in 0..n - 1) {
+                            temp = a[k][t]
+                            a[k][t] = a[l][t]
+                            a[l][t] = temp
+                        }
+                        temp = b[k]
+                        b[k] = b[l]
+                        b[l] = temp
+                        p = p + 1
+                    }
+                }
+                for (i in k + 1..n - 1) {
+                    m[i][k] = -(a[i][k] / a[k][k])
+                    b[i] = b[i] + m[i][k] * b[k]
+                    for (j in k..n - 1) {
+                        a[i][j] = a[i][j] + m[i][k] * a[k][j]
+                    }
+                }
+            }
+            x[n - 1] = b[n - 1] / a[n - 1][n - 1]
+            var s: Double
+            for (k in n - 2 downTo 0) {
+                s = 0.0
+                for (j in k + 1..n - 1) {
+                    s = s + a[k][j] * x[j]
+                }
+                x[k] = (b[k] - s) / a[k][k]
+            }
+            return x
+        }
     }
+
+
 
 }

@@ -50,8 +50,8 @@ fun main(args : Array<String>) {
 //        println(yTochne(i.toDouble() / n.toDouble()))
 //    }
     //TODO testing
-      val m= 4
-    val nmin =m
+      val m= 16
+    val nmin = 2
      val superm = Supermatrix()
     val cl = ClusterTree.buildClusterTree(m,nmin)
     val sppp = BlockClusterTree.buildBlockClusterTree(cl, cl, superm, m,nmin)
@@ -62,12 +62,14 @@ fun main(args : Array<String>) {
     val testMatrix =BlockClusterTree.getNormalMatrix(sppp)
     for (i in 0 until testMatrix.size){
         for (j in 0 until testMatrix[i].size){
+           // testMatrix[i][i] = 1.0
             print(testMatrix[i][j].toString()+" ")
+
         }
         println()
     }
     val res = BlockClusterTree.MultHMatrixByVector(sppp, ourArray)
-    res.forEach { println(it) }
+   // res.forEach { println(it) }
     println("==============")
     println("solve")
     val superm2 = Supermatrix()
@@ -80,7 +82,7 @@ fun main(args : Array<String>) {
     println(getPohubka(ourArray,per))
     println("===============")
     val resttt = multiplyMatrixByVector(testMatrix,ourArray)
-    val per2 =solve(0.0001,testMatrix, DoubleArray(m),resttt)
+    val per2 =solve(0.00001,testMatrix,DoubleArray(m),resttt)
     println("=============")
     println(getPohubka(ourArray,per2))
     println("===============")

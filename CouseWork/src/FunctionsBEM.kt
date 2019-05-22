@@ -47,16 +47,19 @@ fun Egtulda(i: Int, j: Int, n: Int): Double {
     var k2 = 0.0
     var m = 0.0
     var m2 = 0.0
-    if ((b-c) !=0.0)
+    if ((b-c) >0.0)
        k = 0.25*Math.pow(b-c,2.0)*(2*Math.log(b-c)-1)-0.5*Math.pow(b,2.0)+c*b
-    if ((a-c)!=0.0)
+    if ((a-c)>0.0)
         k2 = - 0.25*Math.pow(a-c,2.0)*(2*Math.log(a-c)-1)+ 0.5*Math.pow(a,2.0)-c*a
-    if((d-b)!= 0.0)
+    if((d-b)> 0.0)
         m =  -0.25*Math.pow(d-b,2.0)*(2*Math.log(d-b)-1)+0.5*Math.pow(b,2.0)-d*b
-    if((d-a)!= 0.0)
+    if((d-a)> 0.0)
         m2 = 0.25*Math.pow(d-a,2.0)*(2*Math.log(d-a)-1)- 0.5*Math.pow(a,2.0)+d*a
     println("testing eg "+" "+a+" "+b+" "+c+" "+d+" "+k+" "+k2+"  "+m+" "+m2)
-    return k +k2+ m+m2
+    if (i==j)
+        return n.toDouble()
+    else
+        return k +k2 -m-m2
 }
 
 fun phi(i: Int, n: Int, x: Double): Double {
