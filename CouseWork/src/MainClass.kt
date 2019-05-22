@@ -50,8 +50,8 @@ fun main(args : Array<String>) {
 //        println(yTochne(i.toDouble() / n.toDouble()))
 //    }
     //TODO testing
-      val m= 16
-    val nmin = 2
+      val m= 4
+    val nmin = 4
      val superm = Supermatrix()
     val cl = ClusterTree.buildClusterTree(m,nmin)
     val sppp = BlockClusterTree.buildBlockClusterTree(cl, cl, superm, m,nmin)

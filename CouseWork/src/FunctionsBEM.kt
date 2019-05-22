@@ -42,24 +42,54 @@ fun Egtulda(i: Int, j: Int, n: Int): Double {
     val a = i.toDouble() / n.toDouble()
     val d = (j + 1.0) / n.toDouble()
     val c = j.toDouble() / n.toDouble()
-    val test = Math.log(b-c)
-    var k = 0.0
-    var k2 = 0.0
-    var m = 0.0
-    var m2 = 0.0
-    if ((b-c) >0.0)
-       k = 0.25*Math.pow(b-c,2.0)*(2*Math.log(b-c)-1)-0.5*Math.pow(b,2.0)+c*b
-    if ((a-c)>0.0)
-        k2 = - 0.25*Math.pow(a-c,2.0)*(2*Math.log(a-c)-1)+ 0.5*Math.pow(a,2.0)-c*a
-    if((d-b)> 0.0)
-        m =  -0.25*Math.pow(d-b,2.0)*(2*Math.log(d-b)-1)+0.5*Math.pow(b,2.0)-d*b
-    if((d-a)> 0.0)
-        m2 = 0.25*Math.pow(d-a,2.0)*(2*Math.log(d-a)-1)- 0.5*Math.pow(a,2.0)+d*a
-    println("testing eg "+" "+a+" "+b+" "+c+" "+d+" "+k+" "+k2+"  "+m+" "+m2)
+//    var k = 0.0
+//    var k2 = 0.0
+//    var m = 0.0
+//    var m2 = 0.0
+//    if ((b-c) >0.0) {
+//        k = 0.25 * Math.pow(b - c, 2.0) * (2 * Math.log(b - c) - 1)
+//    }
+//    k+=-0.5*Math.pow(b,2.0)+c*b
+//    if ((a-c)>0.0)
+//        k2 = - 0.25*Math.pow(a-c,2.0)*(2*Math.log(a-c)-1)
+//    k2+=0.5*Math.pow(a,2.0)-c*a
+//    if((d-b)> 0.0)
+//        m =  -0.25*Math.pow(d-b,2.0)*(2*Math.log(d-b)-1)
+//    m+=0.5*Math.pow(b,2.0)-d*b
+//    if((d-a)> 0.0)
+//        m2 = 0.25*Math.pow(d-a,2.0)*(2*Math.log(d-a)-1)
+//    m2+=- 0.5*Math.pow(a,2.0)+d*a
+//    println("testing eg "+" "+a+" "+b+" "+c+" "+d+" "+k+" "+k2+"  "+m+" "+m2)
     if (i==j)
-        return n.toDouble()
+        return -Math.pow(b-a,2.0)*(Math.log(b-a)+0.5)
     else
-        return k +k2 -m-m2
+        if(a<c){
+            var sum =0.0
+            if((d-b)!= 0.0)
+                sum+=-0.25*Math.pow((d-b),2.0)*(2*Math.log(d-b)-1)
+            if ((c-b)!= 0.0)
+                sum+=0.25*Math.pow(c-b,2.0)*(2*Math.log(c-b)-1)
+            sum += c*b-d*b
+            if((d-a)!= 0.0)
+                sum+=0.25*Math.pow((d-a),2.0)* (2*Math.log(d-a)-1)
+            if((c-a)!= 0.0)
+                sum+=-0.25*Math.pow(c-a,2.0)*(2*Math.log(c-a)-1)
+            sum+=-c*a+d*a
+            return sum
+        } else{
+            var sum =0.0
+            if ((b-c)!= 0.0)
+                sum+=0.25*Math.pow((b-c),2.0)*(2*Math.log(b-c)-1)
+            if((b-d)!= 0.0)
+                sum+= -0.25*Math.pow((b-d),2.0)*(2*Math.log(b-d)-1)
+            sum+=d*b+c*b
+            if((a-c)!=0.0)
+                sum+=-0.25*Math.pow((a-c),2.0)*(2*Math.log(a-c)-1)
+            if((a-d)!=0.0)
+                sum+=0.25*Math.pow((a-d),2.0)*(2*Math.log(a-d)-1)
+            sum +=-d*a-c*a
+            return sum
+        }
 }
 
 fun phi(i: Int, n: Int, x: Double): Double {
