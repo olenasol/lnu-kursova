@@ -61,7 +61,7 @@ fun Egtulda(i: Int, j: Int, n: Int): Double {
 //    m2+=- 0.5*Math.pow(a,2.0)+d*a
 //    println("testing eg "+" "+a+" "+b+" "+c+" "+d+" "+k+" "+k2+"  "+m+" "+m2)
     if (i==j)
-        return -Math.pow(b-a,2.0)*(Math.log(b-a)+0.5)
+        return 0.5*Math.pow(b-a,2.0)*(2*Math.log(b-a)-1)-Math.pow(b-a,2.0)
     else
         if(a<c){
             var sum =0.0
@@ -82,12 +82,12 @@ fun Egtulda(i: Int, j: Int, n: Int): Double {
                 sum+=0.25*Math.pow((b-c),2.0)*(2*Math.log(b-c)-1)
             if((b-d)!= 0.0)
                 sum+= -0.25*Math.pow((b-d),2.0)*(2*Math.log(b-d)-1)
-            sum+=d*b+c*b
+            sum+=-d*b+c*b
             if((a-c)!=0.0)
                 sum+=-0.25*Math.pow((a-c),2.0)*(2*Math.log(a-c)-1)
             if((a-d)!=0.0)
                 sum+=0.25*Math.pow((a-d),2.0)*(2*Math.log(a-d)-1)
-            sum +=-d*a-c*a
+            sum +=d*a-c*a
             return sum
         }
 }
