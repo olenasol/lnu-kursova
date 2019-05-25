@@ -25,7 +25,7 @@ class BlockClusterTree {
 //            //filling Rkmatrix
             val a = t.leaf[0]*(1.0 / n.toDouble())
             val b = (t.leaf[0] + t.leaf.size)*(1.0 / n.toDouble())
-            val x0 = (a+b)*0.5//(t.leaf[0].toDouble() + 0.5 * t.leaf.size.toDouble()) * (1.0 / n.toDouble())
+            val x0 = (a+b)*0.5
             for (i in 0 until t.leaf.size) {
                 for (v in 0 until rkmatrix.k) {
                     rkmatrix.a[i][v] = amatr(t.leaf[i], n, x0, v)
@@ -41,17 +41,6 @@ class BlockClusterTree {
                     }
                 }
             }
-            //TODO remove
-//            for(i in 0 until rkmatrix.a.size){
-//                for (j in 0 until rkmatrix.a[i].size){
-//                    rkmatrix.a[i][j] = 2.0
-//                }
-//            }
-//            for(i in 0 until rkmatrix.b.size){
-//                for (j in 0 until rkmatrix.b[i].size){
-//                    rkmatrix.b[i][j] = 5.0
-//                }
-//            }
             //end of filling Rkmatrix
             return rkmatrix
         }
@@ -88,8 +77,7 @@ class BlockClusterTree {
                     //filling Fullmatrix
                     for(i in 0 until spr.fullmatrix!!.rows){
                         for (j in 0 until spr.fullmatrix!!.cols)
-                            //I am not sure what is supposed to be here
-                            spr.fullmatrix!!.e[i][j] = (Egtulda(t.leaf[i],s.leaf[j], n))
+                            spr.fullmatrix!!.e[i][j] = Egtulda(s.leaf[i],t.leaf[j], n)
                     }
                 }
                 return spr

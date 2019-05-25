@@ -40,8 +40,7 @@ fun gradientMethod(matrix: Array<DoubleArray>, vector: DoubleArray, inx0: Double
     }
     return x1
 }
-
-fun gradientMethodMatrix(matrix: Supermatrix, vector: DoubleArray, inx0: DoubleArray): DoubleArray {
+fun gradientMethodMatrix(matrix: Supermatrix, vector: DoubleArray, inx0: DoubleArray,eps: Double): DoubleArray {
     val n = vector.size
     val x1 = DoubleArray(n)
     var x0 = inx0
@@ -53,98 +52,60 @@ fun gradientMethodMatrix(matrix: Supermatrix, vector: DoubleArray, inx0: DoubleA
     var alphak: Double
     var betak: Double
     var k = 0
-    while (k != n) {
-        val temp1 = multiplyVectorByVector(r0, r0)
+    var rsold =0.0
+    for( i in 0 until r0.size){
+        rsold+=r0[i]*r0[i]
+    }
+    for(i in 0 until vector.size) {
         val temp2 = BlockClusterTree.MultHMatrixByVector(matrix, p0)
         val temp3 = multiplyVectorByVector(temp2, p0)
-        alphak = temp1 / temp3
-        for (i in 0..(n - 1)) {
-            x1[i] = x0[i] + alphak * p0[i]
-            r1[i] = r0[i] - alphak * temp2[i]
+        alphak = rsold / temp3
+        for (j in 0..(n - 1)) {
+            x1[j] = x0[j] + alphak * p0[j]
+            r1[j] = r0[j] - alphak * temp2[j]
         }
-        betak = multiplyVectorByVector(r1, r1) / multiplyVectorByVector(r0, r0)
-        for (i in 0..(n - 1))
-            p1[i] = r1[i] + betak * p0[i]
+        var rsnew =0.0
+        for( j in 0 until r0.size){
+            rsnew+=r1[j]*r1[j]
+        }
+        if (sqrt(rsnew) < eps)
+            break
+        for (j in 0..(n - 1))
+            p1[j] = r1[j] + (rsnew / rsold) * p0[j]
         p0 = p1
         r0 = r1
         x0 = x1
+        rsold = rsnew
         k++
     }
     return x1
 }
 
-fun solve(eps: Double, A: Array<DoubleArray>, x: DoubleArray, b: DoubleArray): DoubleArray {
-    var k = 0
-    val r_k = b.clone()
-    val p_k = b.clone()
-    var Apk: DoubleArray = DoubleArray(x.size)
-
-    var RdR = multiplyVectorByVector(r_k,r_k)
-    do {
-         Apk = multiplyMatrixByVector(A,p_k)//A.multiply(p_k)
-         val alpha_k = RdR / multiplyVectorByVector(p_k,Apk)//p_k.dot(Apk)
-
-        for(i in 0 until x.size){
-            x[i] = x[i]+alpha_k*p_k[i]
-            r_k[i] = r_k[i] - alpha_k*Apk[i]
+fun test(a:Array<DoubleArray>,b:DoubleArray,x:DoubleArray):DoubleArray{
+    var r=DoubleArray(b.size)
+    val axmult = multiplyMatrixByVector(a,x)
+    for(i in 0 until r.size){
+        r[i] = b[i]-axmult[i]
+    }
+    var p=r
+    var rsold = multiplyVectorByVector(r,r)
+    for (k in 0 until b.size){
+        var Ap = multiplyMatrixByVector(a,p)
+        var alpha = rsold/multiplyVectorByVector(Ap,p)
+        for (i in 0 until x.size){
+            x[i] = x[i]+alpha*p[i]
+            r[i] = r[i]-alpha*Ap[i]
         }
-
-        val newRdR = multiplyVectorByVector(r_k,r_k)
-        //Stop when we are close enough
-        if (newRdR < eps * eps)
-            return x
-
-        val beta_k = newRdR / RdR
-        for (i in 0 until p_k.size){
-            p_k[i] = p_k[i]*beta_k
+        var rsnew = multiplyVectorByVector(r,r)
+        if (sqrt(rsnew)< 1e-10)
+            break
+        for (i in 0 until p.size){
+            p[i] = r[i]+(rsnew/rsold)*p[i]
         }
-        for (i in 0 until p_k.size){
-            p_k[i] = p_k[i]+r_k[i]
-        }
-
-//        //Set up for next step
-        RdR = newRdR
-    } while (k++ < A.size)
-
+        rsold = rsnew
+    }
     return x
 }
-
-fun solveMatrix(eps: Double, A: Supermatrix, x: DoubleArray, b: DoubleArray): DoubleArray {
-    var k = 0
-    val r_k = b.clone()
-    val p_k = b.clone()
-    var Apk: DoubleArray = DoubleArray(x.size)
-
-    var RdR = multiplyVectorByVector(r_k,r_k)
-    do {
-        Apk = BlockClusterTree.MultHMatrixByVector(A,p_k)//A.multiply(p_k)
-        val alpha_k = RdR / multiplyVectorByVector(p_k,Apk)//p_k.dot(Apk)
-
-        for(i in 0 until x.size){
-            x[i] = x[i]+alpha_k*p_k[i]
-            r_k[i] = r_k[i] - alpha_k*Apk[i]
-        }
-
-        val newRdR = multiplyVectorByVector(r_k,r_k)
-        //Stop when we are close enough
-        if (newRdR < eps * eps)
-            return x
-
-        val beta_k = newRdR / RdR
-        for (i in 0 until p_k.size){
-            p_k[i] = p_k[i]*beta_k
-        }
-        for (i in 0 until p_k.size){
-            p_k[i] = p_k[i]+r_k[i]
-        }
-
-//        //Set up for next step
-        RdR = newRdR
-    } while (k++ < b.size)
-
-    return x
-}
-
 //TODO indeces are messed up here
 fun multiplyMatrixByVector(matrix: Array<DoubleArray>, vector: DoubleArray): DoubleArray {
     val result = DoubleArray(matrix.size)

@@ -1,14 +1,13 @@
 
-fun f(x:Double):Double{
-    var sum =0.0
-    if(x!=0.0){
-        sum+=x*Math.log(x)
-    }
-    if(x!=1.0){
-        sum+=(1-x)*Math.log(1-x)
-    }
-    sum+=-1
-    return sum
+fun f(i:Int,n:Int,x:Double):Double{
+//    var sum = 0.0
+//    if(x!=0.0)
+//        sum+=x*Math.log(Math.abs(x))
+//    if((x-1)!=0.0)
+//        sum+=-Math.log(Math.abs(x-1))*x+Math.log(Math.abs(x-1))
+//    sum+=-1
+
+    return -3.0*phi(i,n,x)
 }
 
 fun un(x: Double, u: DoubleArray, n: Int): Double {
@@ -26,8 +25,8 @@ fun yTochne(x: Double): Double {
 
 fun main(args : Array<String>) {
 
-    val n = 4
-    val nmin = 4
+    val n = 8
+    val nmin = 1
     var s = Supermatrix()
     val c = ClusterTree.buildClusterTree(n,nmin)
     try {
@@ -35,26 +34,38 @@ fun main(args : Array<String>) {
     } catch (e: Exception) {
         println("error")
     }
+    val testMatrix =BlockClusterTree.getNormalMatrix(s)
+    for (i in 0 until testMatrix.size){
+        for (j in 0 until testMatrix[i].size){
+           // testMatrix[i][i] = 1.0
+            print(testMatrix[i][j].toString()+" ")
 
+        }
+        println()
+    }
     val f = DoubleArray(n)
     val x0 = DoubleArray(n){0.0}
+    println("-------------------")
+    println("f")
     for (i in 0 until n) {
-        f[i] = f(i.toDouble() / n.toDouble())
+        f[i] = funderint(i.toDouble() / n.toDouble(),(i+1.0) / n.toDouble())
+        println(f[i])
     }
-
     println("----------------")
     println("u_approx")
-    val u = BlockClusterTree.MetodHausa(n,BlockClusterTree.getNormalMatrix(s),f)
+    val u = gradientMethodMatrix((s),f, DoubleArray(n),0.0000000000000000001)
+    val res = DoubleArray(n)
     for (i in 0 until n) {
-        println(un(i.toDouble() / n.toDouble(), u, n))
+        res[i] = un(i.toDouble() / n.toDouble(), u, n)
+        println(res[i])
     }
     println("----------------")
-    println("u_tochne")
+    println("pohubka")
     val ytochne = DoubleArray(n)
     for (i in 0 until n) {
         ytochne[i] = yTochne(i.toDouble() / n.toDouble())
-        println(yTochne(i.toDouble() / n.toDouble()))
     }
+    println(getPohubka(ytochne,res))
     //TODO testing
 //      val m= 256
 //    val nmin = 8

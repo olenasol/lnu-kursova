@@ -1,42 +1,21 @@
+import kotlin.math.abs
+import kotlin.math.ln
 
-fun Factorial(x: Int): Int {
-    return if (x <= 0) {
-        1
-    } else {
-        x * Factorial(x - 1)
+fun funderint(a:Double,b:Double):Double{
+    var res = 0.0
+    if(b!= 0.0)
+        res+=Math.pow(b,2.0)*ln(abs(b))
+    if((b-1)!=0.0)
+        res += -ln(Math.abs(b-1))*Math.pow(b-1,2.0)
+    res+=-3*b
+    if(a!=0.0)
+        res+=-Math.pow(a,2.0)*ln(abs(a))
+    if((a-1)!=0.0){
+        res+=ln(abs(a-1))*Math.pow((a-1),2.0)
     }
+    res+=3*a
+    return res/2.0
 }
-
-fun DerivativeXg(x: Double, y: Double, v: Int): Double {
-    return Math.pow(-1.0, (v - 1).toDouble()) * Factorial(v - 1).toDouble() * Math.pow(x - y, -v.toDouble())
-}
-
-fun gTulda(x: Double, y: Double, k: Int, a: Double, b: Double): Double {
-    val x0 = 0.5 * (a + b)
-    var s = 0.0
-    for (v in 0..(k - 1)) {
-        s +=  1.0 / Factorial(v).toDouble() * DerivativeXg(x0, y, v) * Math.pow(x - x0, v.toDouble())
-    }
-    return s
-}
-
-fun f(x: Double, a: Double): Double {
-    return bmatr2Integr(x,a)//a * Math.log(Math.abs(x - a)) - x * Math.log(Math.abs(x - a)) - a
-}
-
-fun f1(x: Double, a: Double): Double {
-    return 0.5 * (a * Math.signum(x-a) * (Math.log(Math.abs(x - a)) - Math.log(Math.abs(a - x))) + a * Math.log(Math.abs(x - a)) + a * Math.log(Math.abs(a - x)) - 2 * x * Math.log(Math.abs(a - x)) - 2 * a)
-    //return a * (x - a) * Math.Log(x - a) - a * x;
-}
-
-fun f2(x: Double, a: Double): Double {
-    return 0.25 * (x - a) * (2 * (a + x) * Math.log(Math.abs(x - a)) - 3 * a - x) + a * x
-}
-
-fun fIntegr(c: Double, d: Double, a: Double): Double {
-    return f1(d, a) - f1(c, a) - (f2(d, a) - f2(c, a))
-}
-//TODO wtf with integral - argument below 0
 fun Egtulda(i: Int, j: Int, n: Int): Double {
     val b = (i + 1.0) / n.toDouble()
     val a = i.toDouble() / n.toDouble()
@@ -92,7 +71,7 @@ fun Egtulda(i: Int, j: Int, n: Int): Double {
 }
 
 fun phi(i: Int, n: Int, x: Double): Double {
-    return if (x >= i.toDouble() / n.toDouble() && x <= (i + 1).toDouble() / n.toDouble()) {
+    return if (x >= i.toDouble() / n.toDouble() && x < (i + 1).toDouble() / n.toDouble()) {
         1.0
     } else {
         0.0
