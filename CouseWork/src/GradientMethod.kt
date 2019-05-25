@@ -1,5 +1,6 @@
+import java.lang.Math.sqrt
 
-fun gradientMethod(matrix: Array<DoubleArray>, vector: DoubleArray, inx0: DoubleArray): DoubleArray {
+fun gradientMethod(matrix: Array<DoubleArray>, vector: DoubleArray, inx0: DoubleArray,eps: Double): DoubleArray {
     val n = vector.size
     val x1 = DoubleArray(n)
     var x0 = inx0
@@ -11,9 +12,50 @@ fun gradientMethod(matrix: Array<DoubleArray>, vector: DoubleArray, inx0: Double
     var alphak: Double
     var betak: Double
     var k = 0
+    var rsold =0.0
+    for( i in 0 until r0.size){
+        rsold+=r0[i]*r0[i]
+    }
+    for(i in 0 until vector.size) {
+        val temp2 = multiplyMatrixByVector(matrix, p0)
+        val temp3 = multiplyVectorByVector(temp2, p0)
+        alphak = rsold / temp3
+        for (j in 0..(n - 1)) {
+            x1[j] = x0[j] + alphak * p0[j]
+            r1[j] = r0[j] - alphak * temp2[j]
+        }
+        var rsnew =0.0
+        for( j in 0 until r0.size){
+            rsnew+=r1[j]*r1[j]
+        }
+        if (sqrt(rsnew) < eps)
+            break
+        for (j in 0..(n - 1))
+            p1[j] = r1[j] + (rsnew / rsold) * p0[j]
+        p0 = p1
+        r0 = r1
+        x0 = x1
+        rsold = rsnew
+        k++
+    }
+    return x1
+}
+
+fun gradientMethodMatrix(matrix: Supermatrix, vector: DoubleArray, inx0: DoubleArray): DoubleArray {
+    val n = vector.size
+    val x1 = DoubleArray(n)
+    var x0 = inx0
+    val temp = BlockClusterTree.MultHMatrixByVector(matrix, x0)
+    var r0 = DoubleArray(n, { i -> vector[i] - temp[i] })
+    var p0 = r0
+    val r1 = DoubleArray(n)
+    val p1 = DoubleArray(n)
+    var alphak: Double
+    var betak: Double
+    var k = 0
     while (k != n) {
         val temp1 = multiplyVectorByVector(r0, r0)
-        val temp2 = multiplyMatrixByVector(matrix, p0)
+        val temp2 = BlockClusterTree.MultHMatrixByVector(matrix, p0)
         val temp3 = multiplyVectorByVector(temp2, p0)
         alphak = temp1 / temp3
         for (i in 0..(n - 1)) {
