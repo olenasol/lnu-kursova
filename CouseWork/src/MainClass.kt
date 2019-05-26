@@ -25,7 +25,7 @@ fun yTochne(x: Double): Double {
 
 fun main(args : Array<String>) {
 
-    val n = 8
+    val n = 256
     val nmin = 1
     var s = Supermatrix()
     val c = ClusterTree.buildClusterTree(n,nmin)

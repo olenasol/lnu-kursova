@@ -50,7 +50,7 @@ class BlockClusterTree {
             if (isAdmissible(t, s)) {
                 spr.supermatrix = null
                 if(t!= null && s!= null)
-                    spr.rkmatrix = buildRkmatrix(t, s, n,nMin)
+                    spr.rkmatrix = buildRkmatrix(s,t, n,nMin)
                 return spr
             } else {
                 if (t!= null && t?.leaf?.size >nMin)
