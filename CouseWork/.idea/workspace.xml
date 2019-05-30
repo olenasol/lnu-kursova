@@ -2,7 +2,1036 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5eb2281-b93c-4ba6-a869-70bf77761176" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../2019/coursefunctionslnu/coursefunctionslnu.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2019/coursefunctionslnu/src/main/java/src/BlockClusterTree.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2019/coursefunctionslnu/src/main/java/src/ClusterTree.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2019/coursefunctionslnu/src/main/java/src/ComputationalClasses.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2019/coursefunctionslnu/src/main/java/src/Extentions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2019/coursefunctionslnu/src/main/java/src/FunctionsBEM.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2019/coursefunctionslnu/src/main/java/src/GradientMethod.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2019/coursefunctionslnu/src/main/java/src/Integral.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../2019/coursefunctionslnu/src/main/java/src/MainClass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CouseWork/BlockClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CouseWork/BlockClusterTree$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CouseWork/ClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CouseWork/ClusterTree$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CouseWork/FunctionsBEMKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CouseWork/FunctionsBEMKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CouseWork/MainClassKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CouseWork/MainClassKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BlockClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/BlockClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FunctionsBEM.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionsBEM.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainClass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/.idea/JSAT-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/nb-configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/ColumnMajorStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/DataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/DataStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/RowMajorStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/SimpleDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/SimpleWeightVectorModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/SingleWeightVectorModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/BaseUpdateableClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/CategoricalData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/CategoricalResults.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/ClassificationDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/ClassificationModelEvaluation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/Classifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/DDAG.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/DataPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/DataPointPair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/MajorityVote.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/OneVSAll.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/OneVSOne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/PriorClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/RegressorToClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/Rocchio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/UpdateableClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/WarmClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/AODE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/BestClassDistribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/ConditionalProbabilityTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/MultinomialNaiveBayes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/MultivariateNormals.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/NaiveBayes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/NaiveBayesUpdateable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/ODE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/graphicalmodel/DirectedGraph.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/graphicalmodel/DiscreteBayesNetwork.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/bayesian/graphicalmodel/K2NetworkLearner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/AdaBoostM1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/ArcX4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/Bagging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/EmphasisBoost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/LogitBoost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/LogitBoostPL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/ModestAdaBoost.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/SAMME.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/Stacking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/UpdatableStacking.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/Wagging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/boosting/WaggingNormal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/calibration/BinaryCalibration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/calibration/BinaryScoreClassifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/calibration/IsotonicCalibration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/calibration/PlattCalibration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/AUC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/Accuracy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/BalancedAccuracy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/ClassificationScore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/F1Score.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/FbetaScore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/Kappa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/LogLoss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/MatthewsCorrelationCoefficient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/Precision.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/Recall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/evaluation/SimpleBinaryClassMetric.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/imbalance/BorderlineSMOTE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/imbalance/SMOTE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/knn/DANN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/knn/LWL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/knn/NearestNeighbour.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/ALMA2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/AROW.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/BBR.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/LinearBatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/LinearL1SCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/LinearSGD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/LinearTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/LogisticRegressionDCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/NHERD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/NewGLMNET.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/PassiveAggressive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/ROMMA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/SCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/SCW.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/SDCA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/SMIDAS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/SPA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/STGD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/StochasticMultinomialLogisticRegression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/StochasticSTLinearL1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/kernelized/ALMA2K.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/kernelized/BOGD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/kernelized/CSKLR.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/kernelized/CSKLRBatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/kernelized/DUOL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/kernelized/Forgetron.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/kernelized/KernelSGD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/kernelized/OSKL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/linear/kernelized/Projectron.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/BackPropagationNet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/DReDNetSimple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/LVQ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/LVQLLC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/Perceptron.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/RBFNet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/SGDNetworkTrainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/SOM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/activations/ActivationLayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/activations/LinearLayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/activations/ReLU.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/activations/SigmoidLayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/activations/SoftSignLayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/activations/SoftmaxLayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/activations/TanhLayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/initializers/BiastInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/initializers/ConstantInit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/initializers/GaussianNormalInit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/initializers/TanhInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/initializers/WeightInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/regularizers/Max2NormRegularizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/neuralnetwork/regularizers/WeightRegularizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/DCD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/DCDs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/DCSVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/LSSVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/Pegasos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/PegasosK.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/PlattSMO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/SBP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/SVMnoBias.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/SupportVectorLearner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/extended/AMM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/extended/CPM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/svm/extended/OnlineAMM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/DecisionStump.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/DecisionTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/ERTrees.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/ExtraTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/ID3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/ImportanceByUses.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/ImpurityScore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/MDA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/MDI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/RandomDecisionTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/RandomForest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/TreeFeatureImportanceInference.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/TreeLearner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/TreeNodeVisitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/classifiers/trees/TreePruner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/CLARA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/ClusterFailureException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/Clusterer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/ClustererBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/DBSCAN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/EMGaussianMixture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/FLAME.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/GapStatistic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/HDBSCAN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/KClusterer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/KClustererBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/LSDBC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/MEDDIT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/MeanShift.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/OPTICS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/PAM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/SeedSelectionMethods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/TRIKMEDS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/AbstractClusterDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/AverageLinkDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/CentroidDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/ClusterDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/CompleteLinkDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/DistanceMetricDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/LanceWilliamsDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/MedianDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/SingleLinkDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/UpdatableClusterDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/dissimilarity/WardsDissimilarity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/AdjustedRandIndex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/ClusterEvaluation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/ClusterEvaluationBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/Completeness.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/DaviesBouldinIndex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/DunnIndex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/Homogeneity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/IntraClusterSumEvaluation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/NormalizedMutualInformation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/VMeasure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/intra/IntraClusterEvaluation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/intra/MaxDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/intra/MeanCentroidDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/intra/MeanDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/intra/SoSCentroidDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/evaluation/intra/SumOfSqrdPairwiseDistances.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/hierarchical/DivisiveGlobalClusterer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/hierarchical/DivisiveLocalClusterer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/hierarchical/NNChainHAC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/hierarchical/PriorityHAC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/hierarchical/SimpleHAC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/ElkanKMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/ElkanKernelKMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/GMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/HamerlyKMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/KMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/KMeansPDN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/KernelKMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/LloydKernelKMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/MiniBatchKMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/NaiveKMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/clustering/kmeans/XMeans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/AutoDeskewTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/DataModelPipeline.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/DataTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/DataTransformBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/DataTransformProcess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/DenseSparceTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/FastICA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/Imputer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/InPlaceInvertibleTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/InPlaceTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/InsertMissingValuesTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/InverseOfTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/InvertibleTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/JLTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/LinearTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/NominalToNumeric.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/NumericalToHistogram.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/PCA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/PNormNormalization.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/PolynomialTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/RemoveAttributeTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/StandardizeTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/UnitVarianceTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/WhitenedPCA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/WhitenedZCA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/ZeroMeanTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/featureselection/BDS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/featureselection/LRS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/featureselection/MutualInfoFS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/featureselection/ReliefF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/featureselection/SBS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/featureselection/SFS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/kernel/KernelPCA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/kernel/Nystrom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/kernel/RFF_RBF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/visualization/Isomap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/visualization/LargeViz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/visualization/MDS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/visualization/TSNE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/datatransform/visualization/VisualizationTransform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Beta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Cauchy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/ChiSquared.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/ContinuousDistribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Distribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/DistributionSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Exponential.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/FisherSendor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Gamma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Kolmogorov.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Kumaraswamy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Laplace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Levy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/LogNormal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/LogUniform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Logistic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/MaxwellBoltzmann.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Normal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Pareto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Rayleigh.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/StudentT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/TruncatedDistribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Uniform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/Weibull.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/discrete/Binomial.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/discrete/DiscreteDistribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/discrete/Poisson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/discrete/UniformDiscrete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/discrete/Zipf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/empirical/KernelDensityEstimator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/empirical/kernelfunc/BiweightKF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/empirical/kernelfunc/EpanechnikovKF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/empirical/kernelfunc/GaussKF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/empirical/kernelfunc/KernelFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/empirical/kernelfunc/TriweightKF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/empirical/kernelfunc/UniformKF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/BaseKernelTrick.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/BaseL2Kernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/DistanceMetricBasedKernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/GeneralRBFKernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/KernelPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/KernelPoints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/KernelTrick.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/LinearKernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/NormalizedKernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/PolynomialKernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/PukKernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/RBFKernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/RationalQuadraticKernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/kernels/SigmoidKernel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/multivariate/Dirichlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/multivariate/MetricKDE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/multivariate/MultivariateDistribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/multivariate/MultivariateDistributionSkeleton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/multivariate/MultivariateKDE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/multivariate/NormalM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/multivariate/NormalMR.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/multivariate/ProductKDE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/distributions/multivariate/SymmetricDirichlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/driftdetectors/ADWIN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/driftdetectors/BaseDriftDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/driftdetectors/DDM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/driftdetectors/UnhandledDriftException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/exceptions/FailedToFitException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/exceptions/ModelMismatchException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/exceptions/UntrainedModelException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/io/ARFFLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/io/CSV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/io/DataWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/io/JSATData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/io/LIBSVMLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/CholeskyDecomposition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/ConcatenatedVec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/ConstantVector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/DenseMatrix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/DenseVector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/EigenValueDecomposition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/GenericMatrix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/HessenbergForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/IndexValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/LUPDecomposition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/Matrix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/MatrixOfVecs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/MatrixStatistics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/Poly2Vec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/QRDecomposition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/RandomMatrix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/RandomVector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/RowColumnOps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/ScaledVector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/ShiftedVec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/SingularValueDecomposition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/SparseMatrix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/SparseVector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/SubMatrix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/SubVector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/TransposeView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/Vec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/VecOps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/VecPaired.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/VecPairedComparable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/VecWithNorm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/ChebyshevDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/CosineDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/CosineDistanceNormalized.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/DenseSparseMetric.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/DistanceCounter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/DistanceMetric.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/EuclideanDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/JaccardDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/KernelDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/MahalanobisDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/ManhattanDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/MinkowskiDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/NormalizedEuclideanDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/PearsonDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/SquaredEuclideanDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/TrainableDistanceMetric.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/distancemetrics/WeightedEuclideanDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/solvers/ConjugateGradient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/BallTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/BaseCaseDT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/CoverTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/DCI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/DefaultVectorCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/DualTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/IncrementalCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/IndexDistPair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/IndexNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/IndexTuple.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/KDTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/RTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/RandomBallCover.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/RandomBallCoverOneShot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/SVPTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/ScoreDT.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/ScoreDTLazy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/VPTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/VPTreeMV.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/VectorArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/VectorCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/VectorCollectionUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/lsh/E2LSH.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/linear/vectorcollection/lsh/RandomProjectionLSH.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/AbsoluteLoss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/EpsilonInsensitiveLoss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/HingeLoss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/HuberLoss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/LogisticLoss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/LossC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/LossFunc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/LossMC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/LossR.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/SoftmaxLoss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/lossfunctions/SquaredLoss.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/Complex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/ContinuedFraction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/DescriptiveStatistics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/ExponentialMovingStatistics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/FastMath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/Function.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/Function1D.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/FunctionMat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/FunctionVec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/IndexFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/MathTricks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/OnLineStatistics.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/SimpleLinearRegression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/SpecialMath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/TrigMath.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/decayrates/DecayRate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/decayrates/ExponetialDecay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/decayrates/InverseDecay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/decayrates/LinearDecay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/decayrates/NoDecay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/decayrates/PowerDecay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/integration/AdaptiveSimpson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/integration/Romberg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/integration/Trapezoidal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/BFGS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/BacktrackingArmijoLineSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/GoldenSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/LBFGS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/LineSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/ModifiedOWLQN.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/NelderMead.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/Optimizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/RosenbrockFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/WolfeNWLineSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/oned/GoldenSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/stochastic/AdaDelta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/stochastic/AdaGrad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/stochastic/Adam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/stochastic/GradientUpdater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/stochastic/NAdaGrad.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/stochastic/RMSProp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/stochastic/Rprop.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/stochastic/SGDMomentum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/optimization/stochastic/SimpleSGD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/rootfinding/Bisection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/rootfinding/RiddersMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/rootfinding/RootFinder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/rootfinding/Secant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/math/rootfinding/Zeroin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/outlier/DensityOutlier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/outlier/IsolationForest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/outlier/LOF.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/outlier/LinearOCSVM.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/outlier/LoOP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/outlier/Outlier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/BooleanParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/DecayRateParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/DoubleParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/GridSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/IntParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/KernelFunctionParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/MetricParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/ModelSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/ObjectParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/Parameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/Parameterized.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/parameters/RandomSearch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/AveragedRegressor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/BaseUpdateableRegressor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/KernelRLS.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/KernelRidgeRegression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/MultipleLinearRegression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/NadarayaWatson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/OrdinaryKriging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/RANSAC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/RegressionDataSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/RegressionModelEvaluation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/Regressor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/RidgeRegression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/StochasticGradientBoosting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/StochasticRidgeRegression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/UpdateableRegressor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/WarmRegressor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/evaluation/CoefficientOfDetermination.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/evaluation/MeanAbsoluteError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/evaluation/MeanSquaredError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/evaluation/RegressionScore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/evaluation/RelativeAbsoluteError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/evaluation/RelativeSquaredError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/regression/evaluation/TotalHistoryRegressionScore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/testing/StatisticTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/testing/goodnessoffit/KSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/testing/onesample/OneSampleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/testing/onesample/TTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/testing/onesample/ZTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/BasicTextVectorCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/ClassificationHashedTextDataLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/ClassificationTextDataLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/GreekLetters.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/HashedTextDataLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/HashedTextVectorCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/TextDataLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/TextVectorCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/stemming/LovinsStemmer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/stemming/PaiceHuskStemmer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/stemming/PorterStemmer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/stemming/Stemmer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/stemming/VoidStemmer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/tokenizer/NGramTokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/tokenizer/NaiveTokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/tokenizer/StemmingTokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/tokenizer/StopWordTokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/tokenizer/Tokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/topicmodel/OnlineLDAsvi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/wordweighting/BinaryWordPresent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/wordweighting/OkapiBM25.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/wordweighting/TfIdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/wordweighting/WordCount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/text/wordweighting/WordWeighting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/ArrayUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/BooleanList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/BoundedSortedList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/BoundedSortedSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/ClosedHashingUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/DoubleList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/FakeExecutor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/FibHeap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/GridDataGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/IndexTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/IntDoubleMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/IntDoubleMapArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/IntList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/IntPriorityQueue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/IntSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/IntSetFixedSize.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/IntSortedSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/IterableIterator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/ListUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/LongDoubleMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/LongList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/ModifiableCountDownLatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/PairedReturn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/PoisonRunnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/ProbailityMatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/QuickSort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/RunnableConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/SimpleList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/SortedArrayList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/StringUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/SystemInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/Tuple3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/UnionFind.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/concurrent/AtomicDouble.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/concurrent/AtomicDoubleArray.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/concurrent/ConcurrentCacheLRU.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/concurrent/IndexReducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/concurrent/IndexRunnable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/concurrent/LoopChunkReducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/concurrent/LoopChunkRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/concurrent/ParallelUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/concurrent/TreeBarrier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/random/CMWC4096.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/random/RandomUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/random/XOR128.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/random/XOR96.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/src/jsat/utils/random/XORWOW.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/FixedProblems.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/NormalClampedSample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/TestTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/DDAGTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/OneVSAllTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/OneVSOneTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/RocchioTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/bayesian/AODETest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/bayesian/MultinomialNaiveBayesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/bayesian/MultivariateNormalsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/bayesian/NaiveBayesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/bayesian/NaiveBayesUpdateableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/AdaBoostM1Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/ArcX4Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/BaggingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/EmphasisBoostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/LogitBoostPLTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/LogitBoostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/ModestAdaBoostTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/SAMMETest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/StackingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/UpdatableStackingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/boosting/WaggingNormalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/calibration/IsotonicCalibrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/calibration/PlattCalibrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/evaluation/AUCTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/evaluation/AccuracyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/evaluation/F1ScoreTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/evaluation/FbetaScoreTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/evaluation/KappaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/evaluation/LogLossTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/evaluation/MatthewsCorrelationCoefficientTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/evaluation/PrecisionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/evaluation/RecallTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/imbalance/BorderlineSMOTETest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/imbalance/SMOTETest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/knn/DANNTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/knn/LWLTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/knn/NearestNeighbourTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/ALMA2Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/AROWTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/BBRTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/LinearBatchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/LinearL1SCDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/LinearSGDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/LogisticRegressionDCDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/NHERDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/NewGLMNETTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/PassiveAggressiveTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/ROMMATest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/SCDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/SCWTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/SDCATest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/SMIDASTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/STGDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/StochasticMultinomialLogisticRegressionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/ALMA2KTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/BOGDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/CSKLRBatchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/CSKLRTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/DUOLTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/ForgetronTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/KernelPointTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/KernelSGDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/OSKLTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/linear/kernelized/ProjectronTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/neuralnetwork/BackPropagationNetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/neuralnetwork/DReDNetSimpleTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/neuralnetwork/LVQLLCTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/neuralnetwork/LVQTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/neuralnetwork/PerceptronTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/neuralnetwork/RBFNetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/neuralnetwork/SOMTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/DCDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/DCDsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/DCSVMTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/LSSVMTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/PegasosKTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/PegasosTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/PlattSMOTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/SBPTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/SVMnoBiasTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/extended/AMMTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/svm/extended/CPMTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/trees/DecisionStumpTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/trees/DecisionTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/trees/ERTreesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/trees/ImportanceByUsesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/trees/MDATest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/trees/MDITest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/classifiers/trees/RandomForestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/CLARATest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/DBSCANTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/EMGaussianMixtureTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/FLAMETest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/GapStatisticTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/HDBSCANTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/LSDBCTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/MEDDITTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/MeanShiftTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/OPTICSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/PAMTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/TRIKMEDSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/evaluation/AdjustedRandIndexTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/evaluation/CompletenessTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/evaluation/HomogeneityTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/evaluation/NormalizedMutualInformationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/evaluation/VMeasureTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/evaluation/intra/SumOfSqrdPairwiseDistancesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/hierarchical/DivisiveGlobalClustererTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/hierarchical/DivisiveLocalClustererTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/hierarchical/NNChainHACTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/hierarchical/PriorityHACTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/hierarchical/SimpleHACTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/kmeans/ElkanKMeansTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/kmeans/ElkanKernelKMeansTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/kmeans/GMeansTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/kmeans/HamerlyKMeansTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/kmeans/KMeansPDNTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/kmeans/LloydKernelKMeansTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/kmeans/MiniBatchKMeansTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/kmeans/NaiveKMeansTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/clustering/kmeans/XMeansTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/FastICATest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/ImputerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/JLTransformTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/PCATest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/RemoveAttributeTransformTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/WhitenedPCATest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/WhitenedZCATest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/featureselection/BDSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/featureselection/LRSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/featureselection/MutualInfoFSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/featureselection/ReliefFTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/featureselection/SBSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/featureselection/SFSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/kernel/KernelPCATest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/kernel/NystromTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/kernel/RFF_RBFTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/visualization/IsomapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/visualization/LargeVizTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/visualization/MDSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/datatransform/visualization/TSNETest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/BetaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/CauchyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/ChiSquaredTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/ContinuousDistributionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/ExponentialTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/FisherSendorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/GammaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/KolmogorovTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/KumaraswamyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/LaplaceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/LevyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/LogNormalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/LogUniformTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/LogisticTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/MaxwellBoltzmannTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/NormalTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/ParetoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/RayleighTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/StudentTTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/TruncatedDistributionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/UniformTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/WeibullTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/discrete/BinomialTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/discrete/PoissonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/discrete/UniformDiscreteTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/discrete/ZipfTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/empirical/KernelDensityEstimatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/multivariate/DirichletTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/multivariate/NormalMTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/distributions/multivariate/SymmetricDirichletTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/driftdetectors/ADWINTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/driftdetectors/DDMTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/io/CSVTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/io/JSATDataTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/io/LIBSVMLoaderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/CholeskyDecompositionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/ConcatenatedVecTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/DenseMatrixTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/EigenvalueDecompositionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/GenericMatrixTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/HessenbergFormTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/LUPDecompositionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/MatrixOfVecsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/MatrixStatisticsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/MatrixTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/Poly2VecTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/QRDecompositionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/ShiftedVecTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/SingularValueDecompositionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/SparseMatrixTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/SparseVectorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/SubVectorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/VecWithNormTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/ChebyshevDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/CosineDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/CosineDistanceTestNormalized.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/EuclideanDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/JaccardDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/MahalanobisDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/ManhattanDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/MinkowskiDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/NormalizedEuclideanDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/PearsonDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/SquaredEuclideanDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/distancemetrics/WeightedEuclideanDistanceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/solvers/ConjugateGradientTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/BallTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/CoverTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/DCITest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/DualTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/KDTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/RTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/RandomBallCoverTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/VPTreeMVTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/VPTreeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/VectorArrayTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/lsh/E2LSHTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/linear/vectorcollection/lsh/RandomProjectionLSHTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/ComplexTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/ExponentialMovingStatisticsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/FastMathTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/FunctionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/MathTricksTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/OnLineStatisticsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/SpecialMathTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/integration/AdaptiveSimpsonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/BFGSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/LBFGSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/ModifiedOWLQNTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/NelderMeadTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/oned/GoldenSearchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/stochastic/AdaDeltaTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/stochastic/AdaGradTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/stochastic/AdamTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/stochastic/NAdaGradTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/stochastic/RMSPropTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/stochastic/RpropTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/stochastic/SGDMomentumTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/optimization/stochastic/SimpleSGDTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/rootfinding/BisectionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/rootfinding/RiddersMethodTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/rootfinding/SecantTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/math/rootfinding/ZeroinTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/outlier/DensityOutlierTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/outlier/IsolationForestTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/outlier/LOFTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/outlier/LinearOCSVMTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/outlier/LoOPTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/parameters/GridSearchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/parameters/RandomSearchTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/AveragedRegressorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/KernelRLSTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/KernelRidgeRegressionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/NadarayaWatsonTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/OrdinaryKrigingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/RANSACTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/RidgeRegressionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/StochasticGradientBoostingTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/StochasticRidgeRegressionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/evaluation/CoefficientOfDeterminationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/evaluation/MeanAbsoluteErrorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/evaluation/MeanSquaredErrorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/evaluation/RelativeAbsoluteErrorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/regression/evaluation/RelativeSquaredErrorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/text/stemming/LovinsStemmerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/text/stemming/PaiceHuskStemmerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/text/stemming/PorterStemmerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/text/tokenizer/NGramTokenizerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/text/topicmodel/OnlineLDAsviTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/FibHeapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/IndexTableTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/IntDoubleMapArrayTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/IntDoubleMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/IntListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/IntPriorityQueueTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/IntSetFixedSizeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/IntSetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/IntSortedSetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/ListUtilsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/LongDoubleMapTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/LongListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/QuickSortTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/SimpleListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/JSAT/test/jsat/utils/StringUtilsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JSAT-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/.vs/KursovaLibrary/v15/.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/.vs/KursovaLibrary/v15/Browse.VC.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/.vs/KursovaLibrary/v15/Server/sqlite3/db.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/.vs/KursovaLibrary/v15/Server/sqlite3/storage.ide" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/.vs/KursovaLibrary/v15/ipch/AutoPCH/9c2193869ad4ca7f/NESTEDBEM.ipch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary.v12.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/BlockClusterTree.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/ClusterTree.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/Fullmatrix.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/FunctionsBEM.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/GradientMethod.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/KursovaLibrary.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/Rkmatrix.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/Supermatrix.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/bin/Debug/KursovaLibrary.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/bin/Debug/KursovaLibrary.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/bin/Debug/Methods.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/bin/Debug/Methods.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/bin/Debug/nunit_random_seed.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/KursovaLibrary.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/KursovaLibrary.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/KursovaLibrary.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/KursovaLibrary.csprojResolveAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/KursovaLibrary.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/KursovaLibrary.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../KursovaLibrary/KursovaLibrary/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/.vs/Kursova_Console/v15/.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/.vs/Kursova_Console/v15/Server/sqlite3/db.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/.vs/Kursova_Console/v15/Server/sqlite3/storage.ide" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console.v12.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/App.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/Kursova_Console.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/KursovaLibrary.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/KursovaLibrary.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/Kursova_Console.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/Kursova_Console.exe.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/Kursova_Console.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/Kursova_Console.vshost.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/Kursova_Console.vshost.exe.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/Kursova_Console.vshost.exe.manifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/Methods.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/Methods.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/bin/Debug/nunit_random_seed.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/Kursova_Console.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/Kursova_Console.csproj.CoreCompileInputs.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/Kursova_Console.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/Kursova_Console.csprojResolveAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/Kursova_Console.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/Kursova_Console.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Kursova_Console/Kursova_Console/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods.v12.suo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/Integral.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/Methods.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/Properties/AssemblyInfo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/SystemSolver.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/bin/Debug/Methods.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/bin/Debug/Methods.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/obj/Debug/Methods.csproj.FileListAbsolute.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/obj/Debug/Methods.csprojResolveAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/obj/Debug/Methods.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/obj/Debug/Methods.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Methods/Methods/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_2018/1_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_2018/1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_2018/1_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_2018/1_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_2018/1_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_2018/presentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_2018/presentation.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/1_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/1_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/1_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/1_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/pictures/1_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/pictures/1_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/pictures/1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/pictures/1_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/pictures/1_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/pictures/1_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/pictures/1_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/pictures/1_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/presentation_kursova.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../presentation_kursova/Солук О..pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/Soluk_P41.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/1_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/2_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/2_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/pictures/2_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/report.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/report.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/pictures/1_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/pictures/1_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/pictures/1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/pictures/1_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/pictures/1_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/pictures/1_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/pictures/1_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/pictures/1_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/pictures/1_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/report_kursova.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova/report_kursova.tex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/Soluk_P41.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/1_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/2_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/2_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/pictures/2_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/report.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_kursova_2018/report.tex" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,26 +1044,33 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BlockClusterTree.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="52" column="52" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+            <state relative-caret-position="799">
+              <caret line="47" column="33" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/FunctionsBEM.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="150" column="7" lean-forward="true" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/FunctionsBEM.kt">
+        <entry file="file://$PROJECT_DIR$/src/ClusterTree.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-                <marker date="1558827193036" expanded="true" signature="1075:1173" ph="..." />
-                <marker date="1558827193036" expanded="true" signature="1075:2225" ph="..." />
-              </folding>
+            <state relative-caret-position="-613">
+              <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -42,8 +1078,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainClass.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+            <state relative-caret-position="182">
+              <caret line="56" column="21" lean-forward="true" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GradientMethod.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="31" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -73,6 +1118,8 @@
       <find>tra</find>
       <find>eg</find>
       <find>k=</find>
+      <find>uildRkmatrix</find>
+      <find>yTochne</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -85,11 +1132,11 @@
         <option value="$PROJECT_DIR$/src/Integral.kt" />
         <option value="$PROJECT_DIR$/src/ComputationalClasses.kt" />
         <option value="$PROJECT_DIR$/src/ConjugateGradient.java" />
+        <option value="$PROJECT_DIR$/src/BlockClusterTree.kt" />
         <option value="$PROJECT_DIR$/src/ClusterTree.kt" />
         <option value="$PROJECT_DIR$/src/GradientMethod.kt" />
-        <option value="$PROJECT_DIR$/src/FunctionsBEM.kt" />
         <option value="$PROJECT_DIR$/src/MainClass.kt" />
-        <option value="$PROJECT_DIR$/src/BlockClusterTree.kt" />
+        <option value="$PROJECT_DIR$/src/FunctionsBEM.kt" />
       </list>
     </option>
   </component>
@@ -111,6 +1158,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -127,13 +1176,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Yarmola" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -214,7 +1261,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31208053" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3161074" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -223,7 +1270,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.44475922" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.43909347" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -245,7 +1292,7 @@
       <window_info anchor="right" id="Coverage" order="9" sideWeight="0.504717" side_tool="true" weight="0.3295302" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25704697" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3167785" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -254,25 +1301,26 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44475922" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.43909347" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32808024" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50067115" side_tool="true" weight="0.44475922" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32719547" />
       <window_info anchor="bottom" id="GraphQL" order="11" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Maven Projects" order="7" />
-      <window_info anchor="right" id="Maven" order="8" />
+      <window_info anchor="right" id="Maven" order="8" sideWeight="0.495283" weight="0.3295302" />
+      <window_info anchor="right" id="Coverage" order="9" sideWeight="0.504717" side_tool="true" weight="0.3295302" />
     </layout-to-restore>
   </component>
   <component name="XDebuggerManager">
@@ -280,25 +1328,25 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/MainClass.kt</url>
-          <line>74</line>
+          <line>63</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/MainClass.kt</url>
-          <line>91</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/MainClass.kt</url>
-          <line>61</line>
+          <line>49</line>
           <properties />
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/MainClass.kt</url>
-          <line>53</line>
+          <line>41</line>
           <properties />
           <option name="timeStamp" value="42" />
         </line-breakpoint>
@@ -321,40 +1369,16 @@
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/FunctionsBEM.kt</url>
-          <line>19</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/FunctionsBEM.kt</url>
-          <line>21</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/FunctionsBEM.kt</url>
-          <line>22</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/FunctionsBEM.kt</url>
+          <url>file://$PROJECT_DIR$/src/BlockClusterTree.kt</url>
           <line>23</line>
           <properties />
-          <option name="timeStamp" value="49" />
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/BlockClusterTree.kt</url>
-          <line>77</line>
+          <url>file://$PROJECT_DIR$/src/GradientMethod.kt</url>
+          <line>31</line>
           <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/BlockClusterTree.kt</url>
-          <line>79</line>
-          <properties />
-          <option name="timeStamp" value="52" />
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -412,13 +1436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClusterTree.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Integral.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -433,36 +1450,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GradientMethod.kt">
+    <entry file="file://$PROJECT_DIR$/src/BlockClusterTree.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="799">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="33" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GradientMethod.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClusterTree.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-613">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CouseWork.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainClass.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="182">
+          <caret line="56" column="21" lean-forward="true" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FunctionsBEM.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        <state relative-caret-position="505">
+          <caret line="150" column="7" lean-forward="true" selection-start-line="150" selection-start-column="7" selection-end-line="150" selection-end-column="7" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
-            <marker date="1558827193036" expanded="true" signature="1075:1173" ph="..." />
-            <marker date="1558827193036" expanded="true" signature="1075:2225" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BlockClusterTree.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="52" column="52" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
         </state>
       </provider>
     </entry>

@@ -16,58 +16,85 @@ fun funderint(a:Double,b:Double):Double{
     res+=3*a
     return res/2.0
 }
+fun fpervisna(x:Double):Double{
+    var res = 0.0
+    if(x!=0.0){
+        res+=2*x*x*x*ln(abs(x))
+    }
+    if(x != 1.0){
+        res += -2*x*x*x*ln(abs(x-1))+6*x*ln(abs(x-1))-4*ln(abs(x-1))
+    }
+    res+=-2*x*x-7*x
+    return res/12.0
+}
+fun funderint2(a:Double,b:Double):Double{
+//    var res = 0.0
+//    if(b!= 0.0)
+//        res+=2*Math.pow(b,3.0)*Math.log(abs(b))
+//    if((b-1)!= 0.0)
+//        res+= -2*Math.pow(b,3.0)*ln(abs(b-1))+6*b*ln(abs(b-1))-4*ln(abs(b-1))
+//    res+=-2*Math.pow(b,2.0)-7*b
+//    if(a!=0.0)
+//        res+=-2*Math.pow(a,3.0)*Math.log(abs(a))
+//    if((a-1)!=0.0)
+//        res+=2*Math.pow(a,3.0)*Math.log(abs(a-1))-6*a*ln(abs(a-1))+4*ln(abs(a-1))
+//    res+=2*a*a+7*a
+//    return res/12.0
+    return fpervisna(b)-fpervisna(a)
+}
+
 fun Egtulda(i: Int, j: Int, n: Int): Double {
     val b = (i + 1.0) / n.toDouble()
     val a = i.toDouble() / n.toDouble()
     val d = (j + 1.0) / n.toDouble()
     val c = j.toDouble() / n.toDouble()
     var sum =0.0
-    if((d-b)!= 0.0){
-        sum+=-0.5*Math.pow((d-b),2.0)*Math.log(Math.abs(d-b))
-    }
-    if((d-a)!=0.0){
-        sum+=0.5*Math.pow((d-a),2.0)*Math.log(Math.abs(d-a))
-    }
-    sum+=-0.25*(2*b-2*a)*d
-    if((c-b)!=0.0){
-        sum+=0.5*Math.pow((c-b),2.0)*Math.log(Math.abs(c-b))
-    }
-    if((c-a)!=0.0){
-        sum+=-0.5*Math.pow((c-a),2.0)*Math.log(Math.abs(c-a))
-    }
-    sum+=0.25*(2*b-2*a)*c
-    sum+=-d*(b-a)+c*(b-a)
-    return sum
-//    if (i==j)
-//        return 0.5*Math.pow(b-a,2.0)*(2*Math.log(b-a)-1)-Math.pow(b-a,2.0)
-//    else
-//        if(a<c){
-//            var sum =0.0
-//            if((d-b)!= 0.0)
-//                sum+=-0.25*Math.pow((d-b),2.0)*(2*Math.log(d-b)-1)
-//            if ((c-b)!= 0.0)
-//                sum+=0.25*Math.pow(c-b,2.0)*(2*Math.log(c-b)-1)
-//            sum += c*b-d*b
-//            if((d-a)!= 0.0)
-//                sum+=0.25*Math.pow((d-a),2.0)* (2*Math.log(d-a)-1)
-//            if((c-a)!= 0.0)
-//                sum+=-0.25*Math.pow(c-a,2.0)*(2*Math.log(c-a)-1)
-//            sum+=-c*a+d*a
-//            return sum
-//        } else{
-//            var sum =0.0
-//            if ((b-c)!= 0.0)
-//                sum+=0.25*Math.pow((b-c),2.0)*(2*Math.log(b-c)-1)
-//            if((b-d)!= 0.0)
-//                sum+= -0.25*Math.pow((b-d),2.0)*(2*Math.log(b-d)-1)
-//            sum+=-d*b+c*b
-//            if((a-c)!=0.0)
-//                sum+=-0.25*Math.pow((a-c),2.0)*(2*Math.log(a-c)-1)
-//            if((a-d)!=0.0)
-//                sum+=0.25*Math.pow((a-d),2.0)*(2*Math.log(a-d)-1)
-//            sum +=d*a-c*a
-//            return sum
-//        }
+//    if((d-b)!= 0.0){
+//        sum+=-0.5*Math.pow((d-b),2.0)*Math.log(Math.abs(d-b))
+//    }
+//    if((d-a)!=0.0){
+//        sum+=0.5*Math.pow((d-a),2.0)*Math.log(Math.abs(d-a))
+//    }
+//    sum+=-0.25*(2*b-2*a)*d
+//    if((c-b)!=0.0){
+//        sum+=0.5*Math.pow((c-b),2.0)*Math.log(Math.abs(c-b))
+//    }
+//    if((c-a)!=0.0){
+//        sum+=-0.5*Math.pow((c-a),2.0)*Math.log(Math.abs(c-a))
+//    }
+//    sum+=0.25*(2*b-2*a)*c
+//    sum+=-d*(b-a)+c*(b-a)
+//    return sum
+    if (i==j)
+        return 0.5*Math.pow(b-a,2.0)*(2*Math.log(b-a)-1)-Math.pow(b-a,2.0)
+    else
+        if(a<c){
+            var sum =0.0
+            if((d-b)!= 0.0)
+                sum+=-0.25*Math.pow((d-b),2.0)*(2*Math.log(d-b)-1)
+            if ((c-b)!= 0.0)
+                sum+=0.25*Math.pow(c-b,2.0)*(2*Math.log(c-b)-1)
+            sum += c*b-d*b
+            if((d-a)!= 0.0)
+                sum+=0.25*Math.pow((d-a),2.0)* (2*Math.log(d-a)-1)
+            if((c-a)!= 0.0)
+                sum+=-0.25*Math.pow(c-a,2.0)*(2*Math.log(c-a)-1)
+            sum+=-c*a+d*a
+            return sum
+        } else{
+            var sum =0.0
+            if ((b-c)!= 0.0)
+                sum+=0.25*Math.pow((b-c),2.0)*(2*Math.log(b-c)-1)
+            if((b-d)!= 0.0)
+                sum+= -0.25*Math.pow((b-d),2.0)*(2*Math.log(b-d)-1)
+            sum+=-d*b+c*b
+            if((a-c)!=0.0)
+                sum+=-0.25*Math.pow((a-c),2.0)*(2*Math.log(a-c)-1)
+            if((a-d)!=0.0)
+                sum+=0.25*Math.pow((a-d),2.0)*(2*Math.log(a-d)-1)
+            sum +=d*a-c*a
+            return sum
+        }
 }
 
 fun phi(i: Int, n: Int, x: Double): Double {
@@ -111,13 +138,16 @@ private fun bmatr2Integr(y: Double, x0: Double): Double {
 }
 fun getPohubka(a:DoubleArray,b:DoubleArray):Double{
     val c = DoubleArray(a.size)
+    var sum =0.0
     for(i in 0 until a.size){
-        c[i] = Math.abs(a[i]-b[i])
+
+        c[i] = Math.pow(Math.abs(a[i]-b[i]),2.0)
+        sum+=c[i]
     }
-    var max = c[0]
-    for (i in 1 until c.size){
-        if (c[i]>max)
-            max = c[i]
-    }
-    return max
+//    var max = c[0]
+//    for (i in 1 until c.size){
+//        if (c[i]>max)
+//            max = c[i]
+//    }
+    return Math.sqrt(sum)/a.size.toDouble()
 }
