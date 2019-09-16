@@ -12,9 +12,9 @@ class ClusterTree{
             val nmin = 2*k
             //n=2^p
             val p:Int = Util.log2(n)
-            val numbersOfElementsAtLevel = IntArray(p+1){i-> Math.pow(2.0,i.toDouble()).toInt()}
+            val numbersOfElementsAtLevel = IntArray(p+2){i-> Math.pow(2.0,i.toDouble()).toInt()}
             val boundaryElements = buildBoundaryElements(n=8,func1 = {t:Double-> Math.cos(t) }, func2 = { t:Double-> Math.sin(t) })
-            return buildRealClusterTree(boundaryElements,n-1, 0,numbersOfElementsAtLevel,nmin)
+            return buildRealClusterTree(boundaryElements,0, 0,numbersOfElementsAtLevel,nmin)
         }
 
         fun getNumberOfNodes(p: Int): Int {
@@ -33,7 +33,7 @@ class ClusterTree{
             tree.leaf = list
             var m = Math.pow(2.0, level.toDouble()).toInt() - arr[level]
             arr[level]--
-            if(list.size > 1) {
+            if(list.size > 2) {
                 val split = splitBoundingBox(list,true)
                 tree.leftTree = buildRealClusterTree(split.first, level + 1,
                         m, arr,nmin)

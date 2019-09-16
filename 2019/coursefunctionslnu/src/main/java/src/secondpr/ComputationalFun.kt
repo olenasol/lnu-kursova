@@ -55,7 +55,7 @@ fun splitBoundingBox(list:List<Pair<Double,Double>>,isVertical:Boolean):Pair<Lis
     val secondList = mutableListOf<Pair<Double,Double>>()
     val halfRec = if (isVertical){
         mutableListOf(Pair((boundingBox[3].first+boundingBox[0].first)/2,boundingBox[0].second),
-                Pair((boundingBox[2].first+boundingBox[1].first)/2,boundingBox[0].second),
+                Pair((boundingBox[2].first+boundingBox[1].first)/2,boundingBox[1].second),
                 boundingBox[2],boundingBox[3])
     } else
         mutableListOf(boundingBox[0],
