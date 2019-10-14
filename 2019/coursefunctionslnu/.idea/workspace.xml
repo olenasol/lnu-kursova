@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de6c558d-86af-44e7-af59-47d1377c5c33" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/BlockClusterTree.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/ClusterTree.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/ComputationalClasses.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/Extentions.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/FunctionsBEM.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/GradientMethod.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/Integral.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/MainClass.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/firstpr/BlockClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/firstpr/BlockClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/firstpr/Integral.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/Integral.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/coursefunctionslnu.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BlockClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BlockClusterTree$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ComputationalFunKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ComputationalFunKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../report_2019/report.pdf" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +37,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="src.secondpr" />
       <recent name="src.firstpr" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -121,36 +120,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt</url>
-          <line>16</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt</url>
-          <line>31</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt</url>
-          <line>29</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt</url>
-          <line>35</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt</url>
-          <line>34</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt</url>
-          <line>33</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/ClusterTree.kt</url>
           <line>32</line>
           <option name="timeStamp" value="9" />
@@ -166,39 +135,14 @@
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt</url>
-          <line>41</line>
-          <option name="timeStamp" value="12" />
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt</url>
+          <line>13</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt</url>
-          <line>37</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>56</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>60</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>65</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>68</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>66</line>
-          <option name="timeStamp" value="26" />
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>31</line>
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
