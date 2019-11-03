@@ -11,10 +11,20 @@ class BlockClusterTree {
         //diam<=dist
         fun isAdmissible(s: ClusterTree?, t: ClusterTree?): Boolean {
             if (s != null && t != null) {
-                val diam1 = calculateDiamOfBoundingBox(findBoundingBox(s.leaf))
-                val diam2 = calculateDiamOfBoundingBox(findBoundingBox(t.leaf))
+                val sList = mutableListOf<Pair<Double,Double>>()
+                s.leaf.forEach {
+                    sList.add(it.startPoint)
+                    sList.add(it.endPoint)
+                }
+                val tList = mutableListOf<Pair<Double,Double>>()
+                t.leaf.forEach {
+                    tList.add(it.startPoint)
+                    tList.add(it.endPoint)
+                }
+                val diam1 = calculateDiamOfBoundingBox(findBoundingBox(sList))
+                val diam2 = calculateDiamOfBoundingBox(findBoundingBox(tList))
                 val diam = min(diam1, diam2)
-                val dist = calculateDistanceBetweenBoundingBoxes(findBoundingBox(s.leaf), findBoundingBox(t.leaf))
+                val dist = calculateDistanceBetweenBoundingBoxes(findBoundingBox(sList), findBoundingBox(tList))
                 return diam <= dist
             } else
                 return false
@@ -22,8 +32,8 @@ class BlockClusterTree {
         fun findTransformedPoints(t:ClusterTree){
             val l = mutableListOf<MutableList<Double>>()
             for(j in 0 until 2){
-                val mid = 0.5 * (getBmax(findBoundingBox(t.leaf))[j]+getBmin(findBoundingBox(t.leaf))[j])
-                val dif = 0.5 * (getBmax(findBoundingBox(t.leaf))[j]-getBmin(findBoundingBox(t.leaf))[j])
+//                val mid = 0.5 * (getBmax(findBoundingBox(t.leaf))[j]+getBmin(findBoundingBox(t.leaf))[j])
+//                val dif = 0.5 * (getBmax(findBoundingBox(t.leaf))[j]-getBmin(findBoundingBox(t.leaf))[j])
   //              for ()
             }
         }

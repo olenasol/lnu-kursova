@@ -5,10 +5,13 @@ import java.awt.Rectangle
 import kotlin.math.abs
 import kotlin.math.sqrt
 
-fun buildBoundaryElements(n:Int = 10,func1:(x:Double)->Double,func2:(x:Double)->Double):List<Pair<Double,Double>>{
+fun buildBoundaryElements(n:Int = 10,func1:(x:Double)->Double,func2:(x:Double)->Double):List<Segment>{
     val points = DoubleArray(2*n, { j -> (j*Math.PI)/n})
-    val list = mutableListOf<Pair<Double,Double>>()
-    points.forEach { list.add(Pair(func1(it),func2(it))) }
+    val list = mutableListOf<Segment>()
+    for (i in 0 until (points.size-1)){
+        list.add(Segment(Pair(func1(points[i]), func2(points[i])), Pair(func1(points[i+1]), func2(points[i+1]))))
+    }
+    list.add(Segment(Pair(func1(points[points.size-1]), func2(points[points.size-1])), Pair(func1(points[0]), func2(points[0]))))
     return list
 }
 private fun maxX(list:List<Pair<Double,Double>>):Double{
@@ -110,10 +113,16 @@ fun isXIntersect(projectedFirst: Segment, projectedSecond: Segment): Boolean{
             (projectedSecond.startPoint.first>= projectedFirst.startPoint.first &&
                     projectedSecond.endPoint.first<= projectedFirst.endPoint.first))
 }
-fun splitBoundingBox(list:List<Pair<Double,Double>>,isVertical:Boolean):Pair<List<Pair<Double,Double>>,List<Pair<Double,Double>>>{
-    val boundingBox = findBoundingBox(list)
-    val firstList = mutableListOf<Pair<Double,Double>>()
-    val secondList = mutableListOf<Pair<Double,Double>>()
+//TODO handle vertical and horizontal splits
+fun splitBoundingBox(list:List<Segment>,isVertical:Boolean):Pair<List<Segment>,List<Segment>>{
+    val tempList = mutableListOf<Pair<Double,Double>>()
+    list.forEach {
+        tempList.add(it.startPoint)
+        tempList.add(it.endPoint)
+    }
+    val boundingBox = findBoundingBox(tempList)
+    val firstList = mutableListOf<Segment>()
+    val secondList = mutableListOf<Segment>()
     val halfRec = if (isVertical){
         mutableListOf(Pair((boundingBox[3].first+boundingBox[0].first)/2,boundingBox[0].second),
                 Pair((boundingBox[2].first+boundingBox[1].first)/2,boundingBox[1].second),
@@ -124,7 +133,7 @@ fun splitBoundingBox(list:List<Pair<Double,Double>>,isVertical:Boolean):Pair<Lis
                 Pair(boundingBox[3].first,(boundingBox[3].second+boundingBox[2].second)/2),
                 boundingBox[3])
     list.forEach {
-        if (isPointInRectangle(it,halfRec))
+        if (isPointInRectangle((Pair((it.startPoint.first+it.endPoint.first)/2.0,(it.startPoint.second+it.endPoint.second)/2.0)),halfRec) )
             firstList.add(it)
         else
             secondList.add(it)

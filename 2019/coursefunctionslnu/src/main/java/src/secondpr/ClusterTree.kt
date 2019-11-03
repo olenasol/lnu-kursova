@@ -3,13 +3,13 @@ package src.secondpr
 class ClusterTree{
     var level:Int = 0
     var numberOfLeaf:Int = 0
-    lateinit var leaf: List<Pair<Double,Double>>
+    lateinit var leaf: List<Segment>
     var leftTree: ClusterTree? = null
     var rightTree: ClusterTree? = null
 
     companion object {
         fun buildClusterTree(n:Int,k:Int):ClusterTree{
-            val nmin = 2*k
+            val nmin = 2
             //n=2^p
             val p:Int = Util.log2(n)
             val numbersOfElementsAtLevel = IntArray(p+2){i-> Math.pow(2.0,i.toDouble()).toInt()}
@@ -26,14 +26,14 @@ class ClusterTree{
         }
         // arr is used to calculate bottom indexes(numberOfLeaf) of tree child,
         // original - for n=8 [1,2,4,8] - number of children on each level
-        private fun buildRealClusterTree(list: List<Pair<Double,Double>>, level:Int, numberOfLeaf: Int, arr:IntArray,nmin:Int):ClusterTree{
+        private fun buildRealClusterTree(list: List<Segment>, level:Int, numberOfLeaf: Int, arr:IntArray,nmin:Int):ClusterTree{
             val tree = ClusterTree()
             tree.level = level
             tree.numberOfLeaf = numberOfLeaf
             tree.leaf = list
             var m = Math.pow(2.0, level.toDouble()).toInt() - arr[level]
             arr[level]--
-            if(list.size > 2) {
+            if(list.size > nmin) {
                 val split = splitBoundingBox(list,true)
                 tree.leftTree = buildRealClusterTree(split.first, level + 1,
                         m, arr,nmin)
