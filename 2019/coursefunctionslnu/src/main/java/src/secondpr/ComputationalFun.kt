@@ -1,12 +1,21 @@
 package src.secondpr
 
-import com.google.common.math.IntMath.pow
-import java.awt.Rectangle
-import kotlin.math.abs
+import kotlin.math.cos
 import kotlin.math.sqrt
 
+lateinit var points: Array<Pair<Double,Double>>
+
+private fun getPoints(n:Int, func1:(x:Double)->Double,func2:(x:Double)->Double): Array<Pair<Double,Double>>{
+    val points = DoubleArray(2*n) { j -> (j*Math.PI)/n}
+    src.secondpr.points = Array(points.size){i-> Pair(0.0,0.0)}
+    for (i in points.indices){
+        src.secondpr.points[i] = Pair(func1(points[i]), func2(points[i]))
+    }
+    return src.secondpr.points
+}
 fun buildBoundaryElements(n:Int = 10,func1:(x:Double)->Double,func2:(x:Double)->Double):List<Segment>{
-    val points = DoubleArray(2*n, { j -> (j*Math.PI)/n})
+    getPoints(n,func1,func2)
+    val points = DoubleArray(2*n) { j -> (j*Math.PI)/n}
     val list = mutableListOf<Segment>()
     for (i in 0 until (points.size-1)){
         list.add(Segment(Pair(func1(points[i]), func2(points[i])), Pair(func1(points[i+1]), func2(points[i+1]))))
@@ -56,14 +65,45 @@ fun findBoundingBox(list:List<Pair<Double,Double>>):List<Pair<Double,Double>>{
 }
 
 fun calculateDiamOfBoundingBox(boundingBox: List<Pair<Double,Double>>): Double {
-    return Math.sqrt((pow((boundingBox[0].first-boundingBox[2].first).toInt(),2)+
-            pow((boundingBox[0].second-boundingBox[2].second).toInt(),2)).toDouble())
+    return sqrt(((boundingBox[0].first-boundingBox[2].first)*(boundingBox[0].first-boundingBox[2].first)+
+            (boundingBox[0].second-boundingBox[2].second)*(boundingBox[0].second-boundingBox[2].second)).toDouble())
 }
-fun getBmin(boundingBox: List<Pair<Double, Double>>):List<Double>{
-    return listOf<Double>(abs(boundingBox[0].first-boundingBox[1].first), abs(boundingBox[1].first-boundingBox[2].first))
+fun getSplitOnSegment01(m: Int) : Array<Double>{
+    return  Array<Double>(m+1){
+        i -> cos(((2*i+1).toDouble()/(2*m+2).toDouble())*Math.PI)
+    }
 }
-fun getBmax(boundingBox: List<Pair<Double, Double>>):List<Double>{
-    return listOf<Double>(abs(boundingBox[0].second-boundingBox[1].second), abs(boundingBox[1].second-boundingBox[2].second))
+fun getSplitOnSegmentab(list: List<Segment>, m: Int): List<Pair<Double,Double>>{
+    val array01 = getSplitOnSegment01(m)
+    val tempList = mutableListOf<Pair<Double,Double>>()
+    list.forEach {
+        tempList.add(it.startPoint)
+        tempList.add(it.endPoint)
+    }
+    val boundingBox = findBoundingBox(tempList)
+    val bmin = arrayListOf<Double>(boundingBox[2].first, boundingBox[2].second)
+    val bmax = arrayListOf<Double>(boundingBox[0].first, boundingBox[0].second)
+    val mid1 = 0.5 * (bmax[0]+ bmin[0])
+    val dif1 = 0.5 * (bmax[0]- bmin[0])
+    val mid2 = 0.5 * (bmax[1]+ bmin[1])
+    val dif2 = 0.5 * (bmax[1]- bmin[1])
+    val result = mutableListOf<Pair<Double, Double>>()
+    for (i in 0 until (m+1)){
+        result.add(Pair(mid1 + array01[i] * dif1, mid2 + array01[i] * dif2))
+    }
+    return result
+}
+
+fun getLagrangeMultiplied(x: Pair<Double,Double>,nu: Pair<Int,Int>,l:List<Pair<Double,Double>>, m:Int): Double{
+    var result = 1.0
+        for(i in 0 until (m+1)) {
+            if (i != nu.toList()[0])
+                result *= (x.first - l[i].first) / (l[nu.toList()[0]].first - l[i].first)
+            if (i != nu.toList()[1]){
+                result *= (x.second - l[i].second) / (l[nu.toList()[1]].second - l[i].second)
+            }
+        }
+    return result
 }
 fun calculateDistanceBetweenBoundingBoxes(firstbb: List<Pair<Double,Double>>, secondbb: List<Pair<Double,Double>>): Double{
     val distances = mutableListOf<Double>()
@@ -114,13 +154,16 @@ fun isXIntersect(projectedFirst: Segment, projectedSecond: Segment): Boolean{
                     projectedSecond.endPoint.first<= projectedFirst.endPoint.first))
 }
 //TODO handle vertical and horizontal splits
-fun splitBoundingBox(list:List<Segment>,isVertical:Boolean):Pair<List<Segment>,List<Segment>>{
+fun splitBoundingBox(list:List<Segment>):Pair<List<Segment>,List<Segment>>{
     val tempList = mutableListOf<Pair<Double,Double>>()
     list.forEach {
         tempList.add(it.startPoint)
         tempList.add(it.endPoint)
     }
     val boundingBox = findBoundingBox(tempList)
+    val distanceHor = boundingBox[0].first - boundingBox[2].first
+    val distanceVer = boundingBox[0].second - boundingBox[2].second
+    val isVertical = distanceHor > distanceVer
     val firstList = mutableListOf<Segment>()
     val secondList = mutableListOf<Segment>()
     val halfRec = if (isVertical){
@@ -140,9 +183,6 @@ fun splitBoundingBox(list:List<Segment>,isVertical:Boolean):Pair<List<Segment>,L
     }
     return Pair(firstList.toList(),secondList.toList())
 }
-
-
-
 private fun isPointInRectangle(point:Pair<Double,Double>, rectangle: List<Pair<Double,Double>>):Boolean{
     return ((point.first>=rectangle[2].first && point.first<=rectangle[1].first) &&
             (point.second>=rectangle[1].second && point.second<=rectangle[0].second))

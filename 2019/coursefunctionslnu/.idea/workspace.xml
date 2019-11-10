@@ -2,15 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de6c558d-86af-44e7-af59-47d1377c5c33" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/Legrandge.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/com.coursefunctions.lnu.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/com.coursefunctions.lnu.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ComputationalFunKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ComputationalFunKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +62,19 @@
     </option>
   </component>
   <component name="RunManager" selected="Kotlin.src.secondpr.MainClassKt">
+    <configuration name="Compute" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="src.secondpr.Compute" />
+      <module name="com.coursefunctions.lnu" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="src.secondpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainClassKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="com.coursefunctions.lnu" />
       <option name="VM_PARAMETERS" />
@@ -64,6 +83,19 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="MainClassKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="src.secondpr.LegrandgeKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="com.coursefunctions.lnu" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="src.secondpr.LegrandgeKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,6 +117,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.src.secondpr.MainClassKt" />
+        <item itemvalue="Kotlin.src.secondpr.LegrandgeKt" />
+        <item itemvalue="Application.Compute" />
         <item itemvalue="Kotlin.MainClassKt" />
       </list>
     </recent_temporary>
@@ -129,49 +163,24 @@
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/Legrandge.kt</url>
+          <line>35</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/Legrandge.kt</url>
+          <line>36</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt</url>
           <line>13</line>
-          <option name="timeStamp" value="41" />
+          <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
-          <line>68</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>118</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>120</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>135</line>
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>137</line>
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>136</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>138</line>
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt</url>
-          <line>140</line>
-          <option name="timeStamp" value="97" />
+          <line>80</line>
+          <option name="timeStamp" value="130" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -29,14 +29,7 @@ class BlockClusterTree {
             } else
                 return false
         }
-        fun findTransformedPoints(t:ClusterTree){
-            val l = mutableListOf<MutableList<Double>>()
-            for(j in 0 until 2){
-//                val mid = 0.5 * (getBmax(findBoundingBox(t.leaf))[j]+getBmin(findBoundingBox(t.leaf))[j])
-//                val dif = 0.5 * (getBmax(findBoundingBox(t.leaf))[j]-getBmin(findBoundingBox(t.leaf))[j])
-  //              for ()
-            }
-        }
+
         fun buildRkmatrix(t: ClusterTree, s: ClusterTree, n: Int, k: Int): Rkmatrix {
 
             val rkmatrix = Rkmatrix(k, t.leaf.size, s.leaf.size)
@@ -69,7 +62,7 @@ class BlockClusterTree {
                     spr.rkmatrix = buildRkmatrix(s, t, n, nMin)
                 return spr
             } else {
-                if (t != null && s!= null && t.leaf.size > 1) {
+                if (t != null && s!= null  &&!(t.leftTree == null || t.rightTree ==null || s.leftTree == null || s.rightTree == null) && t.leaf.size > 1) {
                     spr.rows = n
                     spr.cols = n
                     spr.blockrows = 2
@@ -84,10 +77,13 @@ class BlockClusterTree {
                     spr.cols = n
                     spr.supermatrix = null
                     spr.fullmatrix = Fullmatrix()
+                    //TODO figure this out
                     if (s!= null)
-                    spr.fullmatrix!!.cols = s.leaf.size
+                        spr.fullmatrix!!.cols = s.leaf.size
+                    else print("test ")
                     if (t != null)
-                    spr.fullmatrix!!.rows = t.leaf.size
+                        spr.fullmatrix!!.rows = t.leaf.size
+                    else print("test2 ")
                     spr.fullmatrix!!.e = Array(spr.fullmatrix!!.rows) { DoubleArray(spr.fullmatrix!!.cols) }
                     //filling Fullmatrix
                     for (i in 0 until spr.fullmatrix!!.rows) {
