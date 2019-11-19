@@ -2,10 +2,10 @@ package src.secondpr
 
 import java.lang.Math.sqrt
 
-fun gamma(y: Pair<Double, Double>, pStart: Pair<Double, Double>, pEnd: Pair<Double, Double>):Pair<Double, Double>{
-    return Pair(pStart.first*(1-y.first)+pEnd.first*y.first,pStart.second*(1-y.second)+pEnd.second*y.second)
+fun gamma(y: Double, pStart: Pair<Double, Double>, pEnd: Pair<Double, Double>):Pair<Double, Double>{
+    return Pair(pStart.first*(1-y)+pEnd.first*y,pStart.second*(1-y)+pEnd.second*y)
 }
-fun getGamma(x:Pair<Double, Double>, i: Int):Pair<Double, Double>{
+fun getGamma(x: Double, i: Int):Pair<Double, Double>{
     return gamma(x, points[i-1], points[i])
 }
 

@@ -1,6 +1,7 @@
 package src.secondpr
 
 import kotlin.math.cos
+import kotlin.math.log
 import kotlin.math.sqrt
 
 lateinit var points: Array<Pair<Double,Double>>
@@ -59,6 +60,8 @@ private fun minY(list:List<Pair<Double,Double>>):Double{
         }
     return min
 }
+
+
 fun findBoundingBox(list:List<Pair<Double,Double>>):List<Pair<Double,Double>>{
     return listOf(Pair(maxX(list),maxY(list)), Pair(maxX(list), minY(list)),
             Pair(minX(list), minY(list)), Pair(minX(list), maxY(list)))
@@ -81,8 +84,8 @@ fun getSplitOnSegmentab(list: List<Segment>, m: Int): List<Pair<Double,Double>>{
         tempList.add(it.endPoint)
     }
     val boundingBox = findBoundingBox(tempList)
-    val bmin = arrayListOf<Double>(boundingBox[2].first, boundingBox[2].second)
-    val bmax = arrayListOf<Double>(boundingBox[0].first, boundingBox[0].second)
+    val bmin = arrayListOf(boundingBox[2].first, boundingBox[2].second)
+    val bmax = arrayListOf(boundingBox[0].first, boundingBox[0].second)
     val mid1 = 0.5 * (bmax[0]+ bmin[0])
     val dif1 = 0.5 * (bmax[0]- bmin[0])
     val mid2 = 0.5 * (bmax[1]+ bmin[1])
@@ -94,7 +97,20 @@ fun getSplitOnSegmentab(list: List<Segment>, m: Int): List<Pair<Double,Double>>{
     return result
 }
 
-fun getLagrangeMultiplied(x: Pair<Double,Double>,nu: Pair<Int,Int>,l:List<Pair<Double,Double>>, m:Int): Double{
+fun getLogIntegral(y: Double, x_v: Pair<Double, Double>, j: Int): Double{
+    val g = getGamma(y, j)
+    return Math.log(norm(Pair(x_v.first-g.first, x_v.second - g.second)))
+}
+fun getLogIntegralDouble(x: Double, y: Double, i:Int, j: Int): Double{
+    val g1 = getGamma(x,i)
+    val g2 = getGamma(y, j)
+    if (norm(Pair(g1.first-g2.first, g1.second - g2.second)) == 0.0)
+        return 0.0
+    return Math.log(norm(Pair(g1.first-g2.first, g1.second - g2.second)))
+}
+
+fun getLagrangeMultiplied(y:Double, j:Int,nu: Pair<Int,Int>,l:List<Pair<Double,Double>>, m:Int): Double{
+    val x = getGamma(y, j)
     var result = 1.0
         for(i in 0 until (m+1)) {
             if (i != nu.toList()[0])
@@ -105,6 +121,11 @@ fun getLagrangeMultiplied(x: Pair<Double,Double>,nu: Pair<Int,Int>,l:List<Pair<D
         }
     return result
 }
+
+fun norm(x: Pair<Double, Double>): Double{
+    return sqrt(x.first*x.first + x.second*x.second)
+}
+
 fun calculateDistanceBetweenBoundingBoxes(firstbb: List<Pair<Double,Double>>, secondbb: List<Pair<Double,Double>>): Double{
     val distances = mutableListOf<Double>()
     for (segmentFromFirst in getListOfSegments(firstbb)){
@@ -153,7 +174,6 @@ fun isXIntersect(projectedFirst: Segment, projectedSecond: Segment): Boolean{
             (projectedSecond.startPoint.first>= projectedFirst.startPoint.first &&
                     projectedSecond.endPoint.first<= projectedFirst.endPoint.first))
 }
-//TODO handle vertical and horizontal splits
 fun splitBoundingBox(list:List<Segment>):Pair<List<Segment>,List<Segment>>{
     val tempList = mutableListOf<Pair<Double,Double>>()
     list.forEach {

@@ -13,6 +13,38 @@ class Legendre(val N: Int) {
         return c1 * (0 until N).fold(0.0) { s, i -> s + weights[i] * f(c1 * roots[i] + c2) }
     }
 
+    fun integrateLagrange( j:Int,nu: Pair<Int,Int>,l:List<Pair<Double,Double>>, m:Int):  Double{
+        val a = 0.0
+        val b = 1.0
+        val c1 = (b - a) / 2.0
+        val c2 = (b + a) / 2.0
+        return c1 * (0 until N).fold(0.0) { s, i -> s + weights[i] * getLagrangeMultiplied(c1 * roots[i] + c2, j, nu, l,m) }
+    }
+    fun integrateLogDouble( i: Int, j:Int):  Double{
+        val a = 0.0
+        val b = 1.0
+        val c1 = (b - a) / 2.0
+        val c2 = (b + a) / 2.0
+        return c1 * (0 until N).fold(0.0) { s, k -> s + weights[k] * (c1 * (0 until N).fold(0.0)
+            { t, m -> t + weights[m] * getLogIntegralDouble(c1 * roots[k] + c2,c1 * roots[m] + c2, i,j)})}
+    }
+    fun integrateF(f: (Pair<Double, Double>) -> Double, i:Int): Double{
+        val a = 0.0
+        val b = 1.0
+        val c1 = (b - a) / 2.0
+        val c2 = (b + a) / 2.0
+        return c1 * (0 until N).fold(0.0) { s, l -> s + weights[l] * f(getGamma(c1 * roots[l] + c2,i)) }
+    }
+
+    fun integrateLog(x_v: Pair<Double, Double>, j: Int) : Double{
+        val a = 0.0
+        val b = 1.0
+        val c1 = (b - a) / 2.0
+        val c2 = (b + a) / 2.0
+        return c1 * (0 until N).fold(0.0) { s, i -> s + weights[i] * getLogIntegral(c1 * roots[i] + c2, x_v, j) }
+
+    }
+
     private val roots = DoubleArray(N)
     private val weights = DoubleArray(N)
     private val c = Array(N + 1) { DoubleArray(N + 1) }    // coefficients
@@ -42,12 +74,6 @@ class Legendre(val N: Int) {
             weights[i - 1] = 2 / ((1 - x * x) * x1 * x1)
         }
 
-        print("Roots:")
-        roots.forEach { print(" %f".format(it)) }
-        println()
-        print("Weights:")
-        weights.forEach { print(" %f".format(it)) }
-        println()
     }
 }
 fun returnOne(x:Double): Double{
