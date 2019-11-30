@@ -1,5 +1,7 @@
 package src.secondpr
 
+import Egtulda01
+import multiplyMatricesV3
 import multiplyMatrixByVector
 import transposeMatrix
 import java.lang.Double.min
@@ -128,9 +130,16 @@ class BlockClusterTree {
                     //filling Fullmatrix
                     for (i in 1 until spr.fullmatrix!!.rows+1) {
                         for (j in 1 until spr.fullmatrix!!.cols+1) {
+                            var integral =0.0
+                            integral = if (i==j){
+                                Egtulda01()+Math.log(norm(Pair(points[i].first - points[i - 1].first,
+                                        points[i].second - points[i - 1].second)))
+                            } else{
+                                Legendre(6).integrateLogDouble(i,j)
+                            }
                             spr.fullmatrix!!.e[i-1][j-1] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[j].first - points[j - 1].first,
                                     points[j].second - points[j - 1].second)) * norm(Pair(points[i].first - points[i - 1].first,
-                                    points[i].second - points[i - 1].second)) * Legendre(6).integrateLogDouble(i, j)
+                                    points[i].second - points[i - 1].second)) * integral
                         }
 
                     }
@@ -148,8 +157,8 @@ class BlockClusterTree {
                 val b1 = MultHMatrixByVector(spr.supermatrix!![1][0], vct.copyOfRange(0, breakPoint2))
                 val b2 = MultHMatrixByVector(spr.supermatrix!![1][1], vct.copyOfRange(breakPoint2, vct.size))
                 val res: DoubleArray = DoubleArray(Integer.valueOf(n))
-                println("-----------------------")
-                println("\t a1.size = "+a1.size +"\t a2.size = "+a2.size +"\t b1.size = "+b1.size +"\t b2.size = "+b2.size )
+                //println("-----------------------")
+               // println("\t a1.size = "+a1.size +"\t a2.size = "+a2.size +"\t b1.size = "+b1.size +"\t b2.size = "+b2.size )
                 for (i in 0..(n / 2 - 1)) {
                     res[i] = a1[i] + a2[i]
                     res[i + Integer.valueOf(n / 2)] = b1[i] + b2[i]
@@ -167,6 +176,48 @@ class BlockClusterTree {
             }
             return DoubleArray(1)
         }
+
+        public fun getNormalMatrix(spr:Supermatrix):Array<DoubleArray>{
+            if(spr.supermatrix != null){
+                val a1 = getNormalMatrix(spr.supermatrix!![0][0])
+                val a2 = getNormalMatrix(spr.supermatrix!![0][1])
+                val b1 = getNormalMatrix(spr.supermatrix!![1][0])
+                val b2 = getNormalMatrix(spr.supermatrix!![1][1])
+                val array = Array(a1.size+b1.size){DoubleArray(a1[0].size+a2[0].size)}
+                for (i in 0 until a1.size)
+                    for (j in 0 until a1[0].size) {
+                       // println("array["+i+"]["+j+"]")
+                        array[i][j] = a1[i][j]
+                    }
+                for (i in 0 until a2.size)
+                    for (j in 0 until a2[0].size) {
+                       // println("array["+(i)+"]["+(a1[0].size +j)+"]")
+                        array[i][a1[0].size +j] = a2[i][j ]
+                    }
+                for (i in 0 until b2.size)
+                    for (j in 0 until b2[0].size) {
+                        //println("array["+(a2.size + i)+"]["+(a2[0].size +j)+"]")
+                        array[a2.size + i][a2[0].size +j] = b2[i][j]
+                    }
+                for (i in 0 until b1.size)
+                    for (j in 0 until b1[0].size) {
+                       // println("array["+(a1.size +i)+"]["+j+"]")
+                        array[a1.size +i][j] = b1[i ][j]
+                    }
+                return array
+            }
+            else {
+                if (spr.rkmatrix != null) {
+                    val temp = multiplyMatricesV3(spr.rkmatrix!!.a,transposeMatrix(spr.rkmatrix!!.b))
+                    return multiplyMatricesV3(spr.rkmatrix!!.a,transposeMatrix(spr.rkmatrix!!.b))
+                } else if (spr.fullmatrix != null) {
+                    return spr.fullmatrix!!.e
+                }
+            }
+            return Array(1){ DoubleArray(1) }
+        }
     }
+
+
 
 }

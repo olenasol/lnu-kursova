@@ -125,7 +125,29 @@ fun Egtulda(i: Int, j: Int, n: Int): Double {
 //            return sum
 //        }
 }
-
+fun Egtulda01(): Double {
+    val b = 1.0
+    val a = 0.0
+    val d = 1.0
+    val c = 0.0
+    var sum =0.0
+    if((d-b)!= 0.0){
+        sum+=-0.5*Math.pow((d-b),2.0)*Math.log(Math.abs(d-b))
+    }
+    if((d-a)!=0.0){
+        sum+=0.5*Math.pow((d-a),2.0)*Math.log(Math.abs(d-a))
+    }
+    sum+=-0.25*(2*b-2*a)*d
+    if((c-b)!=0.0){
+        sum+=0.5*Math.pow((c-b),2.0)*Math.log(Math.abs(c-b))
+    }
+    if((c-a)!=0.0){
+        sum+=-0.5*Math.pow((c-a),2.0)*Math.log(Math.abs(c-a))
+    }
+    sum+=0.25*(2*b-2*a)*c
+    sum+=-d*(b-a)+c*(b-a)
+    return sum
+}
 fun phi(i: Int, n: Int, x: Double): Double {
     return if (x >= i.toDouble() / n.toDouble() && x < (i + 1).toDouble() / n.toDouble()) {
         1.0

@@ -1,5 +1,6 @@
 package src.secondpr
 
+import Egtulda01
 import kotlin.math.cos
 import kotlin.math.log
 import kotlin.math.sqrt
@@ -7,7 +8,7 @@ import kotlin.math.sqrt
 lateinit var points: Array<Pair<Double,Double>>
 
 private fun getPoints(n:Int, func1:(x:Double)->Double,func2:(x:Double)->Double): Array<Pair<Double,Double>>{
-    val points = DoubleArray(2*n) { j -> (j*Math.PI)/n}
+    val points = DoubleArray(n) { j -> (2*j*Math.PI)/n}
     src.secondpr.points = Array(points.size){i-> Pair(0.0,0.0)}
     for (i in points.indices){
         src.secondpr.points[i] = Pair(func1(points[i]), func2(points[i]))
@@ -16,7 +17,7 @@ private fun getPoints(n:Int, func1:(x:Double)->Double,func2:(x:Double)->Double):
 }
 fun buildBoundaryElements(n:Int = 10,func1:(x:Double)->Double,func2:(x:Double)->Double):List<Segment>{
     getPoints(n,func1,func2)
-    val points = DoubleArray(2*n) { j -> (j*Math.PI)/n}
+    val points = DoubleArray(n) { j -> (2*j*Math.PI)/n}
     val list = mutableListOf<Segment>()
     for (i in 0 until (points.size-1)){
         list.add(Segment(Pair(func1(points[i]), func2(points[i])), Pair(func1(points[i+1]), func2(points[i+1]))))
@@ -104,8 +105,6 @@ fun getLogIntegral(y: Double, x_v: Pair<Double, Double>, j: Int): Double{
 fun getLogIntegralDouble(x: Double, y: Double, i:Int, j: Int): Double{
     val g1 = getGamma(x,i)
     val g2 = getGamma(y, j)
-    if (norm(Pair(g1.first-g2.first, g1.second - g2.second)) == 0.0)
-        return 0.0
     return Math.log(norm(Pair(g1.first-g2.first, g1.second - g2.second)))
 }
 

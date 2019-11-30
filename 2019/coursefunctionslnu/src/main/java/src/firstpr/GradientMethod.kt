@@ -1,4 +1,7 @@
 import java.lang.Math.sqrt
+import java.util.Arrays
+import java.util.stream.IntStream
+
 
 fun gradientMethod(matrix: Array<DoubleArray>, vector: DoubleArray, inx0: DoubleArray,eps: Double): DoubleArray {
     val n = vector.size
@@ -80,11 +83,20 @@ fun gradientMethodMatrix(matrix: Supermatrix, vector: DoubleArray, inx0: DoubleA
     }
     return x1
 }
+
+fun multiply(matrix: Array<DoubleArray>, vector: DoubleArray): DoubleArray {
+    return Arrays.stream(matrix)
+            .mapToDouble { row ->
+                IntStream.range(0, row.size)
+                        .mapToDouble({ col -> row[col] * vector[col] })
+                        .sum()
+            }.toArray()
+}
 fun gradientMethodMatrix(matrix: src.secondpr.Supermatrix, vector: DoubleArray, inx0: DoubleArray,eps: Double): DoubleArray {
     val n = vector.size
     val x1 = DoubleArray(n)
     var x0 = inx0
-    val temp = src.secondpr.BlockClusterTree.MultHMatrixByVector(matrix, x0)
+    val temp = multiply(src.secondpr.BlockClusterTree.getNormalMatrix(matrix), x0)
     var r0 = DoubleArray(n, { i -> vector[i] - temp[i] })
     var p0 = r0
     val r1 = DoubleArray(n)
@@ -97,7 +109,7 @@ fun gradientMethodMatrix(matrix: src.secondpr.Supermatrix, vector: DoubleArray, 
         rsold+=r0[i]*r0[i]
     }
     for(i in 0 until vector.size) {
-        val temp2 = src.secondpr.BlockClusterTree.MultHMatrixByVector(matrix, p0)
+        val temp2 = multiply(src.secondpr.BlockClusterTree.getNormalMatrix(matrix), p0)
         val temp3 = multiplyVectorByVector(temp2, p0)
         alphak = rsold / temp3
         for (j in 0..(n - 1)) {
@@ -108,7 +120,7 @@ fun gradientMethodMatrix(matrix: src.secondpr.Supermatrix, vector: DoubleArray, 
         for( j in 0 until r0.size){
             rsnew+=r1[j]*r1[j]
         }
-        if (i==2 || sqrt(rsnew) < eps)
+        if (sqrt(rsnew) < eps)
             break
         for (j in 0..(n - 1))
             p1[j] = r1[j] + (rsnew / rsold) * p0[j]
