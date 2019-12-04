@@ -21,7 +21,7 @@ fun calculateU(x:Pair<Double, Double>, u:DoubleArray ): Double{
 }
 
 fun main(){
-    val n = 48
+    val n = 6
     val k = 1
     val clusterTree = buildClusterTree(n,k)
     val sprm = BlockClusterTree.buildBlockClusterTree(clusterTree,clusterTree,Supermatrix(),0,0,n,k)
@@ -84,7 +84,7 @@ fun main(){
             f[i-1] = norm(Pair(points[i].first - points[i-1].first, points[i].second - points[i-1].second))* Legendre(6).integrateF(::f,i)
         println(f[i-1])
     }
-    val u = gradientMethodMatrix((sprm),f, DoubleArray(2*n),0.1)
+    val u = gradientMethodMatrix((sprm),f, DoubleArray(n),0.1)
     //val u = gradientMethod(test1,f, DoubleArray(n),0.000001)
     println("------------------")
     u.forEach { println(it) }
