@@ -7,10 +7,10 @@ data class Supermatrix(var rows:Int = 0, var cols:Int = 0,
 
 data class Rkmatrix(val m:Int, val rows:Int, val cols:Int,
                     var a:Array<DoubleArray> = Array(rows){
-                        DoubleArray(m*m)
+                        DoubleArray(m)
                     },
                     var b:Array<DoubleArray> = Array(cols){
-                        DoubleArray(m*m)
+                        DoubleArray(m)
                     })
 
 data class Fullmatrix(var rows:Int=0, var cols:Int=0,

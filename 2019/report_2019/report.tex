@@ -725,7 +725,21 @@
 	для $i,j\in I:={1,...,n}$.
 	\par Коефіцієнти відповідних матриць задаються наступним чином $$G_{ij}=a_{slp}(\varphi_j,\varphi_i)=-\frac{1}{2\pi}\int_{\Gamma}\varphi_i(x)\int_{\Gamma}\log(\|x-y\|)\varphi_j(y)dydx$$
 	$$=-\frac{1}{2\pi}\|p_i-p_{i-1}\| \|p_j-p_{j-1}\|\int_{0}^{1}\int_{0}^{1}\log(\|\gamma_i(x)-\gamma_j(y)\|)dydx$$
+	\par Цей інтеграл можна знайти за допомогою квадратури Гауса, проте він має особливість, якщо $i=j$, тому для цього випадку порахуємо інтеграл точно:
+	$$\gamma_i(x)-\gamma_i(y) = p_{i-1}(1-x)-p_ix-p_{i-1}(1-y)+p_iy=p_{i-1}(y-x)+p_i(y-x)=(p_{i-1}+p_i)(y-x)$$
+	$$\int_{0}^{1}\int_{0}^{1}\log\|\gamma_i(x)-\gamma_i(y)\|dydx=\int_{0}^{1}\int_{0}^{1}\log|(\|p_{i-1}+p_i\||x-y|)dydx =$$$$ \log\|p_{i-1}+p_i\|+\int_{0}^{1}\int_{0}^{1}\log|x-y|dydx$$
 	\par Тепер ми можемо побудувати ієрархічну матрицю так чк в попередньому розділі, замінивши логарифмічне ядро $g(x,y)=\log(\|x-y\|)$ відповідними апроксимаціями.
+	\par Базисні функціх для нашої задачі мають вигляд:
+		\newline 
+	\begin{equation*}
+	\varphi_i(x)=\begin{cases}
+	1,\quad\text{якщо $ x\in \gamma_i[0,1]$}\\
+	0,\quad\text{якщо $ x\not\in \gamma_i[0,1]$}
+	\end{cases}
+	\end{equation*}
+	\newline
+	\par Після знаходження $u_n$, розв'язок можна порахувати наступним чином:
+	$$u(x) = -\frac{1}{2\pi}\sum_{i=1}^{n}\int_{\Gamma_i}\log\|x-y\|u(y)ds(y)=-\frac{1}{2\pi}\sum_{i=1}^{n}\|p_i-p_{i-1}\|\int_{0}^{1}\log\|x-\gamma_(y)\|u(\gamma_i(y))dy\approx$$$$ -\frac{1}{2\pi}\sum_{i=1}^{n}u_i\|p_i-p_{i-1}\|\int_{0}^{1}\log\|x-\gamma_(y)\|dy$$
 	\subsection{Реалізація}
 	\hspace{0.8cm} Опрацювання повних матриць(full matrix) включає детальну оцінку сингулярних інтегралів.
 	\par Розглянемо опрацювання низькорівневих блоків. Вони відповідають допустимим парам кластерів $(t,s)$ і вимагає оцінки вироджених наближень функції ядра. Припустимо, що $diam(Q_t)\le diam(Q_s)$ виконується. Тоді апроксимація має вигляд
@@ -744,125 +758,6 @@
 	\chapter{Висновок}
 	\hspace{0.8cm} В цій роботі розглянуто основні принципи побудови та використання $\mathcal{H}$-матриць. Описано такі ключові поняття як дерево, кластерне дерево та блочне кластерне дерево, які лягли в основу означення структури ієрархічної матриці. Також розглянуто відповідні структури через які ієрархічні матриці реалізують програмно: rkmatrix, fullmatrix та supermatrix. Наведено алгоритми реалізації блочного кластерного дерева i методу спряжених градієнтів.
 	\par Застосування $\mathcal{H}$-матриць розглянуто на прикладі методу скінченних елементів (BEM). У даному прикладі застосовується метод Галеркіна та метод спряжених градієнтів. Розглянута теорія побудови $\mathcal{H}$-матриць для двовимірного випадку на прикладі задачі Діріхле для рівняння Лапласа.
-	\chapter{Додатки}
-	\begin{enumerate}
-		\item Побудова кластерного дерева
-		
-			\begin{verbatim}
-			 private fun buildRealClusterTree(begin:Int, end:Int, level:Int, 
-			       numberOfLeaf: Int,  
-			       arr:IntArray,nmin:Int):ClusterTree{
-			     val tree = ClusterTree()
-			     tree.level = level
-			     tree.numberOfLeaf = numberOfLeaf
-			     tree.leaf = (begin..end).toList().toIntArray()
-			     var m = Math.pow(2.0, level.toDouble()).toInt() - arr[level]
-			     arr[level]--
-			     if((end - begin+1) > nmin) {
-			         tree.leftTree = buildRealClusterTree(begin, (begin + end + 1) / 2 - 1,
-			                                 level + 1, m, arr,nmin)
-			         m = Math.pow(2.0, level.toDouble()).toInt() - arr[level]
-			         arr[level]--
-			         tree.rightTree = buildRealClusterTree((begin + end + 1) / 2, end, 
-			         											level + 1, m, arr,nmin)
-			     } else{
-			         tree.leftTree = null
-			         tree.rightTree = null
-			     }
-			     return tree
-			 }
-			\end{verbatim}
-		\item Побудова блочного кластерного дерева
-		\begin{verbatim}
-		fun buildBlockClusterTree(t: ClusterTree?, s: ClusterTree?, spr: Supermatrix, 
-		                                n: Int,k: Int): Supermatrix {
-		    //admissible -rkmatrix
-		    val nMin = 2*k
-		    if (isAdmissible(t, s)) {
-		        spr.supermatrix = null
-		        if(t!= null && s!= null)
-		        spr.rkmatrix = buildRkmatrix(s,t, n,nMin)
-		        return spr
-		    } else {
-		        if (t!= null && t.leaf.size >nMin)
-		        {
-		            spr.rows = n
-		            spr.cols = n
-		            spr.blockrows = 2
-		            spr.blockcols = 2
-		            spr.supermatrix = Array(2){ Array(2){Supermatrix()} }
-		            spr.supermatrix!![0][0] = buildBlockClusterTree(t.leftTree,
-		                         s?.leftTree, spr.supermatrix!![0][ 0],n,nMin)
-		            spr.supermatrix!![0][1] = buildBlockClusterTree(t.rightTree, 
-		                         s?.leftTree, spr.supermatrix!![0][1],n,nMin)
-		            spr.supermatrix!![1][0] = buildBlockClusterTree(t.leftTree, 
-		                         s?.rightTree,spr.supermatrix!![1][0],n,nMin)
-		            spr.supermatrix!![1][1] = buildBlockClusterTree(t.rightTree, 
-		                         s?.rightTree,spr.supermatrix!![1][1],n,nMin)
-		        }else{
-		            spr.rows = n;
-		            spr.cols = n;
-		            spr.supermatrix = null;
-		            spr.fullmatrix = Fullmatrix()
-		            spr.fullmatrix!!.cols = s!!.leaf.size
-		            spr.fullmatrix!!.rows = t!!.leaf.size
-		            spr.fullmatrix!!.e = Array(spr.fullmatrix!!.rows){ 
-		                            DoubleArray(spr.fullmatrix!!.cols)}
-		            //filling Fullmatrix
-		            for(i in 0 until spr.fullmatrix!!.rows){
-	                	for (j in 0 until spr.fullmatrix!!.cols)
-		                    spr.fullmatrix!!.e[i][j] = Egtulda(s.leaf[i],t.leaf[j], n)
-		                }
-	             	}
-		            return spr
-		        }
-		    }
-		\end{verbatim}
-		\item Реалізація алгоритму методу спряжених градієнтів
-		\begin{verbatim}
-		fun gradientMethodMatrix(matrix: Supermatrix, vector: DoubleArray, 
-		                   inx0: DoubleArray,eps: Double): DoubleArray {
-		    val n = vector.size
-		    val x1 = DoubleArray(n)
-		    var x0 = inx0
-		    val temp = BlockClusterTree.MultHMatrixByVector(matrix, x0)
-		    var r0 = DoubleArray(n, { i -> vector[i] - temp[i] })
-		    var p0 = r0
-		    val r1 = DoubleArray(n)
-		    val p1 = DoubleArray(n)
-		    var alphak: Double
-		    var betak: Double
-		    var k = 0
-		    var rsold =0.0
-		    for( i in 0 until r0.size){
-		       rsold+=r0[i]*r0[i]
-		    }
-		    for(i in 0 until vector.size) {
-		         val temp2 = BlockClusterTree.MultHMatrixByVector(matrix, p0)
-		         val temp3 = multiplyVectorByVector(temp2, p0)
-		         alphak = rsold / temp3
-		         for (j in 0..(n - 1)) {
-		             x1[j] = x0[j] + alphak * p0[j]
-		             r1[j] = r0[j] - alphak * temp2[j]
-		         }
-		         var rsnew =0.0
-		         for( j in 0 until r0.size){
-		             rsnew+=r1[j]*r1[j]
-		         }
-		         if (sqrt(rsnew) < eps)
-		              break
-		         for (j in 0..(n - 1))
-        		     p1[j] = r1[j] + (rsnew / rsold) * p0[j]
-	     	     p0 = p1
-		         r0 = r1
-		         x0 = x1
-		         rsold = rsnew
-		         k++
-		    }
-		    return x1
-		}
-		\end{verbatim}
-	\end{enumerate}
 	\newpage
 	\begin{thebibliography}{00}
 	\normalsize{

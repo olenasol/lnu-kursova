@@ -95,14 +95,14 @@ class BlockClusterTree {
             return rkmatrix
         }
 
-        fun buildBlockClusterTree(t: ClusterTree?, s: ClusterTree?, spr: Supermatrix, n: Int, k: Int): Supermatrix {
+        fun buildBlockClusterTree(t: ClusterTree?, s: ClusterTree?, spr: Supermatrix, hor:Int, ver: Int, n: Int, k: Int): Supermatrix {
             //admissible -rkmatrix
             val nMin = 2 * k
             if (isAdmissible(t, s)) {
                 spr.supermatrix = null
                 if (t != null && s != null) {
-                    spr.blockrows = t.leaf.size
-                    spr.blockcols = s.leaf.size
+                    spr.blockrows = 2
+                    spr.blockcols = 2
                     spr.rkmatrix = buildRkmatrix(s, t, n, s.split.size - 1)
                 }
                 return spr
@@ -110,36 +110,57 @@ class BlockClusterTree {
                 if (t != null && s!= null  &&!(t.leftTree == null || t.rightTree ==null || s.leftTree == null || s.rightTree == null) && t.leaf.size > 1) {
                     spr.rows = n
                     spr.cols = n
-                    spr.blockrows = t.leaf.size
-                    spr.blockcols =  s.leaf.size
+                    spr.blockrows =2
+                    spr.blockcols =  2
                     spr.supermatrix = Array(2) { Array(2) { Supermatrix() } }
-                    spr.supermatrix!![0][0] = buildBlockClusterTree(t.leftTree, s.leftTree, spr.supermatrix!![0][0], n, nMin)
-                    spr.supermatrix!![0][1] = buildBlockClusterTree(t.rightTree, s.leftTree, spr.supermatrix!![0][1], n, nMin)
-                    spr.supermatrix!![1][0] = buildBlockClusterTree(t.leftTree, s.rightTree, spr.supermatrix!![1][0], n, nMin)
-                    spr.supermatrix!![1][1] = buildBlockClusterTree(t.rightTree, s.rightTree, spr.supermatrix!![1][1], n, nMin)
+                    spr.supermatrix!![0][0] = buildBlockClusterTree(t.leftTree, s.leftTree, spr.supermatrix!![0][0],hor,ver, n, nMin)
+                    spr.supermatrix!![0][1] = buildBlockClusterTree(t.rightTree, s.leftTree, spr.supermatrix!![0][1],hor+s.rightTree!!.leaf.size,ver, n, nMin)
+                    spr.supermatrix!![1][0] = buildBlockClusterTree(t.leftTree, s.rightTree, spr.supermatrix!![1][0],hor, ver+t.rightTree!!.leaf.size, n, nMin)
+                    spr.supermatrix!![1][1] = buildBlockClusterTree(t.rightTree, s.rightTree, spr.supermatrix!![1][1], hor+s.leftTree!!.leaf.size, ver+t.leftTree!!.leaf.size,n, nMin)
                 } else {
                     spr.rows = n
                     spr.cols = n
-                    spr.blockrows = t!!.leaf.size
-                    spr.blockcols =  s!!.leaf.size
+                    spr.blockrows = 2
+                    spr.blockcols =  2
                     spr.supermatrix = null
                     spr.fullmatrix = Fullmatrix()
-                    spr.fullmatrix!!.cols = s.leaf.size
-                    spr.fullmatrix!!.rows = t.leaf.size
+                    spr.fullmatrix!!.cols = s!!.leaf.size
+                    spr.fullmatrix!!.rows = t!!.leaf.size
                     spr.fullmatrix!!.e = Array(spr.fullmatrix!!.rows) { DoubleArray(spr.fullmatrix!!.cols) }
                     //filling Fullmatrix
-                    for (i in 1 until spr.fullmatrix!!.rows+1) {
-                        for (j in 1 until spr.fullmatrix!!.cols+1) {
+                    for (l in 1 until spr.fullmatrix!!.rows+1) {
+                        for (m in 1 until spr.fullmatrix!!.cols+1) {
+                            var i = ver+l
+                            var j = hor+m
                             var integral =0.0
-                            integral = if (i==j){
-                                Egtulda01()+Math.log(norm(Pair(points[i].first - points[i - 1].first,
-                                        points[i].second - points[i - 1].second)))
-                            } else{
-                                Legendre(6).integrateLogDouble(i,j)
-                            }
-                            spr.fullmatrix!!.e[i-1][j-1] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[j].first - points[j - 1].first,
-                                    points[j].second - points[j - 1].second)) * norm(Pair(points[i].first - points[i - 1].first,
-                                    points[i].second - points[i - 1].second)) * integral
+            integral = if (i==j){
+                if (i == points.size){
+                    Egtulda01() + Math.log(norm(Pair(points[0].first - points[i - 1].first,
+                            points[0].second - points[i - 1].second)))
+                } else {
+                    Egtulda01() + Math.log(norm(Pair(points[i].first - points[i - 1].first,
+                            points[i].second - points[i - 1].second)))
+                }
+            } else{
+                Legendre(6).integrateLogDouble(i,j)
+            }
+            if (i == points.size && j == points.size){
+                spr.fullmatrix!!.e[l-1][m-1] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[0].first - points[j - 1].first,
+                        points[0].second - points[j - 1].second)) * norm(Pair(points[0].first - points[i - 1].first,
+                        points[0].second - points[i - 1].second)) * integral
+            } else if (i == points.size){
+                spr.fullmatrix!!.e[l-1][m-1] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[j].first - points[j - 1].first,
+                        points[j].second - points[j - 1].second)) * norm(Pair(points[0].first - points[i - 1].first,
+                        points[0].second - points[i - 1].second)) * integral
+            } else if (j == points.size){
+                spr.fullmatrix!!.e[l-1][m-1] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[0].first - points[j - 1].first,
+                        points[0].second - points[j - 1].second)) * norm(Pair(points[i].first - points[i - 1].first,
+                        points[i].second - points[i - 1].second)) * integral
+            } else
+                spr.fullmatrix!!.e[l-1][m-1] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[j].first - points[j - 1].first,
+                    points[j].second - points[j - 1].second)) * norm(Pair(points[i].first - points[i - 1].first,
+                    points[i].second - points[i - 1].second)) * integral
+
                         }
 
                     }
@@ -177,32 +198,43 @@ class BlockClusterTree {
             return DoubleArray(1)
         }
 
+        fun transposeMatrix(matrix:Array<DoubleArray>): Array<DoubleArray>{
+            val transpose = Array(matrix[0].size){DoubleArray(matrix.size)}
+            for (i in 0..matrix.size - 1) {
+                for (j in 0..matrix[0].size - 1) {
+                    transpose[j][i] = matrix[i][j]
+                }
+            }
+            return transpose
+        }
+
         public fun getNormalMatrix(spr:Supermatrix):Array<DoubleArray>{
             if(spr.supermatrix != null){
                 val a1 = getNormalMatrix(spr.supermatrix!![0][0])
                 val a2 = getNormalMatrix(spr.supermatrix!![0][1])
                 val b1 = getNormalMatrix(spr.supermatrix!![1][0])
-                val b2 = getNormalMatrix(spr.supermatrix!![1][1])
-                val array = Array(a1.size+b1.size){DoubleArray(a1[0].size+a2[0].size)}
+                var b2 = getNormalMatrix(spr.supermatrix!![1][1])
+                println("a1.size= ${a1.size}x${a1[0].size}, a2.size= ${a2.size}x${a2[0].size}, b1.size= ${b1.size}x${b1[0].size}, b2.size= ${b2.size}x${b2[0].size}"  )
+                val array = Array(a1.size+a2.size){DoubleArray(a1[0].size+b1[0].size)}
                 for (i in 0 until a1.size)
                     for (j in 0 until a1[0].size) {
                        // println("array["+i+"]["+j+"]")
                         array[i][j] = a1[i][j]
                     }
-                for (i in 0 until a2.size)
-                    for (j in 0 until a2[0].size) {
+                for (i in 0 until b1.size)
+                    for (j in 0 until b1[0].size) {
                        // println("array["+(i)+"]["+(a1[0].size +j)+"]")
-                        array[i][a1[0].size +j] = a2[i][j ]
+                        array[i][a1[0].size +j] = b1[i][j ]
                     }
                 for (i in 0 until b2.size)
                     for (j in 0 until b2[0].size) {
                         //println("array["+(a2.size + i)+"]["+(a2[0].size +j)+"]")
-                        array[a2.size + i][a2[0].size +j] = b2[i][j]
+                        array[b1.size + i][a2[0].size +j] = b2[i][j]
                     }
-                for (i in 0 until b1.size)
-                    for (j in 0 until b1[0].size) {
+                for (i in 0 until a2.size)
+                    for (j in 0 until a2[0].size) {
                        // println("array["+(a1.size +i)+"]["+j+"]")
-                        array[a1.size +i][j] = b1[i ][j]
+                        array[a1.size +i][j] = a2[i ][j]
                     }
                 return array
             }
