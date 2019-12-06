@@ -2,7 +2,7 @@ package src.secondpr
 
 class ClusterTree{
     var level:Int = 0
-    lateinit var leaf: List<Segment>
+    lateinit var leaf: List<Int>
     lateinit var split: List<Pair<Double,Double>>
     var leftTree: ClusterTree? = null
     var rightTree: ClusterTree? = null
@@ -13,7 +13,7 @@ class ClusterTree{
             return buildRealClusterTree(boundaryElements,0,nmin, k)
         }
 
-        private fun buildRealClusterTree(list: List<Segment>, level:Int, nmin:Int, k: Int):ClusterTree{
+        private fun buildRealClusterTree(list: List<Int>, level:Int, nmin:Int, k: Int):ClusterTree{
             val tree = ClusterTree()
             tree.level = level
             tree.leaf = list

@@ -6,6 +6,7 @@ import kotlin.math.log
 import kotlin.math.sqrt
 
 lateinit var points: Array<Pair<Double,Double>>
+lateinit var segments: List<Segment>
 
 private fun getPoints(n:Int, func1:(x:Double)->Double,func2:(x:Double)->Double): Array<Pair<Double,Double>>{
     val points = DoubleArray(n) { j -> (2*j*Math.PI)/n}
@@ -15,15 +16,19 @@ private fun getPoints(n:Int, func1:(x:Double)->Double,func2:(x:Double)->Double):
     }
     return src.secondpr.points
 }
-fun buildBoundaryElements(n:Int = 10,func1:(x:Double)->Double,func2:(x:Double)->Double):List<Segment>{
+fun buildBoundaryElements(n:Int = 10,func1:(x:Double)->Double,func2:(x:Double)->Double):List<Int>{
     getPoints(n,func1,func2)
     val points = DoubleArray(n) { j -> (2*j*Math.PI)/n}
     val list = mutableListOf<Segment>()
+    val indexes = mutableListOf<Int>()
     for (i in 0 until (points.size-1)){
         list.add(Segment(Pair(func1(points[i]), func2(points[i])), Pair(func1(points[i+1]), func2(points[i+1]))))
+        indexes.add(i)
     }
+    indexes.add(n-1)
     list.add(Segment(Pair(func1(points[points.size-1]), func2(points[points.size-1])), Pair(func1(points[0]), func2(points[0]))))
-    return list
+    segments = list
+    return indexes.toList()
 }
 private fun maxX(list:List<Pair<Double,Double>>):Double{
     var max = list[0].first
@@ -77,10 +82,10 @@ fun getSplitOnSegment01(m: Int) : Array<Double>{
         v -> cos(((2*v+1).toDouble()/(2*m+2).toDouble())*Math.PI)
     }
 }
-fun getSplitOnSegmentab(list: List<Segment>, m: Int): List<Pair<Double,Double>>{
+fun getSplitOnSegmentab(list: List<Int>, m: Int): List<Pair<Double,Double>>{
     val array01 = getSplitOnSegment01(m)
     val tempList = mutableListOf<Pair<Double,Double>>()
-    list.forEach {
+    segments.slice(list).forEach {
         tempList.add(it.startPoint)
         tempList.add(it.endPoint)
     }
@@ -173,9 +178,10 @@ fun isXIntersect(projectedFirst: Segment, projectedSecond: Segment): Boolean{
             (projectedSecond.startPoint.first>= projectedFirst.startPoint.first &&
                     projectedSecond.endPoint.first<= projectedFirst.endPoint.first))
 }
-fun splitBoundingBox(list:List<Segment>):Pair<List<Segment>,List<Segment>>{
+fun splitBoundingBox(list:List<Int>):Pair<List<Int>,List<Int>>{
     val tempList = mutableListOf<Pair<Double,Double>>()
-    list.forEach {
+    val convertedList = segments.slice(list)
+    convertedList.forEach {
         tempList.add(it.startPoint)
         tempList.add(it.endPoint)
     }
@@ -183,8 +189,8 @@ fun splitBoundingBox(list:List<Segment>):Pair<List<Segment>,List<Segment>>{
     val distanceHor = boundingBox[0].first - boundingBox[2].first
     val distanceVer = boundingBox[0].second - boundingBox[2].second
     val isVertical = distanceHor > distanceVer
-    val firstList = mutableListOf<Segment>()
-    val secondList = mutableListOf<Segment>()
+    val firstList = mutableListOf<Int>()
+    val secondList = mutableListOf<Int>()
     val halfRec = if (isVertical){
         mutableListOf(Pair((boundingBox[3].first+boundingBox[0].first)/2,boundingBox[0].second),
                 Pair((boundingBox[2].first+boundingBox[1].first)/2,boundingBox[1].second),
@@ -194,11 +200,12 @@ fun splitBoundingBox(list:List<Segment>):Pair<List<Segment>,List<Segment>>{
                 Pair(boundingBox[0].first,(boundingBox[0].second+boundingBox[1].second)/2),
                 Pair(boundingBox[3].first,(boundingBox[3].second+boundingBox[2].second)/2),
                 boundingBox[3])
-    list.forEach {
-        if (isPointInRectangle((Pair((it.startPoint.first+it.endPoint.first)/2.0,(it.startPoint.second+it.endPoint.second)/2.0)),halfRec) )
-            firstList.add(it)
+    list.indices.forEach {i ->
+        if (isPointInRectangle((Pair((convertedList[i].startPoint.first+convertedList[i].endPoint.first)/2.0,
+                        (convertedList[i].startPoint.second+convertedList[i].endPoint.second)/2.0)),halfRec) )
+            firstList.add(list[i])
         else
-            secondList.add(it)
+            secondList.add(list[i])
     }
     return Pair(firstList.toList(),secondList.toList())
 }

@@ -5,7 +5,7 @@ import gradientMethodMatrix
 import src.secondpr.ClusterTree.Companion.buildClusterTree
 
 fun f(x: Pair<Double, Double>): Double{
-    return 1.0
+    return 167.0
 }
 fun calculateU(x:Pair<Double, Double>, u:DoubleArray ): Double{
     var sum = 0.0
@@ -22,11 +22,11 @@ fun calculateU(x:Pair<Double, Double>, u:DoubleArray ): Double{
 }
 
 fun main(){
-    val n = 64
+    val n = 16
     val m = 2
     val nmin = (m+1)*(m+1)
-    val clusterTree = buildClusterTree(n,m,nmin)
-    val sprm = BlockClusterTree.buildBlockClusterTree(clusterTree,clusterTree,Supermatrix(),0,0,n,nmin.toLong())
+    val clusterTree = buildClusterTree(n, m, nmin)
+    val sprm = BlockClusterTree.buildBlockClusterTree(clusterTree,clusterTree,Supermatrix(),n)
     val testMatrix = BlockClusterTree.getNormalMatrix(sprm)
     var test1 =  Array(n){
         DoubleArray(n)
@@ -99,11 +99,12 @@ fun main(){
     //val u = gradientMethod(test1,f, DoubleArray(n),0.000001)
     println("------------------")
     u.forEach { println(it) }
-    val boundaryElements = buildBoundaryElements(n=n,func1 = {t:Double-> Math.cos(t) }, func2 = { t:Double-> Math.sin(t) })
-    val list = mutableListOf<Pair<Double, Double>>()
-    boundaryElements.forEach { list.add(Pair((it.startPoint.first+it.endPoint.first)/2.0,(it.startPoint.second+it.endPoint.second)/2.0)) }
     println("------------------")
     println(calculateU(Pair(0.0,0.25), u))
+}
+
+fun getTestPoints(){
+
 }
 
 fun testMatrixMult(){
