@@ -8,15 +8,11 @@ class ClusterTree{
     var rightTree: ClusterTree? = null
 
     companion object {
-        fun buildClusterTree(n:Int,k:Int):ClusterTree{
-            val nmin = 2*k
+        fun buildClusterTree(n:Int,k:Int, nmin: Int):ClusterTree{
             val boundaryElements = buildBoundaryElements(n=n,func1 = {t:Double-> Math.cos(t) }, func2 = { t:Double-> Math.sin(t) })
             return buildRealClusterTree(boundaryElements,0,nmin, k)
         }
 
-
-        // arr is used to calculate bottom indexes(numberOfLeaf) of tree child,
-        // original - for n=8 [1,2,4,8] - number of children on each level
         private fun buildRealClusterTree(list: List<Segment>, level:Int, nmin:Int, k: Int):ClusterTree{
             val tree = ClusterTree()
             tree.level = level

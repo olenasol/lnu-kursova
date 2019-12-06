@@ -3,7 +3,6 @@ package src.secondpr
 import Egtulda01
 import multiplyMatricesV3
 import multiplyMatrixByVector
-import transposeMatrix
 import java.lang.Double.min
 
 
@@ -31,8 +30,7 @@ class BlockClusterTree {
                 return false
         }
 
-        fun buildRkmatrix(t: ClusterTree, s: ClusterTree, n: Int, m: Int): Rkmatrix {
-
+        fun buildRkmatrix(t: ClusterTree, s: ClusterTree, n: Int, m: Int, ver:Int, hor:Int): Rkmatrix {
             val rkmatrix = Rkmatrix(m, t.leaf.size, s.leaf.size)
 //            //filling Rkmatrix
             val sList = mutableListOf<Pair<Double,Double>>()
@@ -47,44 +45,66 @@ class BlockClusterTree {
             }
             var v = 0
             if (calculateDiamOfBoundingBox(findBoundingBox(tList))<= calculateDiamOfBoundingBox(findBoundingBox(sList))){
-                for (i in 1 until t.leaf.size+1) {
+                for (x in 1 until t.leaf.size+1) {
+                    val i = ver+x
                     v = 0
                     for (v1 in 0 until rkmatrix.m) {
                         for (v2 in 0 until rkmatrix.m) {
-                            rkmatrix.a[i-1][v] = norm(Pair(points[i].first - points[i-1].first,
+                            if (i== points.size){
+                                rkmatrix.a[x-1][v] = norm(Pair(points[0].first - points[i-1].first,
+                                        points[0].second - points[i-1].second)) * Legendre(6).integrateLagrange(i, Pair(v1,v2),t.split, m)
+
+                            } else
+                                println("a.size=${rkmatrix.a.size}x${rkmatrix.a[0].size}, x-1=${x-1}, v=$v")
+                                rkmatrix.a[x-1][v] = norm(Pair(points[i].first - points[i-1].first,
                                     points[i].second - points[i-1].second)) * Legendre(6).integrateLagrange(i, Pair(v1,v2),t.split, m)
                             v++
                         }
                     }
                 }
-                for (j in 1 until s.leaf.size+1) {
+                for (y in 1 until s.leaf.size+1) {
+                    val j = hor+y
                     v = 0
                     for (v1 in 0 until rkmatrix.m) {
                         for (v2 in 0 until rkmatrix.m) {
                             val x_v = Pair(t.split[v1].first,t.split[v2].second)
-                            rkmatrix.b[j-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[j].first - points[j-1].first,
+                            if (j == points.size){
+                                rkmatrix.b[y-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[0].first - points[j-1].first,
+                                        points[0].second - points[j-1].second)) * Legendre(6).integrateLog(x_v,j)
+                            }else
+                               rkmatrix.b[y-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[j].first - points[j-1].first,
                                     points[j].second - points[j-1].second)) * Legendre(6).integrateLog(x_v,j)
                             v++
                         }
                     }
                 }
             } else {
-                for (i in 1 until s.leaf.size+1) {
+                for (x in 1 until s.leaf.size+1) {
+                    val i = x+hor
                     v=0
                     for (v1 in 0 until rkmatrix.m) {
                         for (v2 in 0 until rkmatrix.m) {
-                            rkmatrix.b[i-1][v] = norm(Pair(points[i].first - points[i-1].first,
+                            if (i == points.size){
+                                rkmatrix.b[x-1][v] = norm(Pair(points[0].first - points[i-1].first,
+                                        points[0].second - points[i-1].second)) * Legendre(6).integrateLagrange(i, Pair(v1,v2),s.split, m)
+                            } else
+                                 rkmatrix.b[x-1][v] = norm(Pair(points[i].first - points[i-1].first,
                                     points[i].second - points[i-1].second)) * Legendre(6).integrateLagrange(i, Pair(v1,v2),s.split, m)
                             v++
                         }
                     }
                 }
-                for (j in 1 until t.leaf.size+1) {
+                for (y in 1 until t.leaf.size+1) {
+                    val j = y+ver
                     v = 0
                     for (v1 in 0 until rkmatrix.m) {
                         for (v2 in 0 until rkmatrix.m) {
                             val x_v = Pair(s.split[v1].first,s.split[v2].second)
-                            rkmatrix.a[j-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[j].first - points[j-1].first,
+                            if (j== points.size ){
+                                rkmatrix.a[y-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[0].first - points[j-1].first,
+                                        points[0].second - points[j-1].second)) * Legendre(6).integrateLog(x_v,j)
+                            }else
+                                rkmatrix.a[y-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[j].first - points[j-1].first,
                                     points[j].second - points[j-1].second)) * Legendre(6).integrateLog(x_v,j)
 
                         }
@@ -95,19 +115,19 @@ class BlockClusterTree {
             return rkmatrix
         }
 
-        fun buildBlockClusterTree(t: ClusterTree?, s: ClusterTree?, spr: Supermatrix, hor:Int, ver: Int, n: Int, k: Int): Supermatrix {
+        fun buildBlockClusterTree(t: ClusterTree?, s: ClusterTree?, spr: Supermatrix, hor:Int, ver: Int, n: Int, k: Long): Supermatrix {
             //admissible -rkmatrix
-            val nMin = 2 * k
+            val nMin = Math.round(Math.sqrt(n.toDouble())-1)
             if (isAdmissible(t, s)) {
                 spr.supermatrix = null
                 if (t != null && s != null) {
                     spr.blockrows = ver
                     spr.blockcols =  hor
-                    spr.rkmatrix = buildRkmatrix(s, t, n, s.split.size - 1)
+                    spr.rkmatrix = buildRkmatrix(s, t, n, t.split.size - 1, ver, hor)
                 }
                 return spr
             } else {
-                if (t != null && s!= null  &&!(t.leftTree == null || t.rightTree ==null || s.leftTree == null || s.rightTree == null) && t.leaf.size > 1) {
+                if (t != null && s!= null  &&!(t.leftTree == null || t.rightTree ==null || s.leftTree == null || s.rightTree == null) && t.leaf.size > nMin) {
                     spr.rows = n
                     spr.cols = n
                     spr.blockrows = ver
@@ -168,30 +188,38 @@ class BlockClusterTree {
                 return spr
             }
         }
-        fun MultHMatrixByVector(spr: src.secondpr.Supermatrix, vct: DoubleArray): DoubleArray {
+        fun MultHMatrixByVector(spr: src.secondpr.Supermatrix, vct: DoubleArray, hor: Int): DoubleArray {
             if (spr.supermatrix != null) {
-                val n = vct.size
-                val breakPoint = spr.supermatrix!![0][1].blockcols
-                val breakPoint2 = spr.supermatrix!![1][1].blockcols
-                val a1 = MultHMatrixByVector(spr.supermatrix!![0][0], vct.copyOfRange(0, breakPoint))
-                val a2 = MultHMatrixByVector(spr.supermatrix!![0][1], vct.copyOfRange(breakPoint, vct.size))
-                val b1 = MultHMatrixByVector(spr.supermatrix!![1][0], vct.copyOfRange(0, breakPoint2))
-                val b2 = MultHMatrixByVector(spr.supermatrix!![1][1], vct.copyOfRange(breakPoint2, vct.size))
-                val res: DoubleArray = DoubleArray(Integer.valueOf(n))
-                for (i in 0..(a1.size - 1)) {
-                    res[i] = a1[i] + a2[i]
-                }
-                for (j in a1.size..(n-1)){
-                    res[j] = b1[j-a1.size] + b2[j-a1.size]
+                val a1 = MultHMatrixByVector(spr.supermatrix!![0][0], vct, spr.supermatrix!![0][0].blockcols)
+                val a2 = MultHMatrixByVector(spr.supermatrix!![0][1], vct, spr.supermatrix!![0][1].blockcols)
+                val b1 = MultHMatrixByVector(spr.supermatrix!![1][0], vct, spr.supermatrix!![1][0].blockcols)
+                val b2 = MultHMatrixByVector(spr.supermatrix!![1][1], vct, spr.supermatrix!![1][1].blockcols)
+                println("a1.size= ${a1.size}, a2.size= ${a2.size}, b1.size= ${b1.size}, b2.size= ${b2.size}, vct.size= ${vct.size}"  )
+                val vtmp1 = a1 + b1
+                val vtmp2 = a2 + b2
+                val res: DoubleArray = DoubleArray(Integer.valueOf(a1.size+b1.size))
+                for (i in 0..(res.size - 1)) {
+                    res[i] = vtmp1[i] + vtmp2[i]
                 }
                 return res
             } else {
+
                 if (spr.rkmatrix != null) {
-                    val first = multiplyMatrixByVector(transposeMatrix(spr.rkmatrix!!.b), vct)
+                    var arr : DoubleArray? = null
+                    if (hor == 0){
+                        arr = vct.copyOfRange(0, transposeMatrix(spr.rkmatrix!!.b)[0].size)
+                    } else
+                        arr = vct.copyOfRange(hor, transposeMatrix(spr.rkmatrix!!.b)[0].size)
+                    val first = multiplyMatrixByVector(transposeMatrix(spr.rkmatrix!!.b), arr)
                     val second = multiplyMatrixByVector(spr.rkmatrix!!.a, first)
                     return second
                 } else if (spr.fullmatrix != null) {
-                    val res= multiplyMatrixByVector(spr.fullmatrix!!.e, vct)
+                    var arr : DoubleArray? = null
+                    if (hor == 0){
+                        arr = vct.copyOfRange(0, spr.fullmatrix!!.e[0].size)
+                    } else
+                        arr = vct.copyOfRange(hor, spr.fullmatrix!!.e[0].size)
+                    val res= multiplyMatrixByVector(spr.fullmatrix!!.e, arr)
                     return res
                 }
             }
@@ -235,7 +263,6 @@ class BlockClusterTree {
             }
             else {
                 if (spr.rkmatrix != null) {
-                    val temp = multiplyMatricesV3(spr.rkmatrix!!.a,transposeMatrix(spr.rkmatrix!!.b))
                     return transposeMatrix(multiplyMatricesV3(spr.rkmatrix!!.a,transposeMatrix(spr.rkmatrix!!.b)))
                 } else if (spr.fullmatrix != null) {
                     return spr.fullmatrix!!.e

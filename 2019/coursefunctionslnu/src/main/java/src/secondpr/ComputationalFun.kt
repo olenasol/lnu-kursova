@@ -74,7 +74,7 @@ fun calculateDiamOfBoundingBox(boundingBox: List<Pair<Double,Double>>): Double {
 }
 fun getSplitOnSegment01(m: Int) : Array<Double>{
     return  Array<Double>(m+1){
-        i -> cos(((2*i+1).toDouble()/(2*m+2).toDouble())*Math.PI)
+        v -> cos(((2*v+1).toDouble()/(2*m+2).toDouble())*Math.PI)
     }
 }
 fun getSplitOnSegmentab(list: List<Segment>, m: Int): List<Pair<Double,Double>>{

@@ -5,9 +5,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GradientMethodKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GradientMethodKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ComputationalFunKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ComputationalFunKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$boundaryElements$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$boundaryElements$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$boundaryElements$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$boundaryElements$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -158,107 +169,118 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
+        <line-breakpoint type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/ClusterTree.kt</url>
           <line>32</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
+        <line-breakpoint type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/ClusterTree.kt</url>
           <line>31</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
+        <line-breakpoint type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
           <line>95</line>
           <option name="timeStamp" value="229" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
+        <line-breakpoint type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
           <line>96</line>
           <option name="timeStamp" value="230" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
+        <line-breakpoint type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
           <line>98</line>
           <option name="timeStamp" value="231" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
+        <line-breakpoint type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
           <line>100</line>
           <option name="timeStamp" value="232" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>116</line>
-          <option name="timeStamp" value="234" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>200</line>
+          <option name="timeStamp" value="303" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>120</line>
-          <option name="timeStamp" value="235" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>192</line>
+          <option name="timeStamp" value="304" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>122</line>
-          <option name="timeStamp" value="236" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>194</line>
+          <option name="timeStamp" value="305" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>123</line>
-          <option name="timeStamp" value="237" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>193</line>
+          <option name="timeStamp" value="306" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>124</line>
-          <option name="timeStamp" value="238" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>195</line>
+          <option name="timeStamp" value="307" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>125</line>
-          <option name="timeStamp" value="239" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>201</line>
+          <option name="timeStamp" value="308" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>126</line>
-          <option name="timeStamp" value="240" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>207</line>
+          <option name="timeStamp" value="310" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>127</line>
-          <option name="timeStamp" value="241" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>221</line>
+          <option name="timeStamp" value="313" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>130</line>
-          <option name="timeStamp" value="242" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>222</line>
+          <option name="timeStamp" value="314" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>112</line>
-          <option name="timeStamp" value="243" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>214</line>
+          <option name="timeStamp" value="315" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>111</line>
-          <option name="timeStamp" value="244" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>196</line>
+          <option name="timeStamp" value="316" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>113</line>
-          <option name="timeStamp" value="245" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>213</line>
+          <option name="timeStamp" value="321" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/firstpr/GradientMethod.kt</url>
-          <line>114</line>
-          <option name="timeStamp" value="246" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>212</line>
+          <option name="timeStamp" value="322" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt</url>
-          <line>70</line>
-          <option name="timeStamp" value="302" />
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
+          <line>216</line>
+          <option name="timeStamp" value="323" />
         </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="330" />
+        </breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog>
+          <selected-grouping-rules>
+            <grouping-rule id="XBreakpointGroupingByPackageRule" />
+          </selected-grouping-rules>
+        </breakpoints-dialog>
+      </breakpoints-dialog>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JetRunConfigurationType">
