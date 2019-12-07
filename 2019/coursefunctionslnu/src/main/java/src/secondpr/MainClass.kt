@@ -5,7 +5,7 @@ import gradientMethodMatrix
 import src.secondpr.ClusterTree.Companion.buildClusterTree
 
 fun f(x: Pair<Double, Double>): Double{
-    return 167.0
+    return 2.0
 }
 fun calculateU(x:Pair<Double, Double>, u:DoubleArray ): Double{
     var sum = 0.0
@@ -22,11 +22,11 @@ fun calculateU(x:Pair<Double, Double>, u:DoubleArray ): Double{
 }
 
 fun main(){
-    val n = 16
-    val m = 2
+    val n = 2048
+    val m = 1024
     val nmin = (m+1)*(m+1)
     val clusterTree = buildClusterTree(n, m, nmin)
-    val sprm = BlockClusterTree.buildBlockClusterTree(clusterTree,clusterTree,Supermatrix(),n)
+    val sprm = BlockClusterTree.buildBlockClusterTree(clusterTree,clusterTree,Supermatrix(sLeaf = clusterTree.leaf, tLeaf = clusterTree.leaf),n, nmin)
     val testMatrix = BlockClusterTree.getNormalMatrix(sprm)
     var test1 =  Array(n){
         DoubleArray(n)
@@ -100,29 +100,31 @@ fun main(){
     println("------------------")
     u.forEach { println(it) }
     println("------------------")
-    println(calculateU(Pair(0.0,0.25), u))
+    getTestPoints().forEach{
+        println(calculateU(it, u))
+    }
 }
 
-fun getTestPoints(){
-
+fun getTestPoints(): List<Pair<Double, Double>>{
+    return listOf(Pair(-0.5, 0.5), Pair(-0.25,0.25), Pair(0.0, 0.0), Pair(0.25, -0.25), Pair(0.5,-0.5))
 }
 
-fun testMatrixMult(){
-    val sp =Supermatrix()
-    val sp1 = Supermatrix()
-    sp1.blockcols = 0
-    sp1.fullmatrix = Fullmatrix(e= arrayOf(doubleArrayOf(1.0)))
-    val sp2 = Supermatrix()
-    sp2.blockcols = 1
-    sp2.fullmatrix = Fullmatrix(e= arrayOf(doubleArrayOf(1.0,2.0,3.0), doubleArrayOf(4.0,5.0,6.0), doubleArrayOf(4.0,3.0,2.0)))
-    val sp3 = Supermatrix()
-    sp2.blockcols = 0
-    sp3.fullmatrix = Fullmatrix(e= arrayOf(doubleArrayOf(1.0), doubleArrayOf(4.0), doubleArrayOf(4.0)))
-    val sp4 = Supermatrix()
-    sp4.blockcols = 1
-    sp4.fullmatrix = Fullmatrix(e= arrayOf(doubleArrayOf(1.0,2.0,3.0)))
-    sp.supermatrix = arrayOf(arrayOf(sp1,sp2), arrayOf(sp3,sp4) )
-
-    var doubleArray = doubleArrayOf(1.0,2.0,3.0,4.0)
-    BlockClusterTree.MultHMatrixByVector(sp,doubleArray,0)
-}
+//fun testMatrixMult(){
+//    val sp =Supermatrix()
+//    val sp1 = Supermatrix()
+//    sp1.blockcols = 0
+//    sp1.fullmatrix = Fullmatrix(e= arrayOf(doubleArrayOf(1.0)))
+//    val sp2 = Supermatrix()
+//    sp2.blockcols = 1
+//    sp2.fullmatrix = Fullmatrix(e= arrayOf(doubleArrayOf(1.0,2.0,3.0), doubleArrayOf(4.0,5.0,6.0), doubleArrayOf(4.0,3.0,2.0)))
+//    val sp3 = Supermatrix()
+//    sp2.blockcols = 0
+//    sp3.fullmatrix = Fullmatrix(e= arrayOf(doubleArrayOf(1.0), doubleArrayOf(4.0), doubleArrayOf(4.0)))
+//    val sp4 = Supermatrix()
+//    sp4.blockcols = 1
+//    sp4.fullmatrix = Fullmatrix(e= arrayOf(doubleArrayOf(1.0,2.0,3.0)))
+//    sp.supermatrix = arrayOf(arrayOf(sp1,sp2), arrayOf(sp3,sp4) )
+//
+//    var doubleArray = doubleArrayOf(1.0,2.0,3.0,4.0)
+//    BlockClusterTree.MultHMatrixByVector(sp,doubleArray,0)
+//}

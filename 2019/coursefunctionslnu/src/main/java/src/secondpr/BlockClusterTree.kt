@@ -3,6 +3,7 @@ package src.secondpr
 import Egtulda01
 import multiplyMatricesV3
 import multiplyMatrixByVector
+import transposeMatrix
 import java.lang.Double.min
 
 
@@ -31,8 +32,7 @@ class BlockClusterTree {
         }
 
         fun buildRkmatrix(t: ClusterTree, s: ClusterTree, n: Int, m: Int): Rkmatrix {
-            val rkmatrix = Rkmatrix(m, t.leaf.size, s.leaf.size)
-            println("inside build rk matrix")
+            val rkmatrix = Rkmatrix(m, t.leaf.size, s.leaf.size, sLeaf = s.leaf, tLeaf = t.leaf)
 //            //filling Rkmatrix
             val sList = mutableListOf<Pair<Double,Double>>()
             segments.slice(s.leaf).forEach {
@@ -115,9 +115,8 @@ class BlockClusterTree {
             return rkmatrix
         }
 
-        fun buildBlockClusterTree(t: ClusterTree?, s: ClusterTree?, spr: Supermatrix, n: Int): Supermatrix {
+        fun buildBlockClusterTree(t: ClusterTree?, s: ClusterTree?, spr: Supermatrix, n: Int, nmin: Int): Supermatrix {
             //admissible -rkmatrix
-            val nMin = Math.round(Math.sqrt(n.toDouble())-1)
             if (isAdmissible(t, s)) {
                 spr.supermatrix = null
                 if (t != null && s != null) {
@@ -127,25 +126,27 @@ class BlockClusterTree {
                 }
                 return spr
             } else {
-                if (t != null && s!= null  &&!(t.leftTree == null || t.rightTree ==null || s.leftTree == null || s.rightTree == null) && t.leaf.size > nMin) {
+                if (t != null && s!= null  &&!(t.leftTree == null || t.rightTree ==null || s.leftTree == null || s.rightTree == null) && t.leaf.size > nmin) {
                     spr.rows = n
                     spr.cols = n
                     spr.blockrows = 2
                     spr.blockcols =  2
-                    spr.supermatrix = Array(2) { Array(2) { Supermatrix() } }
-                    spr.supermatrix!![0][0] = buildBlockClusterTree(t.leftTree, s.leftTree, spr.supermatrix!![0][0], n)
-                    spr.supermatrix!![0][1] = buildBlockClusterTree(t.leftTree, s.rightTree, spr.supermatrix!![0][1], n)
-                    spr.supermatrix!![1][0] = buildBlockClusterTree(t.rightTree, s.leftTree, spr.supermatrix!![1][0],n)
-                    spr.supermatrix!![1][1] = buildBlockClusterTree(t.rightTree, s.rightTree, spr.supermatrix!![1][1], n)
+                    spr.sLeaf = s.leaf
+                    spr.tLeaf = t.leaf
+                    spr.supermatrix = Array(2) { Array(2) { Supermatrix(sLeaf = s.leaf, tLeaf = t.leaf) } }
+                    spr.supermatrix!![0][0] = buildBlockClusterTree(t.leftTree, s.leftTree, spr.supermatrix!![0][0], n, nmin)
+                    spr.supermatrix!![0][1] = buildBlockClusterTree(t.leftTree, s.rightTree, spr.supermatrix!![0][1], n,nmin)
+                    spr.supermatrix!![1][0] = buildBlockClusterTree(t.rightTree, s.leftTree, spr.supermatrix!![1][0],n,nmin)
+                    spr.supermatrix!![1][1] = buildBlockClusterTree(t.rightTree, s.rightTree, spr.supermatrix!![1][1], n,nmin)
                 } else {
                     spr.rows = n
                     spr.cols = n
                     spr.blockrows = 2
                     spr.blockcols =  2
                     spr.supermatrix = null
-                    spr.fullmatrix = Fullmatrix()
-                    spr.fullmatrix!!.cols = s!!.leaf.size
-                    spr.fullmatrix!!.rows = t!!.leaf.size
+                    spr.fullmatrix = Fullmatrix(sLeaf = s!!.leaf, tLeaf = t!!.leaf)
+                    spr.fullmatrix!!.cols = s.leaf.size
+                    spr.fullmatrix!!.rows = t.leaf.size
                     spr.fullmatrix!!.e = Array(spr.fullmatrix!!.rows) { DoubleArray(spr.fullmatrix!!.cols) }
                     //filling Fullmatrix
                     for (l in t.leaf.indices) {
@@ -188,6 +189,34 @@ class BlockClusterTree {
                 return spr
             }
         }
+        fun MultHMatrixByVector(spr: src.secondpr.Supermatrix, vct: DoubleArray, resVct: DoubleArray): DoubleArray {
+            if (spr.supermatrix != null) {
+                val a1 = MultHMatrixByVector(spr.supermatrix!![0][0], vct, resVct)
+                val a2 = MultHMatrixByVector(spr.supermatrix!![0][1], vct, a1)
+                val b1 = MultHMatrixByVector(spr.supermatrix!![1][0], vct, a2)
+                val b2 = MultHMatrixByVector(spr.supermatrix!![1][1], vct, b1)
+                return b2
+            } else {
+
+                if (spr.rkmatrix != null) {
+                    val first = multiplyMatrixByVector(transposeMatrix(spr.rkmatrix!!.b), vct.slice(spr.rkmatrix!!.sLeaf).toDoubleArray())
+                    val second = multiplyMatrixByVector(spr.rkmatrix!!.a, first)
+                    for (i in second.indices){
+                        resVct[spr.rkmatrix!!.tLeaf[i]] += second[i]
+                    }
+                    return resVct
+                } else if (spr.fullmatrix != null) {
+                    val multVct = vct.slice(spr.fullmatrix!!.sLeaf).toDoubleArray()
+                    val res= multiplyMatrixByVector(spr.fullmatrix!!.e, multVct)
+                    for (i in res.indices){
+                        resVct[spr.fullmatrix!!.tLeaf[i]] += res[i]
+                    }
+                    return resVct
+                }
+            }
+            return DoubleArray(1)
+        }
+
         fun MultHMatrixByVector(spr: src.secondpr.Supermatrix, vct: DoubleArray, hor: Int): DoubleArray {
             if (spr.supermatrix != null) {
                 val a1 = MultHMatrixByVector(spr.supermatrix!![0][0], vct, spr.supermatrix!![0][0].blockcols)
