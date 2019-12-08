@@ -22,9 +22,9 @@ fun calculateU(x:Pair<Double, Double>, u:DoubleArray ): Double{
 }
 
 fun main(){
-    val n = 8
-    val m = 1
-    val nmin = 1//(m+1)*(m+1)
+    val n = 16
+    val m = 2
+    val nmin = (m+1)*(m+1)
     val clusterTree = buildClusterTree(n, m, nmin)
     val sprm = BlockClusterTree.buildBlockClusterTree(clusterTree,clusterTree,Supermatrix(sLeaf = clusterTree.leaf, tLeaf = clusterTree.leaf),n, nmin)
     val testMatrix = BlockClusterTree.getNormalMatrix(sprm)
@@ -62,25 +62,24 @@ fun main(){
                 test1[i-1][j-1] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[j].first - points[j - 1].first,
                     points[j].second - points[j - 1].second)) * norm(Pair(points[i].first - points[i - 1].first,
                     points[i].second - points[i - 1].second)) * integral
-            println("i=$i, j=$j, e[l][m]=${test1[i-1][j-1]}")
         }
     }
-    println("tochna")
-    for (i in test1.indices) {
-        for (element in test1[i]) {
-            print("$element ")
-        }
-        println()
-    }
-    println("------------------")
-    println("approximate")
-    for (i in testMatrix.indices) {
-        for (element in testMatrix[i]) {
-            print("$element ")
-        }
-        println()
-    }
-    println("------------------")
+//    println("tochna")
+//    for (i in test1.indices) {
+//        for (element in test1[i]) {
+//            print("$element ")
+//        }
+//        println()
+//    }
+//    println("------------------")
+//    println("approximate")
+//    for (i in testMatrix.indices) {
+//        for (element in testMatrix[i]) {
+//            print("$element ")
+//        }
+//        println()
+//    }
+//    println("------------------")
     val f = DoubleArray(n)
     for (i in 1 until n+1) {
         if (i == points.size){

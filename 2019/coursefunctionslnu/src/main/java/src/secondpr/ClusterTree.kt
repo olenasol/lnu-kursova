@@ -8,22 +8,22 @@ class ClusterTree{
     var rightTree: ClusterTree? = null
 
     companion object {
-        fun buildClusterTree(n:Int,k:Int, nmin: Int):ClusterTree{
+        fun buildClusterTree(n:Int,m:Int, nmin: Int):ClusterTree{
             val boundaryElements = buildBoundaryElements(n=n,func1 = {t:Double-> Math.cos(t) }, func2 = { t:Double-> Math.sin(t) })
-            return buildRealClusterTree(boundaryElements,0,nmin, k)
+            return buildRealClusterTree(boundaryElements,0,nmin, m)
         }
 
-        private fun buildRealClusterTree(list: List<Int>, level:Int, nmin:Int, k: Int):ClusterTree{
+        private fun buildRealClusterTree(list: List<Int>, level:Int, nmin:Int, m: Int):ClusterTree{
             val tree = ClusterTree()
             tree.level = level
             tree.leaf = list
-            tree.split = getSplitOnSegmentab(list, k)
+            tree.split = getSplitOnSegmentab(list, m)
             if(list.size > nmin) {
                 val split = splitBoundingBox(list)
                 tree.leftTree = buildRealClusterTree(split.first, level + 1,
-                        nmin,k)
+                        nmin,m)
                 tree.rightTree = buildRealClusterTree(split.second, level + 1,
-                       nmin,k)
+                       nmin,m)
             } else{
                 tree.leftTree = null
                 tree.rightTree = null
