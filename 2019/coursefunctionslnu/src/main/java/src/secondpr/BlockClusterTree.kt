@@ -34,7 +34,7 @@ class BlockClusterTree {
         fun buildRkmatrix(t: ClusterTree, s: ClusterTree, n: Int, m: Int): Rkmatrix {
 
             val rkmatrix = Rkmatrix(m, t.leaf.size, s.leaf.size, sLeaf = s.leaf, tLeaf = t.leaf)
-            println("m=$m")
+
 //            //filling Rkmatrix
             val sList = mutableListOf<Pair<Double,Double>>()
             segments.slice(s.leaf).forEach {

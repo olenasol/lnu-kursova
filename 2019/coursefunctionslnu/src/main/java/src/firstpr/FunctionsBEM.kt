@@ -191,7 +191,6 @@ fun getPohubka(a:DoubleArray,b:DoubleArray):Double{
     val c = DoubleArray(a.size)
     var sum =0.0
     for(i in 0 until a.size){
-       // println(Math.abs(a[i]-b[i]))
         c[i] = (Math.abs(a[i]-b[i]))
                 // sum+=c[i]
     }

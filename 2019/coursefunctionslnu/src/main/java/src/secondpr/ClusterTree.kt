@@ -8,8 +8,8 @@ class ClusterTree{
     var rightTree: ClusterTree? = null
 
     companion object {
-        fun buildClusterTree(n:Int,m:Int, nmin: Int):ClusterTree{
-            val boundaryElements = buildBoundaryElements(n=n,func1 = {t:Double-> Math.cos(t) }, func2 = { t:Double-> Math.sin(t) })
+        fun buildClusterTree(n:Int,m:Int, nmin: Int, func1:(x:Double)->Double,func2:(x:Double)->Double):ClusterTree{
+            val boundaryElements = buildBoundaryElements(n=n,func1=func1, func2=func2)
             return buildRealClusterTree(boundaryElements,0,nmin, m)
         }
 

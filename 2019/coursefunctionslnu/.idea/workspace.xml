@@ -3,18 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="de6c558d-86af-44e7-af59-47d1377c5c33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/firstpr/FunctionsBEM.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/firstpr/FunctionsBEM.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalClasses.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalClasses.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ComputationalFun.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FunctionsBEMKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FunctionsBEMKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ComputationalFunKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ComputationalFunKt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/Rkmatrix.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/Rkmatrix.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -213,11 +211,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
           <line>215</line>
           <option name="timeStamp" value="366" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt</url>
-          <line>29</line>
-          <option name="timeStamp" value="396" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt</url>
