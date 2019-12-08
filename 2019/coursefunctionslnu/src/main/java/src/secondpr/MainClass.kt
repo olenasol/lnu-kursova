@@ -22,19 +22,20 @@ fun calculateU(x:Pair<Double, Double>, u:DoubleArray ): Double{
 }
 
 fun main(){
-    val n = 2048
-    val m = 1024
-    val nmin = (m+1)*(m+1)
+    val n = 8
+    val m = 1
+    val nmin = 1//(m+1)*(m+1)
     val clusterTree = buildClusterTree(n, m, nmin)
     val sprm = BlockClusterTree.buildBlockClusterTree(clusterTree,clusterTree,Supermatrix(sLeaf = clusterTree.leaf, tLeaf = clusterTree.leaf),n, nmin)
     val testMatrix = BlockClusterTree.getNormalMatrix(sprm)
-    var test1 =  Array(n){
+    val test1 =  Array(n){
         DoubleArray(n)
     }
+    println("==============")
+    println("exact")
     for (i in 1 until test1.size+1){
         for (j in 1 until test1[i-1].size+1){
-            var integral =0.0
-            integral = if (i==j){
+            val integral = if (i==j){
                 if (i == points.size){
                     Egtulda01() + Math.log(norm(Pair(points[0].first - points[i - 1].first,
                             points[0].second - points[i - 1].second)))
@@ -61,28 +62,21 @@ fun main(){
                 test1[i-1][j-1] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[j].first - points[j - 1].first,
                     points[j].second - points[j - 1].second)) * norm(Pair(points[i].first - points[i - 1].first,
                     points[i].second - points[i - 1].second)) * integral
+            println("i=$i, j=$j, e[l][m]=${test1[i-1][j-1]}")
         }
     }
     println("tochna")
-    for (i in 0 until test1.size) {
-        for (j in 0 until test1[i].size) {
-            print(test1[i][j].toString()+" ")
+    for (i in test1.indices) {
+        for (element in test1[i]) {
+            print("$element ")
         }
         println()
     }
     println("------------------")
     println("approximate")
-    for (i in 0 until testMatrix.size) {
-        for (j in 0 until testMatrix[i].size) {
-            print(testMatrix[i][j].toString()+" ")
-        }
-        println()
-    }
-    println("------------------")
-    val martrix = BlockClusterTree.getNormalMatrix(sprm)
-        for (i in 0 until martrix.size) {
-        for (j in 0 until martrix[i].size) {
-            print(martrix[i][j].toString()+" ")
+    for (i in testMatrix.indices) {
+        for (element in testMatrix[i]) {
+            print("$element ")
         }
         println()
     }
@@ -93,13 +87,8 @@ fun main(){
             f[i-1] = norm(Pair(points[0].first - points[i-1].first, points[0].second - points[i-1].second))* Legendre(6).integrateF(::f,i)
         } else
             f[i-1] = norm(Pair(points[i].first - points[i-1].first, points[i].second - points[i-1].second))* Legendre(6).integrateF(::f,i)
-        println(f[i-1])
     }
-    val u = gradientMethodMatrix((sprm),f, DoubleArray(n),0.1)
-    //val u = gradientMethod(test1,f, DoubleArray(n),0.000001)
-    println("------------------")
-    u.forEach { println(it) }
-    println("------------------")
+    val u = gradientMethodMatrix((sprm),f, DoubleArray(n),0.000001)
     getTestPoints().forEach{
         println(calculateU(it, u))
     }

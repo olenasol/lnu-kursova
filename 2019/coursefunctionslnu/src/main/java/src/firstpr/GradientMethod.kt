@@ -96,8 +96,8 @@ fun gradientMethodMatrix(matrix: src.secondpr.Supermatrix, vector: DoubleArray, 
     val n = vector.size
     val x1 = DoubleArray(n)
     var x0 = inx0
-    val temptest =multiply(src.secondpr.BlockClusterTree.getNormalMatrix(matrix), x0)
-    val temp =src.secondpr.BlockClusterTree.MultHMatrixByVector((matrix), x0, DoubleArray(x0.size))
+    val temp =multiply(src.secondpr.BlockClusterTree.getNormalMatrix(matrix), x0)
+    //val temp =src.secondpr.BlockClusterTree.MultHMatrixByVector((matrix), x0, DoubleArray(x0.size))
     var r0 = DoubleArray(n, { i -> vector[i] - temp[i] })
     var p0 = r0
     val r1 = DoubleArray(n)
@@ -111,8 +111,8 @@ fun gradientMethodMatrix(matrix: src.secondpr.Supermatrix, vector: DoubleArray, 
     }
     for(i in 0 until vector.size) {
 
-        val temp2test=multiply(src.secondpr.BlockClusterTree.getNormalMatrix(matrix), p0)
-        val temp2 = src.secondpr.BlockClusterTree.MultHMatrixByVector((matrix), p0, DoubleArray(p0.size))
+        val temp2=multiply(src.secondpr.BlockClusterTree.getNormalMatrix(matrix), p0)
+       // val temp2 = src.secondpr.BlockClusterTree.MultHMatrixByVector((matrix), p0, DoubleArray(p0.size))
         val temp3 = multiplyVectorByVector(temp2, p0)
         alphak = rsold / temp3
         for (j in 0..(n - 1)) {

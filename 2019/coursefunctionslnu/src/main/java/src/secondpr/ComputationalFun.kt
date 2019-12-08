@@ -192,14 +192,16 @@ fun splitBoundingBox(list:List<Int>):Pair<List<Int>,List<Int>>{
     val firstList = mutableListOf<Int>()
     val secondList = mutableListOf<Int>()
     val halfRec = if (isVertical){
-        mutableListOf(Pair((boundingBox[3].first+boundingBox[0].first)/2,boundingBox[0].second),
-                Pair((boundingBox[2].first+boundingBox[1].first)/2,boundingBox[1].second),
-                boundingBox[2],boundingBox[3])
+        mutableListOf(boundingBox[0], boundingBox[1],
+                Pair((boundingBox[2].first+boundingBox[1].first)/2.0,boundingBox[1].second),
+                Pair((boundingBox[3].first+boundingBox[0].first)/2.0,boundingBox[0].second))
     } else
         mutableListOf(boundingBox[0],
-                Pair(boundingBox[0].first,(boundingBox[0].second+boundingBox[1].second)/2),
-                Pair(boundingBox[3].first,(boundingBox[3].second+boundingBox[2].second)/2),
+                Pair(boundingBox[0].first,(boundingBox[0].second+boundingBox[1].second)/2.0),
+                Pair(boundingBox[3].first,(boundingBox[3].second+boundingBox[2].second)/2.0),
                 boundingBox[3])
+    val isFirstPointInRectangle = isPointInRectangle((Pair((convertedList[0].startPoint.first+convertedList[0].endPoint.first)/2.0,
+            (convertedList[0].startPoint.second+convertedList[0].endPoint.second)/2.0)),halfRec)
     list.indices.forEach {i ->
         if (isPointInRectangle((Pair((convertedList[i].startPoint.first+convertedList[i].endPoint.first)/2.0,
                         (convertedList[i].startPoint.second+convertedList[i].endPoint.second)/2.0)),halfRec) )
@@ -207,7 +209,11 @@ fun splitBoundingBox(list:List<Int>):Pair<List<Int>,List<Int>>{
         else
             secondList.add(list[i])
     }
-    return Pair(firstList.toList(),secondList.toList())
+    return if(isFirstPointInRectangle){
+         Pair(firstList.toList(),secondList.toList())
+    } else{
+         Pair(secondList.toList(), firstList.toList())
+    }
 }
 private fun isPointInRectangle(point:Pair<Double,Double>, rectangle: List<Pair<Double,Double>>):Boolean{
     return ((point.first>=rectangle[2].first && point.first<=rectangle[1].first) &&

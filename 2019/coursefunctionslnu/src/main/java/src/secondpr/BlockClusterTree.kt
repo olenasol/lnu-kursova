@@ -181,7 +181,7 @@ class BlockClusterTree {
                                 spr.fullmatrix!!.e[l][m] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[j].first - points[j - 1].first,
                                     points[j].second - points[j - 1].second)) * norm(Pair(points[i].first - points[i - 1].first,
                                     points[i].second - points[i - 1].second)) * integral
-
+                            println("l=$l, m=$m, i=$i, j=$j, e[l][m]=${spr.fullmatrix!!.e[l][m]}")
                         }
 
                     }
@@ -217,43 +217,7 @@ class BlockClusterTree {
             return DoubleArray(1)
         }
 
-        fun MultHMatrixByVector(spr: src.secondpr.Supermatrix, vct: DoubleArray, hor: Int): DoubleArray {
-            if (spr.supermatrix != null) {
-                val a1 = MultHMatrixByVector(spr.supermatrix!![0][0], vct, spr.supermatrix!![0][0].blockcols)
-                val a2 = MultHMatrixByVector(spr.supermatrix!![0][1], vct, spr.supermatrix!![0][1].blockcols)
-                val b1 = MultHMatrixByVector(spr.supermatrix!![1][0], vct, spr.supermatrix!![1][0].blockcols)
-                val b2 = MultHMatrixByVector(spr.supermatrix!![1][1], vct, spr.supermatrix!![1][1].blockcols)
-                println("a1.size= ${a1.size}, a2.size= ${a2.size}, b1.size= ${b1.size}, b2.size= ${b2.size}, vct.size= ${vct.size}"  )
-                val vtmp1 = a1 + b1
-                val vtmp2 = a2 + b2
-                val res: DoubleArray = DoubleArray(Integer.valueOf(a1.size+b1.size))
-                for (i in 0..(res.size - 1)) {
-                    res[i] = vtmp1[i] + vtmp2[i]
-                }
-                return res
-            } else {
 
-                if (spr.rkmatrix != null) {
-                    var arr : DoubleArray? = null
-                    if (hor == 0){
-                        arr = vct.copyOfRange(0, transposeMatrix(spr.rkmatrix!!.b)[0].size)
-                    } else
-                        arr = vct.copyOfRange(hor, transposeMatrix(spr.rkmatrix!!.b)[0].size)
-                    val first = multiplyMatrixByVector(transposeMatrix(spr.rkmatrix!!.b), arr)
-                    val second = multiplyMatrixByVector(spr.rkmatrix!!.a, first)
-                    return second
-                } else if (spr.fullmatrix != null) {
-                    var arr : DoubleArray? = null
-                    if (hor == 0){
-                        arr = vct.copyOfRange(0, spr.fullmatrix!!.e[0].size)
-                    } else
-                        arr = vct.copyOfRange(hor, spr.fullmatrix!!.e[0].size)
-                    val res= multiplyMatrixByVector(spr.fullmatrix!!.e, arr)
-                    return res
-                }
-            }
-            return DoubleArray(1)
-        }
 
         fun transposeMatrix(matrix:Array<DoubleArray>): Array<DoubleArray>{
             val transpose = Array(matrix[0].size){DoubleArray(matrix.size)}
