@@ -546,7 +546,7 @@
 			1024 & 2.3177027E-4 & 2.04782E-10 & 1.98478E-10 &1.9847878E-10&2.00121E-10\\ [1ex] % [1ex] adds vertical space
 			\hline %inserts single line
 		\end{tabular}
-	\caption{Похибки при різних $n$ i $n_{min}$}
+	\caption{Похибки при різних $n$ i $k$}
 		\label{table:nonlin} % is used to refer this table in the text
 	\end{table}
 	\subsection{Приклад 2}
@@ -755,6 +755,80 @@
 		\item Масив l розмірності p, що містить трансформовані інтерполяційні точки. 
 	\end{itemize} 
 	\par Щоб заповнити матрицю $B^{t,s}$ потрібно проінтегрувати функцію ядра для точок $x_v^t$ на інтервалах заданих точками $p_{i-1}$ і $p_i$. В цьому випадку, це може бути зроблено аналітично. В загальному, ми можемо використовувати ту саму квадратуру, як у випадку інтегрування поліномів Лагранжа.
+	\section{Чисельні експерименти}
+	\hspace{0.8cm}В усіх наведених експериментах, розглядаємо випадок $n_{min}=(m+1)^2$.
+	\subsection{Приклад 1}
+	\hspace{0.8cm}Розглядаємо рівняння
+	$$f(x)=1$$ 
+	на області $(\cos(t), \sin(t))$.
+
+	\begin{table}[ht]
+		\centering 
+		\begin{tabular}{c c c c c c } % centered columns (4 columns)
+			\hline\hline %inserts double horizontal lines
+			
+			\diaghead(-2,1){aaaaaaa}{n}{m} & 1 & 2 & 4  & $\frac{n}{2}$ & n \\ [0.5ex] % inserts table
+			%heading
+			\hline % inserts single horizontal line
+			16 & 0.02339740 & 0.02339740 & 0.02339740 &0.02339740 &0.02339740  \\ % inserting body of the table
+			128 & 0.53952279& 0.02009871 & 0.002946795 &0.002931897&0.002931897\\
+			512 &0.97820843 & 0.549873031& 0.00184727 &9.88898E-4&9.88898E-4\\
+			1024 & 0.9919998 & 0.219965560 & 0.001486734  &9.0503518E-4&9.0503518E-4\\
+			2048 & 1.22171260& 1.01844332& 0.003680246 &3.889937E-5&3.889937E-5
+			\\ [1ex] % [1ex] adds vertical space
+			\hline %inserts single line
+		\end{tabular}
+		\caption{Похибки при різних $n$ i $m$}
+		\label{table:nonlin} % is used to refer this table in the text
+	\end{table}
+	\subsection{Приклад 2}
+	\hspace{0.8cm}Розглядаємо рівняння
+	$$f(x)=\frac{x_1+x_2}{x_1^2+x_2^2}$$ 
+	на області $(\cos(t)+1, \sin(t)+1)$.
+	
+	\begin{table}[ht]
+		\centering 
+		\begin{tabular}{c c c c c c c} % centered columns (4 columns)
+			\hline\hline %inserts double horizontal lines
+			
+			\diaghead(-2,1){aaaaaaa}{n}{m} & 1 & 2 & 4 & 8& $\frac{n}{2}$ & n \\ [0.25ex] % inserts table
+			%heading
+			\hline % inserts single horizontal line
+			16 & 0.098620269& 0.098620269 & 0.098620269 & 0.098620269 & 0.098620269 &0.098620269  \\ % inserting body of the table
+			128 & 3.236583593& 0.0927862235 & 0.003177058&0.002882573 &0.00288257&0.00288257\\
+			512 &8.162927046 & 1.21128444& 0.004982645 &6.9770519E-4&6.9781321E-4&6.9781321E-4\\
+			1024 & 1.2720654 & 0.42338880 & 0.001906832& 2.86591718E-4 &2.8609666E-4&2.86096666E-4\\
+			2048 & 4.0134401& 2.87286939& 0.0961701653 &3.9334442E-5 &3.890626E-5&3.890626E-5
+			\\ [0.5ex] % [1ex] adds vertical space
+			\hline %inserts single line
+		\end{tabular}
+		\caption{Похибки при різних $n$ i $m$}
+		\label{table:nonlin} % is used to refer this table in the text
+	\end{table}
+\subsection{Приклад 3}
+\hspace{0.8cm}Розглядаємо рівняння
+$$f(x)=\log\|x-x^*\|$$ 
+на області $(\cos(t+10), \sin(t))$.
+
+\begin{table}[ht]
+	\centering 
+	\begin{tabular}{c c c c c c c} % centered columns (4 columns)
+		\hline\hline %inserts double horizontal lines
+		
+		\diaghead(-2,1){aaaaaaa}{n}{m} & 1 & 2 & 4 & 8& $\frac{n}{2}$ & n \\ [0.25ex] % inserts table
+		%heading
+		\hline % inserts single horizontal line
+		16 & 0.0063582& 0.0059827717& 0.0059827717 & 0.0059827717 & 0.0059827717 &0.0059827717  \\ % inserting body of the table
+		128 & 0.00531196176& 2.1103921E-4 & 1.38351742E-5&1.3803963E-5 &1.3803963E-5&1.3803963E-5\\
+		512 &0.002525204 & 7.28675E-5& 5.84060E-7 &2.1006122E-7&2.100469E-7&2.100469E-7\\
+		1024 & 0.00237309 &6.467044E-5 & 4.55549E-7& 2.1911267E-8 &2.177392E-8&2.177392E-8\\
+		2048 & 0.002462828& 7.1301175E-5& 4.882855E-7 &1.01539598E-9 &8.3269635E-10&8.3269635E-10
+		\\ [0.5ex] % [1ex] adds vertical space
+		\hline %inserts single line
+	\end{tabular}
+	\caption{Похибки при різних $n$ i $m$}
+	\label{table:nonlin} % is used to refer this table in the text
+\end{table}
 	\chapter{Висновок}
 	\hspace{0.8cm} В цій роботі розглянуто основні принципи побудови та використання $\mathcal{H}$-матриць. Описано такі ключові поняття як дерево, кластерне дерево та блочне кластерне дерево, які лягли в основу означення структури ієрархічної матриці. Також розглянуто відповідні структури через які ієрархічні матриці реалізують програмно: rkmatrix, fullmatrix та supermatrix. Наведено алгоритми реалізації блочного кластерного дерева i методу спряжених градієнтів.
 	\par Застосування $\mathcal{H}$-матриць розглянуто на прикладі методу скінченних елементів (BEM). У даному прикладі застосовується метод Галеркіна та метод спряжених градієнтів. Розглянута теорія побудови $\mathcal{H}$-матриць для двовимірного випадку на прикладі задачі Діріхле для рівняння Лапласа.

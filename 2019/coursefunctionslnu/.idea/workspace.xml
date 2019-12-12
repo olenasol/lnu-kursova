@@ -2,17 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de6c558d-86af-44e7-af59-47d1377c5c33" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/firstpr/FunctionsBEM.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/firstpr/FunctionsBEM.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/ClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/firstpr/MainClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/firstpr/MainClass.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/BlockClusterTree.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/Integral.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/Legrandge.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/integral/Legrandge.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FunctionsBEMKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FunctionsBEMKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion$buildClusterTree$boundaryElements$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/ClusterTree$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/com.coursefunctions.lnu.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/com.coursefunctions.lnu.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MainClassKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MainClassKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/BlockClusterTree$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/Integral$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/Integral.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/Legendre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/LegrandgeKt$main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/LegrandgeKt$main$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/LegrandgeKt.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$clusterTree$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$clusterTree$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$clusterTree$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$clusterTree$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../report_2019/report.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../report_2019/report.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../report_2019/report.tex" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,14 +51,20 @@
   <component name="ProjectId" id="1QYvfABEvIQsavl4tB33h8KwHQk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/src/secondpr" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="src.secondpr.integral" />
       <recent name="src.secondpr" />
       <recent name="src.firstpr" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/src/secondpr" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/src/secondpr/integral" />
       <recent name="$PROJECT_DIR$/src/main/java/src/firstpr" />
     </key>
   </component>
@@ -68,7 +86,7 @@
       <module name="com.coursefunctions.lnu" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="src.secondpr.*" />
+          <option name="PATTERN" value="src.secondpr.integral.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,19 +102,6 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="MainClassKt" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="src.secondpr.LegrandgeKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="com.coursefunctions.lnu" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="src.secondpr.LegrandgeKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,13 +133,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="src.secondpr.integral.LegrandgeKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="com.coursefunctions.lnu" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="src.secondpr.integral.LegrandgeKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.src.secondpr.MainClassKt" />
-        <item itemvalue="Kotlin.src.secondpr.TestKt" />
-        <item itemvalue="Kotlin.src.secondpr.LegrandgeKt" />
-        <item itemvalue="Application.Compute" />
+        <item itemvalue="Kotlin.src.secondpr.integral.LegrandgeKt" />
         <item itemvalue="Kotlin.MainClassKt" />
+        <item itemvalue="Kotlin.src.secondpr.TestKt" />
+        <item itemvalue="Application.Compute" />
       </list>
     </recent_temporary>
   </component>
@@ -223,8 +241,8 @@
           <option name="timeStamp" value="452" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/Legrandge.kt</url>
-          <line>19</line>
+          <url>file://$PROJECT_DIR$/src/main/java/src/secondpr/integral/Legrandge.kt</url>
+          <line>21</line>
           <option name="timeStamp" value="453" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">

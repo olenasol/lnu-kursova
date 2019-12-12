@@ -3,7 +3,7 @@ package src.secondpr
 import Egtulda01
 import multiplyMatricesV3
 import multiplyMatrixByVector
-import transposeMatrix
+import src.secondpr.integral.Legendre
 import java.lang.Double.min
 
 
@@ -32,7 +32,7 @@ class BlockClusterTree {
         }
 
         fun buildRkmatrix(t: ClusterTree, s: ClusterTree, n: Int, m: Int): Rkmatrix {
-
+            println("rkmaytrix")
             val rkmatrix = Rkmatrix(m, t.leaf.size, s.leaf.size, sLeaf = s.leaf, tLeaf = t.leaf)
 
 //            //filling Rkmatrix
@@ -55,11 +55,11 @@ class BlockClusterTree {
                         for (v2 in 0 until rkmatrix.m+1) {
                             if (i== points.size){
                                 rkmatrix.a[x-1][v] = norm(Pair(points[0].first - points[i-1].first,
-                                        points[0].second - points[i-1].second)) * Legendre(6).integrateLagrange(i, Pair(v1,v2),t.split, m)
+                                        points[0].second - points[i-1].second)) * Legendre().integrateLagrange(i, Pair(v1,v2),t.split, m)
 
                             } else
                                 rkmatrix.a[x-1][v] = norm(Pair(points[i].first - points[i-1].first,
-                                    points[i].second - points[i-1].second)) * Legendre(6).integrateLagrange(i, Pair(v1,v2),t.split, m)
+                                    points[i].second - points[i-1].second)) * Legendre().integrateLagrange(i, Pair(v1,v2),t.split, m)
                             v++
                         }
 
@@ -73,10 +73,10 @@ class BlockClusterTree {
                             val x_v = Pair(t.split[v1].first,t.split[v2].second)
                             if (j == points.size){
                                 rkmatrix.b[y-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[0].first - points[j-1].first,
-                                        points[0].second - points[j-1].second)) * Legendre(6).integrateLog(x_v,j)
+                                        points[0].second - points[j-1].second)) * Legendre().integrateLog(x_v,j)
                             }else
                                rkmatrix.b[y-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[j].first - points[j-1].first,
-                                    points[j].second - points[j-1].second)) * Legendre(6).integrateLog(x_v,j)
+                                    points[j].second - points[j-1].second)) * Legendre().integrateLog(x_v,j)
                             v++
                         }
                     }
@@ -89,10 +89,10 @@ class BlockClusterTree {
                         for (v2 in 0 until rkmatrix.m+1) {
                             if (i == points.size){
                                 rkmatrix.b[x-1][v] = norm(Pair(points[0].first - points[i-1].first,
-                                        points[0].second - points[i-1].second)) * Legendre(6).integrateLagrange(i, Pair(v1,v2),s.split, m)
+                                        points[0].second - points[i-1].second)) * Legendre().integrateLagrange(i, Pair(v1,v2),s.split, m)
                             } else
                                  rkmatrix.b[x-1][v] =norm(Pair(points[i].first - points[i-1].first,
-                                    points[i].second - points[i-1].second)) * Legendre(6).integrateLagrange(i, Pair(v1,v2),s.split, m)
+                                    points[i].second - points[i-1].second)) * Legendre().integrateLagrange(i, Pair(v1,v2),s.split, m)
                             v++
                         }
                     }
@@ -105,10 +105,10 @@ class BlockClusterTree {
                             val x_v = Pair(s.split[v1].first,s.split[v2].second)
                             if (j== points.size ){
                                 rkmatrix.a[y-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[0].first - points[j-1].first,
-                                       points[0].second - points[j-1].second)) * Legendre(6).integrateLog(x_v,j)
+                                       points[0].second - points[j-1].second)) * Legendre().integrateLog(x_v,j)
                             }else
                                 rkmatrix.a[y-1][v] = -(1.0/(2.0*Math.PI))*norm(Pair(points[j].first - points[j-1].first,
-                                    points[j].second - points[j-1].second)) * Legendre(6).integrateLog(x_v,j)
+                                    points[j].second - points[j-1].second)) * Legendre().integrateLog(x_v,j)
                             v++
                         }
                     }
@@ -166,7 +166,7 @@ class BlockClusterTree {
                                         points[i].second - points[i - 1].second)))
                                 }
                             } else{
-                                Legendre(6).integrateLogDouble(i,j)
+                                Legendre().integrateLogDouble(i,j)
                             }
                             if (i == points.size && j == points.size){
                                 spr.fullmatrix!!.e[l][m] = -(1.0 / (2.0 * Math.PI)) * norm(Pair(points[0].first - points[j - 1].first,
