@@ -35,28 +35,34 @@ fun calculateU(x:Pair<Double, Double>, u:DoubleArray ): Double{
 }
 
 fun main(){
+    val startTime = System.nanoTime()
     val n = 2048
-    val m = 1024
+    val m = 4
     val nmin = (m+1)*(m+1)
-    val clusterTree = buildClusterTree(n, m, nmin,func1 = {t:Double-> Math.cos(t+3)+1 }, func2 = { t:Double-> Math.sin(t)+1 })
+    val clusterTree = buildClusterTree(n, m, nmin,func1 = {t:Double-> Math.cos(t+10)}, func2 = { t:Double-> Math.sin(t) })
     val sprm = BlockClusterTree.buildBlockClusterTree(clusterTree,clusterTree,Supermatrix(sLeaf = clusterTree.leaf, tLeaf = clusterTree.leaf),n, nmin)
-   // val testMatrix = calculateTochno(n)
+    val testMatrix = calculateTochno(n)
     val f = DoubleArray(n)
     for (i in 1 until n+1) {
         if (i == points.size){
-            f[i-1] = norm(Pair(points[0].first - points[i-1].first, points[0].second - points[i-1].second))* Legendre().integrateF(::f2,i)
+            f[i-1] = norm(Pair(points[0].first - points[i-1].first, points[0].second - points[i-1].second))* Legendre().integrateF(::f3,i)
         } else
-            f[i-1] = norm(Pair(points[i].first - points[i-1].first, points[i].second - points[i-1].second))* Legendre().integrateF(::f2,i)
+            f[i-1] = norm(Pair(points[i].first - points[i-1].first, points[i].second - points[i-1].second))* Legendre().integrateF(::f3,i)
     }
     val u = gradientMethodMatrix((sprm),f, DoubleArray(n),0.0000000001)
-   // val u = gradientMethod(testMatrix,f, DoubleArray(n),0.000001)
+    //val u = gaussPartial(testMatrix, f)//gradientMethod(testMatrix,f, DoubleArray(n),0.000001)
     val appr = DoubleArray(5)
     val tochne = DoubleArray(5)
-    getTestPoints2(n).forEachIndexed { index, pair ->
+    getTestPoints3(5).forEachIndexed { index, pair ->
         appr[index] = calculateU(pair, u)
-        tochne[index] = f2(pair)
+        tochne[index] = f3(pair)
     }
     println(getPohubka(appr, tochne))
+    val elapsedTime = System.nanoTime() - startTime;
+
+    println("Total execution time to create 1000K objects in Java in millis: "
+            + elapsedTime/1000000);
+
 }
 
 fun getTestPoints(n:Int): List<Pair<Double, Double>>{
