@@ -36,7 +36,7 @@ fun calculateU(x:Pair<Double, Double>, u:DoubleArray ): Double{
 
 fun main(){
     val startTime = System.nanoTime()
-    val n = 2048
+    val n = 4096
     val m = 4
     val nmin = (m+1)*(m+1)
     val clusterTree = buildClusterTree(n, m, nmin,func1 = {t:Double-> Math.cos(t+10)}, func2 = { t:Double-> Math.sin(t) })

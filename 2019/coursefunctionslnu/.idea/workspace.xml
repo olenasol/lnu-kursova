@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de6c558d-86af-44e7-af59-47d1377c5c33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/Gauss.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/secondpr/MainClass.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/com.coursefunctions.lnu.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/com.coursefunctions.lnu.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$clusterTree$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$clusterTree$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$clusterTree$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt$main$clusterTree$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/src/secondpr/MainClassKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../report_2019/report.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../report_2019/report.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../report_2019/report.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../report_2019/report.tex" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
